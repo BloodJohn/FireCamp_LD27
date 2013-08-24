@@ -10,16 +10,14 @@
     <unique-id>1zd9zgvyk313s</unique-id>
     <saved-with-version>13900</saved-with-version>
     <used-plugins>
-        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
-        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
-        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
     </used-plugins>
     <used-behaviors>
-        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
-        <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
         <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
+        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
     </used-behaviors>
     <used-effects />
@@ -44,10 +42,11 @@
         </object-type>
         <object-type name="Player" sid="4665982004058992">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable comment="firewood count" name="wood" sid="2480179982745735" type="number" />
+                <instance-variable comment="far from camp" name="freeze" sid="4612789396669099" type="number" />
+            </instance-variables>
             <behaviors>
-                <behavior-type name="8Direction" sid="8594974342095852">
-                    <behavior id="EightDir" />
-                </behavior-type>
                 <behavior-type name="BoundToLayout" sid="1086099328527579">
                     <behavior id="bound" />
                 </behavior-type>
@@ -71,11 +70,11 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="Mouse" sid="5741473531684078">
-            <plugin id="Mouse" />
-        </object-type>
-        <object-type name="Explosion" sid="2142263845234973">
+        <object-type name="CampFire" sid="2142263845234973">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="power" sid="5218553631166437" type="number" />
+            </instance-variables>
             <behaviors>
                 <behavior-type name="Fade" sid="9756502815884836">
                     <behavior id="Fade" />
@@ -92,9 +91,6 @@
         </object-type>
         <object-type name="GameOverText" sid="4764306912919052">
             <plugin id="Text" />
-        </object-type>
-        <object-type name="Keyboard" sid="7869706615812431">
-            <plugin id="Keyboard" />
         </object-type>
         <object-type name="firewood" sid="5146026140372993">
             <plugin id="Sprite" />
@@ -114,6 +110,15 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="freezeStatus" sid="3741371945695945">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="fireStatus" sid="9705679062719049">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Touch" sid="3908994502925673">
+            <plugin id="Touch" />
+        </object-type>
     </object-folder>
     <families />
     <layout-folder expanded="1">
@@ -123,8 +128,11 @@
         <event-sheet>Event sheet 1.xml</event-sheet>
     </event-folder>
     <global-instances>
-        <global-instance type="Mouse" uid="16" />
-        <global-instance type="Keyboard" uid="17" />
+        <global-instance type="Touch" uid="5">
+            <properties>
+                <use-mouse-input>Yes</use-mouse-input>
+            </properties>
+        </global-instance>
     </global-instances>
     <sounds-folder expanded="1" />
     <music-folder expanded="1" />

@@ -6,7 +6,7 @@
         <comment>This is the speed new monsters are spawned at, and the player score.</comment>
         <variable constant="0" name="Score" sid="9430221669105701" static="0" type="number">0</variable>
         <comment>Start monsters at a random angle.</comment>
-        <event-block sid="2016806224835871">
+        <event-block collapsed="1" sid="2016806224835871">
             <conditions>
                 <condition id="-2" name="On start of layout" sid="4633396582611706" type="System" />
             </conditions>
@@ -49,90 +49,117 @@
                         <condition id="-1" name="Every tick" sid="9893711515753111" type="System" />
                     </conditions>
                     <actions>
-                        <action id="-22" name="Set angle toward position" sid="2980547501569765" type="Player">
-                            <param id="0" name="X">Mouse.X</param>
-                            <param id="1" name="Y">Mouse.Y</param>
-                        </action>
                         <action id="0" name="Set text" sid="8707283659962972" type="Status">
-                            <param id="0" name="Text">&quot;Score: &quot; &amp; Score &amp; &quot; - FPS: &quot; &amp; fps &amp; newline &amp; &quot;Use arrow keys to move and click to shoot!&quot;</param>
+                            <param id="0" name="Text">&quot;Score: &quot; &amp; Score &amp; &quot; Fire: &quot; &amp; CampFire.power &amp; &quot; - FPS: &quot; &amp; fps &amp; newline &amp; &quot;Use arrow keys to move&quot;</param>
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="8648811539034995">
+                <event-block sid="9445426713988271">
                     <conditions>
-                        <condition id="2" name="Key is down" sid="6160064561023688" type="Keyboard">
-                            <param id="0" name="Key">65 (A)</param>
+                        <condition id="2" name="Is in touch" sid="9903541263969406" type="Touch" />
+                    </conditions>
+                    <actions>
+                        <action id="-23" name="Move at angle" sid="8903834655165826" type="Player">
+                            <param id="0" name="Angle">angle(Player.X, Player.Y, Touch.X, Touch.Y)</param>
+                            <param id="1" name="Distance">300 * dt</param>
+                        </action>
+                        <action id="-22" name="Set angle toward position" sid="2980547501569765" type="Player">
+                            <param id="0" name="X">Touch.X</param>
+                            <param id="1" name="Y">Touch.Y</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="118646985458437">
+                            <conditions>
+                                <condition id="4" name="Is touching object" sid="726913994095737" type="Touch">
+                                    <param id="0" name="Object">GameOverText</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="9602626894317266" type="System">
+                                    <param id="0" name="First value">CampFire.Count</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="4839879999534651" type="System">
+                                    <param id="0" name="Variable">Score</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-2" name="Go to layout" sid="9257522300786043" type="System">
+                                    <param id="0" name="Layout">Layout 1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="9986743214981356" title="Player interaction">
+            <sub-events>
+                <event-block sid="7232025729484607">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="7911843152568621" type="Player">
+                            <param id="0" name="Object">firewood</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action behavior="8Direction" id="7" name="Simulate control" sid="2063674241196787" type="Player">
-                            <param id="0" name="Control">0</param>
+                        <action id="-9" name="Destroy" sid="9371887111465753" type="firewood" />
+                        <action id="-11" name="Add to" sid="1342389928707647" type="Player">
+                            <param id="0" name="Instance variable">wood</param>
+                            <param id="1" name="Value">1</param>
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="652972680629551">
+                <event-block sid="7775520856246349">
                     <conditions>
-                        <condition id="2" name="Key is down" sid="3317992322899717" type="Keyboard">
-                            <param id="0" name="Key">68 (D)</param>
+                        <condition id="0" name="On collision with another object" sid="1245352042944207" type="Player">
+                            <param id="0" name="Object">CampFire</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action behavior="8Direction" id="7" name="Simulate control" sid="1532465605411379" type="Player">
-                            <param id="0" name="Control">1</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="5256955346450237">
-                    <conditions>
-                        <condition id="2" name="Key is down" sid="2541408187027055" type="Keyboard">
-                            <param id="0" name="Key">87 (W)</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action behavior="8Direction" id="7" name="Simulate control" sid="9046249265075468" type="Player">
-                            <param id="0" name="Control">2</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="3326366147268268">
-                    <conditions>
-                        <condition id="2" name="Key is down" sid="5923757415183677" type="Keyboard">
-                            <param id="0" name="Key">83 (S)</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action behavior="8Direction" id="7" name="Simulate control" sid="1891319244646442" type="Player">
-                            <param id="0" name="Control">3</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <comment>Restart after game over if space pressed.</comment>
-                <event-block sid="2669626258540129">
-                    <conditions>
-                        <condition id="0" name="On key pressed" sid="422387584060557" type="Keyboard">
-                            <param id="0" name="Key">32 (Space)</param>
-                        </condition>
-                        <condition id="-8" name="Compare two values" sid="9602626894317266" type="System">
-                            <param id="0" name="First value">Explosion.Count</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Second value">0</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Set value" sid="557598773692681" type="System">
-                            <param id="0" name="Variable">Score</param>
+                        <action id="-10" name="Set value" sid="7167713840561844" type="Player">
+                            <param id="0" name="Instance variable">freeze</param>
                             <param id="1" name="Value">0</param>
                         </action>
-                        <action id="-2" name="Go to layout" sid="7168345176405675" type="System">
-                            <param id="0" name="Layout">Layout 1</param>
+                        <action id="-5" name="Set width" sid="7498932449987445" type="freezeStatus">
+                            <param id="0" name="Width">0</param>
                         </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="1990071186740493">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="4411440702627846" type="Player">
+                                    <param id="0" name="Instance variable">wood</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Fade" id="0" name="Restart fade" sid="5193098528470776" type="CampFire" />
+                                <action id="-11" name="Add to" sid="8305177778359514" type="Player">
+                                    <param id="0" name="Instance variable">wood</param>
+                                    <param id="1" name="Value">-1</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="393286595370788" type="System">
+                                    <param id="0" name="Variable">Score</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="9654433311886671" type="CampFire">
+                                    <param id="0" name="Instance variable">power</param>
+                                    <param id="1" name="Value">20</param>
+                                </action>
+                                <action id="-5" name="Set width" sid="6414329833763609" type="fireStatus">
+                                    <param id="0" name="Width">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>
         <event-block sid="1238229792633858">
             <conditions>
-                <condition behavior="Fade" id="0" name="On fade out finished" sid="3191540269146869" type="Explosion" />
+                <condition behavior="Fade" id="0" name="On fade out finished" sid="3191540269146869" type="CampFire" />
             </conditions>
             <actions>
                 <action id="-15" name="Set visible" sid="7949229855495077" type="GameOverText">
@@ -140,20 +167,56 @@
                 </action>
             </actions>
         </event-block>
-        <event-block sid="7232025729484607">
+        <event-block collapsed="1" sid="9166315253767041">
             <conditions>
-                <condition id="0" name="On collision with another object" sid="7911843152568621" type="Player">
-                    <param id="0" name="Object">firewood</param>
+                <condition id="-6" name="Every X seconds" sid="3078012040381353" type="System">
+                    <param id="0" name="Interval (seconds)">1.0</param>
                 </condition>
             </conditions>
             <actions>
-                <action behavior="Fade" id="0" name="Restart fade" sid="8940765523758679" type="Explosion" />
-                <action id="-9" name="Destroy" sid="9371887111465753" type="firewood" />
-                <action id="-10" name="Add to" sid="393286595370788" type="System">
-                    <param id="0" name="Variable">Score</param>
-                    <param id="1" name="Value">1</param>
+                <action id="-11" name="Add to" sid="9513134698113411" type="CampFire">
+                    <param id="0" name="Instance variable">power</param>
+                    <param id="1" name="Value">-1</param>
+                </action>
+                <action id="-5" name="Set width" sid="395180026861966" type="fireStatus">
+                    <param id="0" name="Width">140 - CampFire.power * 7</param>
                 </action>
             </actions>
+            <sub-events>
+                <event-block sid="5436432485031942">
+                    <conditions>
+                        <condition id="1" inverted="1" name="Is overlapping another object" sid="7300634048677421" type="Player">
+                            <param id="0" name="Object">CampFire</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Add to" sid="9188634245146499" type="Player">
+                            <param id="0" name="Instance variable">freeze</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-5" name="Set width" sid="5861697978869906" type="freezeStatus">
+                            <param id="0" name="Width">Player.freeze*14</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="8762838406463823">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="7369365015096753" type="Player">
+                                    <param id="0" name="Instance variable">freeze</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">10</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="9646909347040273" type="CampFire" />
+                                <action id="-15" name="Set visible" sid="7189500876418307" type="GameOverText">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
         </event-block>
     </events>
 </c2eventsheet>
