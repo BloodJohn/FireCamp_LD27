@@ -40,6 +40,9 @@
                                 <action id="5" name="Set frame" sid="6584180911837755" type="tree">
                                     <param id="0" name="Frame number">tree.chopCounter</param>
                                 </action>
+                                <action id="9" name="Set scale" sid="6602710974972366" type="tree">
+                                    <param id="0" name="Scale">random(0.8, 1.2)</param>
+                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="3501928810760359">
@@ -66,7 +69,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="5883093135562037" title="Scene Loop">
+        <event-group collapsed="1" description="" sid="5883093135562037" title="Scene Loop">
             <sub-events>
                 <event-block collapsed="1" sid="9166315253767041">
                     <conditions>
@@ -140,7 +143,7 @@
                     </conditions>
                     <actions>
                         <action id="0" name="Set text" sid="8707283659962972" type="Status">
-                            <param id="0" name="Text">&quot;Score: &quot; &amp; Score &amp; &quot; Wood: &quot; &amp; Player.wood &amp; &quot; - FPS: &quot; &amp; fps &amp; newline &amp; &quot;Use arrow keys to move&quot;</param>
+                            <param id="0" name="Text">&quot;Score: &quot; &amp; Score &amp; &quot; Wood: &quot; &amp; Player.wood &amp; &quot; - FPS: &quot; &amp; fps &amp; newline &amp; &quot;Find wood &amp; back 2 fire&quot;</param>
                         </action>
                     </actions>
                 </event-block>
@@ -202,6 +205,46 @@
         </event-group>
         <event-group description="" sid="9986743214981356" title="Player interaction">
             <sub-events>
+                <event-block sid="681213038943706">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="4347299933266983" type="Player">
+                            <param id="0" name="Object">gun</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="5111948657126019" type="gun" />
+                    </actions>
+                </event-block>
+                <event-block sid="1631421384820083">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="4231771305092125" type="Player">
+                            <param id="0" name="Object">fishingrod</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="7583801899121776" type="fishingrod" />
+                    </actions>
+                </event-block>
+                <event-block sid="810740807766749">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="8354469551033987" type="Player">
+                            <param id="0" name="Object">pick</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="6765903878032645" type="pick" />
+                    </actions>
+                </event-block>
+                <event-block sid="3402303966449781">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="819187226957612" type="Player">
+                            <param id="0" name="Object">axe</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="5481985016713901" type="axe" />
+                    </actions>
+                </event-block>
                 <event-block sid="7232025729484607">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="7911843152568621" type="Player">
@@ -258,72 +301,10 @@
                                     <param id="0" name="Width">0</param>
                                 </action>
                             </actions>
-                            <sub-events>
-                                <event-block any="1" sid="6589665406241626">
-                                    <conditions>
-                                        <condition id="-14" name="Compare variable" sid="6142365006766503" type="System">
-                                            <param id="0" name="Variable">Score</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">2</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-3" name="Set position" sid="8530337573154666" type="axe">
-                                            <param id="0" name="X">random(0,LayoutWidth)</param>
-                                            <param id="1" name="Y">random(0,LayoutHeight)</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block any="1" sid="3423433652081293">
-                                    <conditions>
-                                        <condition id="-14" name="Compare variable" sid="8636476814065033" type="System">
-                                            <param id="0" name="Variable">Score</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">3</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-3" name="Set position" sid="5685367098170507" type="pick">
-                                            <param id="0" name="X">random(0,LayoutWidth)</param>
-                                            <param id="1" name="Y">random(0,LayoutHeight)</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block any="1" sid="2175274073445988">
-                                    <conditions>
-                                        <condition id="-14" name="Compare variable" sid="5798644186763112" type="System">
-                                            <param id="0" name="Variable">Score</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">4</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-3" name="Set position" sid="6249442880557969" type="gun">
-                                            <param id="0" name="X">random(0,LayoutWidth)</param>
-                                            <param id="1" name="Y">random(0,LayoutHeight)</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block any="1" sid="4307921331958889">
-                                    <conditions>
-                                        <condition id="-14" name="Compare variable" sid="3890701741849712" type="System">
-                                            <param id="0" name="Variable">Score</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">5</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-3" name="Set position" sid="2620643905251351" type="fishingrod">
-                                            <param id="0" name="X">random(0,LayoutWidth)</param>
-                                            <param id="1" name="Y">random(0,LayoutHeight)</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block collapsed="1" sid="560764457667941">
+                <event-block sid="560764457667941">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="3908845037663883" type="Player">
                             <param id="0" name="Object">tree</param>
@@ -338,8 +319,15 @@
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Second value">0</param>
                         </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="9129499609754641" type="tree">
+                            <param id="0" name="Instance variable">playerLock</param>
+                        </condition>
                     </conditions>
                     <actions>
+                        <action id="-13" name="Set boolean" sid="9521734465669235" type="tree">
+                            <param id="0" name="Instance variable">playerLock</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
                         <action id="-11" name="Add to" sid="3127441697912284" type="tree">
                             <param id="0" name="Instance variable">chopCounter</param>
                             <param id="1" name="Value">1</param>
@@ -357,6 +345,13 @@
                         </action>
                         <action id="-17" name="Move forward" sid="988149017701914" type="firewood">
                             <param id="0" name="Distance">random(30,70)</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="2798675890273334" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="7085233288069159" type="tree">
+                            <param id="0" name="Instance variable">playerLock</param>
+                            <param id="1" name="Value">1</param>
                         </action>
                     </actions>
                     <sub-events>
@@ -379,47 +374,170 @@
                         </event-block>
                     </sub-events>
                 </event-block>
+                <event-block sid="5769637284090243">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="572112759876383" type="Player">
+                            <param id="0" name="Object">Zeppelin</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="9484288765554631" type="Zeppelin">
+                            <param id="0" name="Instance variable">playerLock</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="2417071741340825" type="Zeppelin">
+                            <param id="0" name="Instance variable">playerLock</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="548250434477144" type="System">
+                            <param id="0" name="Seconds">2.0</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="1530744176036535" type="Zeppelin">
+                            <param id="0" name="Instance variable">playerLock</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="4088242713857694">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="5009731283911225" type="System">
+                                    <param id="0" name="Variable">Score</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="1030629966016913" type="System">
+                                    <param id="0" name="First value">axe.Count</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="1605107997451267" type="axe">
+                                    <param id="0" name="X">Zeppelin.X</param>
+                                    <param id="1" name="Y">Zeppelin.Y</param>
+                                </action>
+                                <action id="-22" name="Set angle toward position" sid="5855745066369074" type="axe">
+                                    <param id="0" name="X">Player.X</param>
+                                    <param id="1" name="Y">Player.Y</param>
+                                </action>
+                                <action id="-17" name="Move forward" sid="2888489772832665" type="axe">
+                                    <param id="0" name="Distance">Zeppelin.Width + Player.Width</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="7898218740369092">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="4863739972619198" type="System">
+                                    <param id="0" name="Variable">Score</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="229598536862397" type="System">
+                                    <param id="0" name="First value">axe.Count</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="1761457144705681" type="System">
+                                    <param id="0" name="First value">fishingrod.Count</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="3827652483130701" type="fishingrod">
+                                    <param id="0" name="X">Zeppelin.X</param>
+                                    <param id="1" name="Y">Zeppelin.Y</param>
+                                </action>
+                                <action id="-22" name="Set angle toward position" sid="8283840023929076" type="fishingrod">
+                                    <param id="0" name="X">Player.X</param>
+                                    <param id="1" name="Y">Player.Y</param>
+                                </action>
+                                <action id="-17" name="Move forward" sid="406762902057858" type="fishingrod">
+                                    <param id="0" name="Distance">Zeppelin.Width + Player.Width</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="7370912661705754">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="7092635484811731" type="System">
+                                    <param id="0" name="Variable">Score</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">4</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="1243549298413159" type="System">
+                                    <param id="0" name="First value">axe.Count</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="5281107613447422" type="System">
+                                    <param id="0" name="First value">fishingrod.Count</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="6118647944997973" type="System">
+                                    <param id="0" name="First value">gun.Count</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="8752521362232041" type="gun">
+                                    <param id="0" name="X">Zeppelin.X</param>
+                                    <param id="1" name="Y">Zeppelin.Y</param>
+                                </action>
+                                <action id="-22" name="Set angle toward position" sid="7566164712522758" type="gun">
+                                    <param id="0" name="X">Player.X</param>
+                                    <param id="1" name="Y">Player.Y</param>
+                                </action>
+                                <action id="-17" name="Move forward" sid="9049021936234875" type="gun">
+                                    <param id="0" name="Distance">Zeppelin.Width + Player.Width</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="991007539118764">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="9950338836827057" type="System">
+                                    <param id="0" name="Variable">Score</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">5</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="2079597341858388" type="System">
+                                    <param id="0" name="First value">axe.Count</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="7396373035397474" type="System">
+                                    <param id="0" name="First value">fishingrod.Count</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="5659580879177978" type="System">
+                                    <param id="0" name="First value">gun.Count</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="3997534222407818" type="System">
+                                    <param id="0" name="First value">pick.Count</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="8530337573154666" type="pick">
+                                    <param id="0" name="X">Zeppelin.X</param>
+                                    <param id="1" name="Y">Zeppelin.Y</param>
+                                </action>
+                                <action id="-22" name="Set angle toward position" sid="5247112426673705" type="pick">
+                                    <param id="0" name="X">Player.X</param>
+                                    <param id="1" name="Y">Player.Y</param>
+                                </action>
+                                <action id="-17" name="Move forward" sid="1719477251045337" type="pick">
+                                    <param id="0" name="Distance">Zeppelin.Width + Player.Width</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
             </sub-events>
         </event-group>
-        <event-block sid="3402303966449781">
-            <conditions>
-                <condition id="0" name="On collision with another object" sid="819187226957612" type="Player">
-                    <param id="0" name="Object">axe</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-9" name="Destroy" sid="5481985016713901" type="axe" />
-            </actions>
-        </event-block>
-        <event-block sid="810740807766749">
-            <conditions>
-                <condition id="0" name="On collision with another object" sid="8354469551033987" type="Player">
-                    <param id="0" name="Object">pick</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-9" name="Destroy" sid="6765903878032645" type="pick" />
-            </actions>
-        </event-block>
-        <event-block sid="1631421384820083">
-            <conditions>
-                <condition id="0" name="On collision with another object" sid="4231771305092125" type="Player">
-                    <param id="0" name="Object">fishingrod</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-9" name="Destroy" sid="7583801899121776" type="fishingrod" />
-            </actions>
-        </event-block>
-        <event-block sid="681213038943706">
-            <conditions>
-                <condition id="0" name="On collision with another object" sid="4347299933266983" type="Player">
-                    <param id="0" name="Object">gun</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-9" name="Destroy" sid="5111948657126019" type="gun" />
-            </actions>
-        </event-block>
     </events>
 </c2eventsheet>
