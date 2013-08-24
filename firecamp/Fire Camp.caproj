@@ -16,8 +16,10 @@
         <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
     </used-plugins>
     <used-behaviors>
-        <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
         <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
     </used-behaviors>
     <used-effects />
@@ -45,8 +47,15 @@
             <instance-variables>
                 <instance-variable comment="firewood count" name="wood" sid="2480179982745735" type="number" />
                 <instance-variable comment="far from camp" name="freeze" sid="4612789396669099" type="number" />
+                <instance-variable comment="hungry/complete" name="speed" sid="1654364414125249" type="number" />
             </instance-variables>
             <behaviors>
+                <behavior-type name="Bullet" sid="4160572480526763">
+                    <behavior id="Bullet" />
+                </behavior-type>
+                <behavior-type name="Solid" sid="7489993901969294">
+                    <behavior id="solid" />
+                </behavior-type>
                 <behavior-type name="BoundToLayout" sid="1086099328527579">
                     <behavior id="bound" />
                 </behavior-type>
@@ -56,8 +65,8 @@
             </behaviors>
             <animation-folder expanded="1">
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5092095919283995" speed="5">
-                    <frame duration="1" hotspotX="0.504951" hotspotY="0.504951">
-                        <image-point name="Imagepoint 1" x="1.0495" y="0.504951" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <image-point name="Imagepoint 1" x="1.04" y="0.5" />
                         <collision-poly>
                             <point x="0.0606436" y="0.220297" />
                             <point x="0.414604" y="0" />
@@ -118,6 +127,81 @@
         </object-type>
         <object-type name="Touch" sid="3908994502925673">
             <plugin id="Touch" />
+        </object-type>
+        <object-type name="tree" sid="3072550079871708">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable comment="chop to lumber" name="chopCounter" sid="2780628077789283" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Solid" sid="3209848086882404">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder expanded="1">
+                <animation framecount="6" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2271850224477868" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.1875" y="0.1875" />
+                            <point x="0.5" y="0.03125" />
+                            <point x="0.84375" y="0.15625" />
+                            <point x="0.84375" y="0.84375" />
+                            <point x="0.5" y="1" />
+                            <point x="0.1875" y="0.8125" />
+                            <point x="0.0625" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.1875" y="0.1875" />
+                            <point x="0.5" y="0.125" />
+                            <point x="0.6875" y="0.3125" />
+                            <point x="0.84375" y="0.5" />
+                            <point x="0.84375" y="0.84375" />
+                            <point x="0.5" y="1" />
+                            <point x="0.1875" y="0.8125" />
+                            <point x="0.0625" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.1875" y="0.1875" />
+                            <point x="0.5" y="0.125" />
+                            <point x="0.6875" y="0.3125" />
+                            <point x="0.84375" y="0.5" />
+                            <point x="0.75" y="0.75" />
+                            <point x="0.5" y="1" />
+                            <point x="0.1875" y="0.8125" />
+                            <point x="0.0625" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.21875" y="0.21875" />
+                            <point x="0.5" y="0.125" />
+                            <point x="0.6875" y="0.3125" />
+                            <point x="0.84375" y="0.5" />
+                            <point x="0.75" y="0.75" />
+                            <point x="0.5" y="1" />
+                            <point x="0.1875" y="0.8125" />
+                            <point x="0.0625" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.21875" y="0.21875" />
+                            <point x="0.5" y="0.125" />
+                            <point x="0.6875" y="0.3125" />
+                            <point x="0.84375" y="0.5" />
+                            <point x="0.75" y="0.75" />
+                            <point x="0.5" y="1" />
+                            <point x="0.1875" y="0.8125" />
+                            <point x="0.15625" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
         </object-type>
     </object-folder>
     <families />
