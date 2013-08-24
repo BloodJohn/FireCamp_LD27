@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <comment>This is the speed new monsters are spawned at, and the player score.</comment>
+        <variable constant="0" name="Score" sid="9430221669105701" static="0" type="number">0</variable>
+        <comment>Start monsters at a random angle.</comment>
+        <event-block sid="2016806224835871">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="4633396582611706" type="System" />
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="6927086697077377" type="GameOverText">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="3501928810760359">
+                    <conditions>
+                        <condition id="-10" name="For" sid="1762746707116191" type="System">
+                            <param id="0" name="Name">&quot;woodCount&quot;</param>
+                            <param id="1" name="Start index">1</param>
+                            <param id="2" name="End index">10</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="3149768265140643" type="firewood">
+                            <param id="0" name="Object">firewood</param>
+                            <param id="1" name="Layer">&quot;Background&quot;</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="9117528681451567" type="firewood">
+                            <param id="0" name="Angle">random(0,360)</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="470620685759117" type="firewood">
+                            <param id="0" name="X">random(0,LayoutWidth)</param>
+                            <param id="1" name="Y">random(0,LayoutHeight)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-group description="" sid="4939230196463606" title="Player controls">
+            <sub-events>
+                <comment>Always look the player towards the mouse, and update the status text.</comment>
+                <event-block sid="5933056411808581">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="9893711515753111" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-22" name="Set angle toward position" sid="2980547501569765" type="Player">
+                            <param id="0" name="X">Mouse.X</param>
+                            <param id="1" name="Y">Mouse.Y</param>
+                        </action>
+                        <action id="0" name="Set text" sid="8707283659962972" type="Status">
+                            <param id="0" name="Text">&quot;Score: &quot; &amp; Score &amp; &quot; - FPS: &quot; &amp; fps &amp; newline &amp; &quot;Use arrow keys to move and click to shoot!&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8648811539034995">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="6160064561023688" type="Keyboard">
+                            <param id="0" name="Key">65 (A)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="2063674241196787" type="Player">
+                            <param id="0" name="Control">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="652972680629551">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="3317992322899717" type="Keyboard">
+                            <param id="0" name="Key">68 (D)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="1532465605411379" type="Player">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5256955346450237">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="2541408187027055" type="Keyboard">
+                            <param id="0" name="Key">87 (W)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="9046249265075468" type="Player">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3326366147268268">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="5923757415183677" type="Keyboard">
+                            <param id="0" name="Key">83 (S)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="1891319244646442" type="Player">
+                            <param id="0" name="Control">3</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Restart after game over if space pressed.</comment>
+                <event-block sid="2669626258540129">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="422387584060557" type="Keyboard">
+                            <param id="0" name="Key">32 (Space)</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="9602626894317266" type="System">
+                            <param id="0" name="First value">Explosion.Count</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="557598773692681" type="System">
+                            <param id="0" name="Variable">Score</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="7168345176405675" type="System">
+                            <param id="0" name="Layout">Layout 1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="1238229792633858">
+            <conditions>
+                <condition behavior="Fade" id="0" name="On fade out finished" sid="3191540269146869" type="Explosion" />
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="7949229855495077" type="GameOverText">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7232025729484607">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="7911843152568621" type="Player">
+                    <param id="0" name="Object">firewood</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Fade" id="0" name="Restart fade" sid="8940765523758679" type="Explosion" />
+                <action id="-9" name="Destroy" sid="9371887111465753" type="firewood" />
+                <action id="-10" name="Add to" sid="393286595370788" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
