@@ -15,6 +15,66 @@
                         <action id="-15" name="Set visible" sid="6927086697077377" type="GameOverText">
                             <param id="0" name="Visibility">0</param>
                         </action>
+                        <action id="0" name="Add key" sid="3677979646057739" type="radioMessages">
+                            <param id="0" name="Key">&quot;1&quot;</param>
+                            <param id="1" name="Value">&quot;We have received your alarm. Does your coffee-machine not work?&quot;</param>
+                        </action>
+                        <action id="0" name="Add key" sid="6917293712211098" type="radioMessages">
+                            <param id="0" name="Key">&quot;2&quot;</param>
+                            <param id="1" name="Value">&quot;We received data. You&apos;re in Russia. I hope it&apos;s not cold there.&quot;</param>
+                        </action>
+                        <action id="0" name="Add key" sid="380244985860413" type="radioMessages">
+                            <param id="0" name="Key">&quot;3&quot;</param>
+                            <param id="1" name="Value">&quot;Smith, we are trying to determine your location. We&apos;ll save you.&quot;</param>
+                        </action>
+                        <action id="0" name="Add key" sid="3877242403236487" type="radioMessages">
+                            <param id="0" name="Key">&quot;4&quot;</param>
+                            <param id="1" name="Value">&quot;Mike from Typing Department asks you to take a picture of a bear.&quot;</param>
+                        </action>
+                        <action id="0" name="Add key" sid="1254123961440494" type="radioMessages">
+                            <param id="0" name="Key">&quot;5&quot;</param>
+                            <param id="1" name="Value">&quot;Mr. Smith, don&apos;t panic. Obviously, you&apos;re somewhere in Syberia.&quot;</param>
+                        </action>
+                        <action id="0" name="Add key" sid="1513151656694188" type="radioMessages">
+                            <param id="0" name="Key">&quot;6&quot;</param>
+                            <param id="1" name="Value">&quot;We are trying to determine coordinates of your location.&quot;</param>
+                        </action>
+                        <action id="0" name="Add key" sid="6227454336816539" type="radioMessages">
+                            <param id="0" name="Key">&quot;7&quot;</param>
+                            <param id="1" name="Value">&quot;We have some good news. It&apos;s easy to get firewood in Syberia.&quot;</param>
+                        </action>
+                        <action id="0" name="Add key" sid="8104268736889149" type="radioMessages">
+                            <param id="0" name="Key">&quot;8&quot;</param>
+                            <param id="1" name="Value">&quot;Your situation isn&apos;t so poor. You have an unscheduled vacation!&quot;</param>
+                        </action>
+                        <action id="0" name="Add key" sid="8275059078873062" type="radioMessages">
+                            <param id="0" name="Key">&quot;9&quot;</param>
+                            <param id="1" name="Value">&quot;Good morning, Mr. Smith. Your wife, Lucy, sends you greetings.&quot;</param>
+                        </action>
+                        <action id="0" name="Add key" sid="6167658343631394" type="radioMessages">
+                            <param id="0" name="Key">&quot;10&quot;</param>
+                            <param id="1" name="Value">&quot;Hey, Mr. Smith! The resque team will get to you soon!&quot;</param>
+                        </action>
+                        <action id="0" name="Add key" sid="2398714520596736" type="radioMessages">
+                            <param id="0" name="Key">&quot;11&quot;</param>
+                            <param id="1" name="Value">&quot;Hello, Syberia! Hope you are in a good mood.&quot;</param>
+                        </action>
+                        <action id="0" name="Add key" sid="3676267004565677" type="radioMessages">
+                            <param id="0" name="Key">&quot;12&quot;</param>
+                            <param id="1" name="Value">&quot;There is no news for today. So I&apos;ll just set you a merry tune.&quot;</param>
+                        </action>
+                        <action id="0" name="Add key" sid="1163383701755707" type="radioMessages">
+                            <param id="0" name="Key">&quot;13&quot;</param>
+                            <param id="1" name="Value">&quot;Resque team has to make an emergency stop to get warm by vodka.&quot;</param>
+                        </action>
+                        <action id="0" name="Add key" sid="5507035627451942" type="radioMessages">
+                            <param id="0" name="Key">&quot;14&quot;</param>
+                            <param id="1" name="Value">&quot;Congratulations with the first day of summer! Yippee!&quot;</param>
+                        </action>
+                        <action id="0" name="Add key" sid="566505698078923" type="radioMessages">
+                            <param id="0" name="Key">&quot;15&quot;</param>
+                            <param id="1" name="Value">&quot;Resque team is coming. They&apos;ll catch you in few minutes.&quot;</param>
+                        </action>
                     </actions>
                     <sub-events>
                         <event-block sid="7013585197129039">
@@ -69,7 +129,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="5883093135562037" title="Scene Loop">
+        <event-group collapsed="1" description="" sid="5883093135562037" title="Scene Loop">
             <sub-events>
                 <event-block sid="9166315253767041">
                     <conditions>
@@ -146,7 +206,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="4939230196463606" title="Player controls">
+        <event-group collapsed="1" description="" sid="4939230196463606" title="Player controls">
             <sub-events>
                 <comment>Always look the player towards the mouse, and update the status text.</comment>
                 <event-block sid="5933056411808581">
@@ -913,7 +973,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block collapsed="1" sid="8727149430184162">
+                <event-block sid="8727149430184162">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="6349487482650664" type="Player">
                             <param id="0" name="Object">Radio</param>
@@ -939,7 +999,7 @@
                                     <param id="1" name="Value">-1</param>
                                 </action>
                                 <action id="0" name="Set text" sid="7176000076295083" type="radioText">
-                                    <param id="0" name="Text">&quot;Heavy cavalry is on the way!&quot;</param>
+                                    <param id="0" name="Text">radioMessages.Get(&quot;&quot; &amp; int(random(1,15)))</param>
                                 </action>
                                 <action behavior="Fade" id="0" name="Restart fade" sid="2202975191399892" type="radioText" />
                             </actions>
