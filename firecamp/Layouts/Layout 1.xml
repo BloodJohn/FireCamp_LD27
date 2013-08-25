@@ -372,7 +372,7 @@
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
-                        <opacity>1</opacity>
+                        <opacity>0.5</opacity>
                     </world>
                 </instance>
                 <instance type="IceHole" uid="21">
@@ -397,7 +397,7 @@
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.504950523</hotspotY>
                         <angle>0</angle>
-                        <opacity>1</opacity>
+                        <opacity>0.5</opacity>
                     </world>
                 </instance>
             </instances>
@@ -428,6 +428,8 @@
                         <wood>0</wood>
                         <freeze>0</freeze>
                         <speed>200</speed>
+                        <meat>0</meat>
+                        <battery>0</battery>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Bullet">

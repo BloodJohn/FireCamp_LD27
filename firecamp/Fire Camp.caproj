@@ -10,15 +10,15 @@
     <unique-id>1zd9zgvyk313s</unique-id>
     <saved-with-version>13900</saved-with-version>
     <used-plugins>
-        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
-        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
     </used-plugins>
     <used-behaviors>
+        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
-        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
     </used-behaviors>
@@ -266,6 +266,8 @@
                 <instance-variable comment="firewood count" name="wood" sid="2480179982745735" type="number" />
                 <instance-variable comment="far from camp" name="freeze" sid="4612789396669099" type="number" />
                 <instance-variable comment="hungry/complete" name="speed" sid="1654364414125249" type="number" />
+                <instance-variable name="meat" sid="5980564785376933" type="number" />
+                <instance-variable name="battery" sid="6836628928116733" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Bullet" sid="4160572480526763">
