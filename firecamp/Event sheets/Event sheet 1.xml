@@ -71,7 +71,7 @@
         </event-group>
         <event-group description="" sid="5883093135562037" title="Scene Loop">
             <sub-events>
-                <event-block sid="9166315253767041">
+                <event-block collapsed="1" sid="9166315253767041">
                     <conditions>
                         <condition id="-6" name="Every X seconds" sid="3078012040381353" type="System">
                             <param id="0" name="Interval (seconds)">1.0</param>
@@ -151,7 +151,7 @@
                     </conditions>
                     <actions>
                         <action id="0" name="Set text" sid="8707283659962972" type="Status">
-                            <param id="0" name="Text">&quot;Score: &quot; &amp; Score &amp; &quot; Meat: &quot; &amp; Player.meat &amp; &quot; - FPS: &quot; &amp; fps &amp; newline &amp; &quot;Find wood &amp; back 2 fire&quot;</param>
+                            <param id="0" name="Text">&quot;Score: &quot; &amp; Score &amp; &quot; Battery: &quot; &amp; Player.battery &amp; &quot; - FPS: &quot; &amp; fps &amp; newline &amp; &quot;Find wood &amp; back 2 fire&quot;</param>
                         </action>
                     </actions>
                 </event-block>
@@ -763,6 +763,54 @@
                                     <param id="0" name="X">random(0,LayoutWidth)</param>
                                     <param id="1" name="Y">random(0,LayoutHeight)</param>
                                 </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="8727149430184162">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="6349487482650664" type="Player">
+                            <param id="0" name="Object">Radio</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="7239386861164882">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="2152577395176187" type="Player">
+                                    <param id="0" name="Instance variable">battery</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-10" name="Compare opacity" sid="5527328093312353" type="radioText">
+                                    <param id="0" name="Comparison">2</param>
+                                    <param id="1" name="Opacity">10</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-11" name="Add to" sid="6312102200327111" type="Player">
+                                    <param id="0" name="Instance variable">battery</param>
+                                    <param id="1" name="Value">-1</param>
+                                </action>
+                                <action id="0" name="Set text" sid="7176000076295083" type="radioText">
+                                    <param id="0" name="Text">&quot;Heavy cavalry is on the way!&quot;</param>
+                                </action>
+                                <action behavior="Fade" id="0" name="Restart fade" sid="2202975191399892" type="radioText" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="6606524977515274">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="6899841240045782" type="System" />
+                                <condition id="-10" name="Compare opacity" sid="1904787782976137" type="radioText">
+                                    <param id="0" name="Comparison">2</param>
+                                    <param id="1" name="Opacity">10</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="7877263430390695" type="radioText">
+                                    <param id="0" name="Text">&quot;Need battery 4 receive..&quot;</param>
+                                </action>
+                                <action behavior="Fade" id="0" name="Restart fade" sid="5432493230236828" type="radioText" />
                             </actions>
                         </event-block>
                     </sub-events>
