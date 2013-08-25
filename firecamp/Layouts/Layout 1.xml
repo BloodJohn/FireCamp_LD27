@@ -459,7 +459,7 @@
                     <instance-variables>
                         <wood>0</wood>
                         <freeze>0</freeze>
-                        <speed>200</speed>
+                        <speed>128</speed>
                         <meat>0</meat>
                         <battery>0</battery>
                     </instance-variables>

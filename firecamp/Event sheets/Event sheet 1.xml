@@ -213,7 +213,7 @@
         </event-group>
         <event-group description="" sid="9986743214981356" title="Player interaction">
             <sub-events>
-                <event-block collapsed="1" sid="8472556989546301">
+                <event-block sid="8472556989546301">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="1318087601316103" type="Player">
                             <param id="0" name="Object">IceHole</param>
@@ -232,12 +232,18 @@
                             <param id="0" name="Instance variable">playerLock</param>
                             <param id="1" name="Value">1</param>
                         </action>
+                        <action id="-16" name="Set opacity" sid="3687833976691036" type="IceHole">
+                            <param id="0" name="Opacity">50</param>
+                        </action>
                         <action id="-16" name="Wait" sid="207555115370823" type="System">
                             <param id="0" name="Seconds">2.0</param>
                         </action>
                         <action id="-13" name="Set boolean" sid="6721008713108104" type="IceHole">
                             <param id="0" name="Instance variable">playerLock</param>
                             <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="3660596353527867" type="IceHole">
+                            <param id="0" name="Opacity">100</param>
                         </action>
                     </actions>
                     <sub-events>
@@ -261,7 +267,7 @@
                                     <param id="1" name="Y">Player.Y</param>
                                 </action>
                                 <action id="-17" name="Move forward" sid="849924002721556" type="fish">
-                                    <param id="0" name="Distance">IceHole.Width + Player.Width</param>
+                                    <param id="0" name="Distance">IceHole.Width</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -281,13 +287,13 @@
                                     <param id="1" name="Y">Player.Y</param>
                                 </action>
                                 <action id="-17" name="Move forward" sid="4243244438781915" type="oldshoes">
-                                    <param id="0" name="Distance">IceHole.Width + Player.Width</param>
+                                    <param id="0" name="Distance">IceHole.Width</param>
                                 </action>
                             </actions>
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block collapsed="1" sid="4185016082126794">
+                <event-block sid="4185016082126794">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="1635403609972842" type="Player">
                             <param id="0" name="Object">Mine</param>
@@ -306,12 +312,18 @@
                             <param id="0" name="Instance variable">playerLock</param>
                             <param id="1" name="Value">1</param>
                         </action>
+                        <action id="-16" name="Set opacity" sid="7465653286729132" type="Mine">
+                            <param id="0" name="Opacity">50</param>
+                        </action>
                         <action id="-16" name="Wait" sid="8438973407743538" type="System">
                             <param id="0" name="Seconds">2.0</param>
                         </action>
                         <action id="-13" name="Set boolean" sid="792759450036348" type="Mine">
                             <param id="0" name="Instance variable">playerLock</param>
                             <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="4584213012275248" type="Mine">
+                            <param id="0" name="Opacity">100</param>
                         </action>
                     </actions>
                     <sub-events>
@@ -335,7 +347,7 @@
                                     <param id="1" name="Y">Player.Y</param>
                                 </action>
                                 <action id="-17" name="Move forward" sid="8716233273306797" type="meat">
-                                    <param id="0" name="Distance">Mine.Width + Player.Width</param>
+                                    <param id="0" name="Distance">Mine.Width</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -360,7 +372,7 @@
                                     <param id="1" name="Y">Player.Y</param>
                                 </action>
                                 <action id="-17" name="Move forward" sid="3662210830909127" type="coal">
-                                    <param id="0" name="Distance">Mine.Width + Player.Width</param>
+                                    <param id="0" name="Distance">Mine.Width</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -380,13 +392,13 @@
                                     <param id="1" name="Y">Player.Y</param>
                                 </action>
                                 <action id="-17" name="Move forward" sid="3380516857301428" type="stone">
-                                    <param id="0" name="Distance">Mine.Width + Player.Width</param>
+                                    <param id="0" name="Distance">Mine.Width</param>
                                 </action>
                             </actions>
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="7775520856246349">
+                <event-block collapsed="1" sid="7775520856246349">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="1245352042944207" type="Player">
                             <param id="0" name="Object">CampFire</param>
@@ -463,7 +475,7 @@
                             <actions>
                                 <action id="-10" name="Set value" sid="8644524557009578" type="Player">
                                     <param id="0" name="Instance variable">speed</param>
-                                    <param id="1" name="Value">200</param>
+                                    <param id="1" name="Value">128</param>
                                 </action>
                                 <action behavior="Bullet" id="0" name="Set speed" sid="4227167530246147" type="Player">
                                     <param id="0" name="Speed">Player.speed</param>
@@ -496,6 +508,9 @@
                             <param id="0" name="Instance variable">playerLock</param>
                             <param id="1" name="Value">1</param>
                         </action>
+                        <action id="-16" name="Set opacity" sid="7149587813078026" type="tree">
+                            <param id="0" name="Opacity">50</param>
+                        </action>
                         <action id="-11" name="Add to" sid="3127441697912284" type="tree">
                             <param id="0" name="Instance variable">chopCounter</param>
                             <param id="1" name="Value">1</param>
@@ -519,7 +534,10 @@
                         </action>
                         <action id="-13" name="Set boolean" sid="7085233288069159" type="tree">
                             <param id="0" name="Instance variable">playerLock</param>
-                            <param id="1" name="Value">1</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="8893208158527471" type="tree">
+                            <param id="0" name="Opacity">100</param>
                         </action>
                     </actions>
                     <sub-events>
@@ -556,12 +574,18 @@
                             <param id="0" name="Instance variable">playerLock</param>
                             <param id="1" name="Value">1</param>
                         </action>
+                        <action id="-16" name="Set opacity" sid="2590050212924224" type="Zeppelin">
+                            <param id="0" name="Opacity">50</param>
+                        </action>
                         <action id="-16" name="Wait" sid="548250434477144" type="System">
                             <param id="0" name="Seconds">2.0</param>
                         </action>
                         <action id="-13" name="Set boolean" sid="1530744176036535" type="Zeppelin">
                             <param id="0" name="Instance variable">playerLock</param>
                             <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="5296823469975488" type="Zeppelin">
+                            <param id="0" name="Opacity">100</param>
                         </action>
                     </actions>
                     <sub-events>
@@ -588,7 +612,7 @@
                                     <param id="1" name="Y">Player.Y</param>
                                 </action>
                                 <action id="-17" name="Move forward" sid="2888489772832665" type="axe">
-                                    <param id="0" name="Distance">Zeppelin.Width + Player.Width</param>
+                                    <param id="0" name="Distance">Zeppelin.Width</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -621,7 +645,7 @@
                                     <param id="1" name="Y">Player.Y</param>
                                 </action>
                                 <action id="-17" name="Move forward" sid="406762902057858" type="fishingrod">
-                                    <param id="0" name="Distance">Zeppelin.Width + Player.Width</param>
+                                    <param id="0" name="Distance">Zeppelin.Width</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -659,7 +683,7 @@
                                     <param id="1" name="Y">Player.Y</param>
                                 </action>
                                 <action id="-17" name="Move forward" sid="1719477251045337" type="pick">
-                                    <param id="0" name="Distance">Zeppelin.Width + Player.Width</param>
+                                    <param id="0" name="Distance">Zeppelin.Width</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -702,7 +726,7 @@
                                     <param id="1" name="Y">Player.Y</param>
                                 </action>
                                 <action id="-17" name="Move forward" sid="9049021936234875" type="gun">
-                                    <param id="0" name="Distance">Zeppelin.Width + Player.Width</param>
+                                    <param id="0" name="Distance">Zeppelin.Width</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -722,13 +746,13 @@
                                     <param id="1" name="Y">Player.Y</param>
                                 </action>
                                 <action id="-17" name="Move forward" sid="1292241574895313" type="battery">
-                                    <param id="0" name="Distance">Zeppelin.Width + Player.Width</param>
+                                    <param id="0" name="Distance">Zeppelin.Width</param>
                                 </action>
                             </actions>
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="5803535104476343">
+                <event-block collapsed="1" sid="5803535104476343">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="537679156339422" type="Player">
                             <param id="0" name="Object">Deer</param>
@@ -767,7 +791,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="8727149430184162">
+                <event-block collapsed="1" sid="8727149430184162">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="6349487482650664" type="Player">
                             <param id="0" name="Object">Radio</param>
@@ -811,6 +835,9 @@
                                     <param id="0" name="Text">&quot;Need battery 4 receive..&quot;</param>
                                 </action>
                                 <action behavior="Fade" id="0" name="Restart fade" sid="5432493230236828" type="radioText" />
+                                <action id="-16" name="Set opacity" sid="4555636086469492" type="Radio">
+                                    <param id="0" name="Opacity">50</param>
+                                </action>
                             </actions>
                         </event-block>
                     </sub-events>
@@ -927,6 +954,9 @@
                         <action id="-11" name="Add to" sid="2096825050390579" type="Player">
                             <param id="0" name="Instance variable">battery</param>
                             <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="3491000254961939" type="Radio">
+                            <param id="0" name="Opacity">100</param>
                         </action>
                     </actions>
                 </event-block>
