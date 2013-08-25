@@ -10,20 +10,20 @@
     <unique-id>1zd9zgvyk313s</unique-id>
     <saved-with-version>13900</saved-with-version>
     <used-plugins>
-        <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
         <plugin author="Scirra" id="NinePatch" version="1">9-patch</plugin>
-        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
     </used-plugins>
     <used-behaviors>
-        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
-        <behavior author="Scirra" id="Anchor" version="1">Anchor</behavior>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
-        <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
         <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
-        <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
+        <behavior author="Scirra" id="Anchor" version="1">Anchor</behavior>
+        <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
+        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
+        <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
     </used-behaviors>
     <used-effects />
     <configurations>
@@ -41,7 +41,7 @@
         <prop name="Preview mode">HTTP</prop>
     </configuration-settings>
     <object-folder expanded="1">
-        <object-folder expanded="1" name="GUI">
+        <object-folder expanded="0" name="GUI">
             <object-type name="fireStatus" sid="9705679062719049">
                 <plugin id="Text" />
             </object-type>
@@ -135,12 +135,27 @@
             </object-type>
             <object-type name="fuelText" sid="4846075294240385">
                 <plugin id="Text" />
+                <behaviors>
+                    <behavior-type name="Anchor" sid="5154294292995488">
+                        <behavior id="Anchor" />
+                    </behavior-type>
+                </behaviors>
             </object-type>
             <object-type name="foodText" sid="5142276124777734">
                 <plugin id="Text" />
+                <behaviors>
+                    <behavior-type name="Anchor" sid="530032190125757">
+                        <behavior id="Anchor" />
+                    </behavior-type>
+                </behaviors>
             </object-type>
             <object-type name="energyText" sid="5774620211076019">
                 <plugin id="Text" />
+                <behaviors>
+                    <behavior-type name="Anchor" sid="4369298608666243">
+                        <behavior id="Anchor" />
+                    </behavior-type>
+                </behaviors>
             </object-type>
             <object-type name="axeTool" sid="51863478682395">
                 <plugin id="Sprite" />
@@ -464,6 +479,9 @@
                     <behavior-type name="Fade" sid="9756502815884836">
                         <behavior id="Fade" />
                     </behavior-type>
+                    <behavior-type name="Solid" sid="5883431323636887">
+                        <behavior id="solid" />
+                    </behavior-type>
                 </behaviors>
                 <animation-folder expanded="1">
                     <animation framecount="5" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2842168036412748" speed="5">
@@ -761,17 +779,9 @@
                 </behavior-type>
             </behaviors>
             <animation-folder expanded="1">
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5092095919283995" speed="5">
+                <animation framecount="1" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5092095919283995" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="Imagepoint 1" x="1.04" y="0.5" />
-                        <collision-poly>
-                            <point x="0.0606436" y="0.220297" />
-                            <point x="0.414604" y="0" />
-                            <point x="0.842822" y="0.497525" />
-                            <point x="0.49505" y="0.970297" />
-                            <point x="0.164604" y="0.79703" />
-                            <point x="0.019802" y="0.49505" />
-                        </collision-poly>
+                        <image-point name="Imagepoint 1" x="1.04688" y="0.5" />
                     </frame>
                 </animation>
             </animation-folder>
@@ -782,6 +792,69 @@
         <object-type name="9patch" sid="7930556974909955">
             <plugin id="NinePatch" />
             <texture />
+        </object-type>
+        <object-type name="Avatar" sid="9805831674463929">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable comment="firewood count" name="wood" sid="5526053889285024" type="number" />
+                <instance-variable comment="far from camp" name="freeze" sid="686801478148635" type="number" />
+                <instance-variable comment="hungry/complete" name="speed" sid="7372748439181848" type="number" />
+                <instance-variable name="meat" sid="2658375277051524" type="number" />
+                <instance-variable comment="battery 4 radio" name="battery" sid="6619358389891775" type="number" />
+            </instance-variables>
+            <animation-folder expanded="1">
+                <animation framecount="4" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3469817535274296" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <image-point name="Imagepoint 1" x="1.04688" y="0.5" />
+                        <collision-poly>
+                            <point x="0.1875" y="0.1875" />
+                            <point x="0.5" y="0.03125" />
+                            <point x="0.8125" y="0.1875" />
+                            <point x="0.9375" y="0.5" />
+                            <point x="0.78125" y="0.78125" />
+                            <point x="0.5" y="1" />
+                            <point x="0.1875" y="0.8125" />
+                            <point x="0.03125" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.1875" y="0.1875" />
+                            <point x="0.5" y="0.03125" />
+                            <point x="0.8125" y="0.1875" />
+                            <point x="0.9375" y="0.5" />
+                            <point x="0.78125" y="0.78125" />
+                            <point x="0.5" y="1" />
+                            <point x="0.1875" y="0.8125" />
+                            <point x="0.03125" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.1875" y="0.1875" />
+                            <point x="0.5" y="0.03125" />
+                            <point x="0.8125" y="0.1875" />
+                            <point x="0.9375" y="0.5" />
+                            <point x="0.78125" y="0.78125" />
+                            <point x="0.5" y="1" />
+                            <point x="0.1875" y="0.8125" />
+                            <point x="0.03125" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.1875" y="0.1875" />
+                            <point x="0.5" y="0.03125" />
+                            <point x="0.8125" y="0.1875" />
+                            <point x="0.9375" y="0.5" />
+                            <point x="0.78125" y="0.78125" />
+                            <point x="0.5" y="1" />
+                            <point x="0.21875" y="0.78125" />
+                            <point x="0.03125" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
         </object-type>
     </object-folder>
     <families />
