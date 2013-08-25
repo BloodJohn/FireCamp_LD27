@@ -71,7 +71,7 @@
         </event-group>
         <event-group description="" sid="5883093135562037" title="Scene Loop">
             <sub-events>
-                <event-block collapsed="1" sid="9166315253767041">
+                <event-block sid="9166315253767041">
                     <conditions>
                         <condition id="-6" name="Every X seconds" sid="3078012040381353" type="System">
                             <param id="0" name="Interval (seconds)">1.0</param>
@@ -121,6 +121,16 @@
                                             <param id="0" name="Instance variable">speed</param>
                                             <param id="1" name="Value">-20</param>
                                         </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="3254326283702856">
+                                    <conditions>
+                                        <condition behavior="Bullet" id="0" name="Compare speed" sid="5452867097743264" type="Player">
+                                            <param id="0" name="Comparison">4</param>
+                                            <param id="1" name="Speed">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
                                         <action behavior="Bullet" id="0" name="Set speed" sid="4698582256798817" type="Player">
                                             <param id="0" name="Speed">Player.speed</param>
                                         </action>
@@ -142,7 +152,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="4939230196463606" title="Player controls">
+        <event-group collapsed="1" description="" sid="4939230196463606" title="Player controls">
             <sub-events>
                 <comment>Always look the player towards the mouse, and update the status text.</comment>
                 <event-block sid="5933056411808581">
@@ -151,7 +161,16 @@
                     </conditions>
                     <actions>
                         <action id="0" name="Set text" sid="8707283659962972" type="Status">
-                            <param id="0" name="Text">&quot;Score: &quot; &amp; Score &amp; &quot; Battery: &quot; &amp; Player.battery &amp; &quot; - FPS: &quot; &amp; fps &amp; newline &amp; &quot;Find wood &amp; back 2 fire&quot;</param>
+                            <param id="0" name="Text">&quot;Score: &quot; &amp; Score &amp; &quot; - FPS: &quot; &amp; fps &amp; newline &amp; &quot;Find wood &amp; back 2 fire&quot;</param>
+                        </action>
+                        <action id="0" name="Set text" sid="8143798948195178" type="fuelText">
+                            <param id="0" name="Text">Player.wood</param>
+                        </action>
+                        <action id="0" name="Set text" sid="4871620538941614" type="foodText">
+                            <param id="0" name="Text">Player.meat</param>
+                        </action>
+                        <action id="0" name="Set text" sid="4754893245269725" type="energyText">
+                            <param id="0" name="Text">Player.battery</param>
                         </action>
                     </actions>
                 </event-block>
@@ -213,7 +232,7 @@
         </event-group>
         <event-group description="" sid="9986743214981356" title="Player interaction">
             <sub-events>
-                <event-block sid="8472556989546301">
+                <event-block collapsed="1" sid="8472556989546301">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="1318087601316103" type="Player">
                             <param id="0" name="Object">IceHole</param>
@@ -293,7 +312,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="4185016082126794">
+                <event-block collapsed="1" sid="4185016082126794">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="1635403609972842" type="Player">
                             <param id="0" name="Object">Mine</param>
@@ -398,7 +417,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block collapsed="1" sid="7775520856246349">
+                <event-block sid="7775520856246349">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="1245352042944207" type="Player">
                             <param id="0" name="Object">CampFire</param>
@@ -456,7 +475,7 @@
                                 </action>
                                 <action id="-10" name="Set value" sid="83428138270032" type="Player">
                                     <param id="0" name="Instance variable">speed</param>
-                                    <param id="1" name="Value">300</param>
+                                    <param id="1" name="Value">256</param>
                                 </action>
                                 <action behavior="Bullet" id="0" name="Set speed" sid="9757338905375609" type="Player">
                                     <param id="0" name="Speed">Player.speed</param>
@@ -844,7 +863,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="get loot" sid="2176904056125398" title="Player pickup">
+        <event-group description="get loot" sid="2176904056125398" title="Player pickup">
             <sub-events>
                 <event-block sid="681213038943706">
                     <conditions>
@@ -856,6 +875,14 @@
                         <action id="-9" name="Destroy" sid="5111948657126019" type="gun" />
                         <action id="-16" name="Set opacity" sid="5085852149828345" type="Deer">
                             <param id="0" name="Opacity">100</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="8590027149493819" type="gunTool">
+                            <param id="0" name="Opacity">100</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="5879355602940726" type="gunTool">
+                            <param id="0" name="&apos;On&apos; time">0.3</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">1.0</param>
                         </action>
                     </actions>
                 </event-block>
@@ -870,6 +897,14 @@
                         <action id="-16" name="Set opacity" sid="7706887419381561" type="IceHole">
                             <param id="0" name="Opacity">100</param>
                         </action>
+                        <action id="-16" name="Set opacity" sid="9029983410801566" type="fishingrodTool">
+                            <param id="0" name="Opacity">100</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="9035303071478429" type="fishingrodTool">
+                            <param id="0" name="&apos;On&apos; time">0.3</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">1.0</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="810740807766749">
@@ -883,6 +918,14 @@
                         <action id="-16" name="Set opacity" sid="5160638544089457" type="Mine">
                             <param id="0" name="Opacity">100</param>
                         </action>
+                        <action id="-16" name="Set opacity" sid="1778133496145755" type="pickTool">
+                            <param id="0" name="Opacity">100</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="5094718957724904" type="pickTool">
+                            <param id="0" name="&apos;On&apos; time">0.3</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">1.0</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="3402303966449781">
@@ -893,6 +936,14 @@
                     </conditions>
                     <actions>
                         <action id="-9" name="Destroy" sid="5481985016713901" type="axe" />
+                        <action id="-16" name="Set opacity" sid="8117660294947721" type="axeTool">
+                            <param id="0" name="Opacity">100</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="4019322029594227" type="axeTool">
+                            <param id="0" name="&apos;On&apos; time">0.3</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">1.0</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="8496255799633769">
@@ -927,6 +978,11 @@
                             <param id="0" name="Instance variable">wood</param>
                             <param id="1" name="Value">1</param>
                         </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="9363681878433944" type="woodSprite">
+                            <param id="0" name="&apos;On&apos; time">0.2</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">0.3</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="9489851990902435">
@@ -940,6 +996,11 @@
                         <action id="-11" name="Add to" sid="697797018719323" type="Player">
                             <param id="0" name="Instance variable">wood</param>
                             <param id="1" name="Value">1</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="880097716859363" type="woodSprite">
+                            <param id="0" name="&apos;On&apos; time">0.2</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">0.3</param>
                         </action>
                     </actions>
                 </event-block>
@@ -958,6 +1019,11 @@
                         <action id="-16" name="Set opacity" sid="3491000254961939" type="Radio">
                             <param id="0" name="Opacity">100</param>
                         </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="9234743108692822" type="batterySprite">
+                            <param id="0" name="&apos;On&apos; time">0.2</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">0.3</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="1104801215975828">
@@ -972,6 +1038,11 @@
                             <param id="0" name="Instance variable">meat</param>
                             <param id="1" name="Value">1</param>
                         </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="9846584468220908" type="meatSprite">
+                            <param id="0" name="&apos;On&apos; time">0.2</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">0.3</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="5612797616533628">
@@ -985,6 +1056,11 @@
                         <action id="-11" name="Add to" sid="3621472260442413" type="Player">
                             <param id="0" name="Instance variable">meat</param>
                             <param id="1" name="Value">1</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="6156628094620742" type="meatSprite">
+                            <param id="0" name="&apos;On&apos; time">0.2</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">0.3</param>
                         </action>
                     </actions>
                 </event-block>
