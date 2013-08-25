@@ -15,6 +15,9 @@
                         <action id="-15" name="Set visible" sid="6927086697077377" type="GameOverText">
                             <param id="0" name="Visibility">0</param>
                         </action>
+                        <action id="-15" name="Set visible" sid="8338446559136613" type="GameWinText">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
                         <action id="0" name="Add key" sid="3677979646057739" type="radioMessages">
                             <param id="0" name="Key">&quot;1&quot;</param>
                             <param id="1" name="Value">&quot;We have received your alarm. Does your coffee-machine not work?&quot;</param>
@@ -150,6 +153,20 @@
                                 </event-block>
                             </sub-events>
                         </event-block>
+                        <event-block sid="3182123057288302">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="1814975542197599" type="System">
+                                    <param id="0" name="Variable">Score</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">300</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="1671534547544002" type="GameWinText">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
                     </sub-events>
                 </event-block>
                 <event-block sid="1238229792633858">
@@ -192,7 +209,7 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block collapsed="1" sid="9445426713988271">
+                <event-block sid="9445426713988271">
                     <conditions>
                         <condition id="2" name="Is in touch" sid="9903541263969406" type="Touch" />
                     </conditions>
@@ -224,6 +241,27 @@
                                     <param id="1" name="Value">0</param>
                                 </action>
                                 <action id="-2" name="Go to layout" sid="9257522300786043" type="System">
+                                    <param id="0" name="Layout">Layout 1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="2758679853818061">
+                            <conditions>
+                                <condition id="4" name="Is touching object" sid="674538760042896" type="Touch">
+                                    <param id="0" name="Object">GameWinText</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="6400276004320632" type="System">
+                                    <param id="0" name="Variable">Score</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">300</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="3091047472578672" type="System">
+                                    <param id="0" name="Variable">Score</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-2" name="Go to layout" sid="3799983945707444" type="System">
                                     <param id="0" name="Layout">Layout 1</param>
                                 </action>
                             </actions>
@@ -279,7 +317,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="9986743214981356" title="Player interaction">
+        <event-group collapsed="1" description="" sid="9986743214981356" title="Player interaction">
             <sub-events>
                 <event-block collapsed="1" sid="8472556989546301">
                     <conditions>

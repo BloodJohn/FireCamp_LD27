@@ -708,7 +708,7 @@
                     <instance-variables>
                         <wood>0</wood>
                         <freeze>0</freeze>
-                        <speed>128</speed>
+                        <speed>64</speed>
                         <meat>0</meat>
                         <battery>0</battery>
                     </instance-variables>
@@ -1975,6 +1975,33 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
+                <instance type="GameWinText" uid="50">
+                    <properties>
+                        <text>Survived!  Tap to restart</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Arial,-64,700,1</font>
+                        <color>255,153,0</color>
+                        <horizontal-alignment>Center</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>450</x>
+                        <y>282</y>
+                        <z>0</z>
+                        <width>425</width>
+                        <height>192</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
             </instances>
             <effects />
         </layer>
@@ -1994,7 +2021,7 @@
             <instances>
                 <instance type="GameOverText" uid="15">
                     <properties>
-                        <text>Game Over!  Tap to restart</text>
+                        <text>Froze 2 Death!  Tap to restart</text>
                         <initial-visibility>Visible</initial-visibility>
                         <font>Arial,-64,700,1</font>
                         <color>0,0,255</color>
@@ -2007,10 +2034,10 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>450</x>
+                        <x>419</x>
                         <y>280</y>
                         <z>0</z>
-                        <width>425</width>
+                        <width>564</width>
                         <height>192</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
@@ -2061,7 +2088,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>221</x>
+                        <x>216</x>
                         <y>114</y>
                         <z>0</z>
                         <width>83</width>
@@ -2542,7 +2569,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>221</x>
+                        <x>216</x>
                         <y>187</y>
                         <z>0</z>
                         <width>66</width>
