@@ -82,9 +82,6 @@
                             <param id="0" name="Instance variable">power</param>
                             <param id="1" name="Value">-1</param>
                         </action>
-                        <action id="-5" name="Set width" sid="395180026861966" type="fireStatus">
-                            <param id="0" name="Width">140 - CampFire.power * 7</param>
-                        </action>
                     </actions>
                     <sub-events>
                         <event-block sid="5436432485031942">
@@ -97,9 +94,6 @@
                                 <action id="-11" name="Add to" sid="9188634245146499" type="Player">
                                     <param id="0" name="Instance variable">freeze</param>
                                     <param id="1" name="Value">1</param>
-                                </action>
-                                <action id="-5" name="Set width" sid="5861697978869906" type="freezeStatus">
-                                    <param id="0" name="Width">Player.freeze*14</param>
                                 </action>
                             </actions>
                             <sub-events>
@@ -160,9 +154,6 @@
                         <condition id="-1" name="Every tick" sid="9893711515753111" type="System" />
                     </conditions>
                     <actions>
-                        <action id="0" name="Set text" sid="8707283659962972" type="Status">
-                            <param id="0" name="Text">&quot;Score: &quot; &amp; Score &amp; &quot; - FPS: &quot; &amp; fps &amp; newline &amp; &quot;Find wood &amp; back 2 fire&quot;</param>
-                        </action>
                         <action id="0" name="Set text" sid="8143798948195178" type="fuelText">
                             <param id="0" name="Text">Player.wood</param>
                         </action>
@@ -172,9 +163,18 @@
                         <action id="0" name="Set text" sid="4754893245269725" type="energyText">
                             <param id="0" name="Text">Player.battery</param>
                         </action>
+                        <action id="0" name="Set text" sid="5374147802106629" type="expStatus">
+                            <param id="0" name="Text">Score</param>
+                        </action>
+                        <action id="0" name="Set text" sid="9285775055454343" type="fireStatus">
+                            <param id="0" name="Text">CampFire.power &amp; &quot;sec&quot;</param>
+                        </action>
+                        <action id="0" name="Set text" sid="513631094312237" type="freezeStatus">
+                            <param id="0" name="Text">(10-Player.freeze) &amp; &quot;sec&quot;</param>
+                        </action>
                     </actions>
                 </event-block>
-                <event-block sid="9445426713988271">
+                <event-block collapsed="1" sid="9445426713988271">
                     <conditions>
                         <condition id="2" name="Is in touch" sid="9903541263969406" type="Touch" />
                     </conditions>
@@ -362,7 +362,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="4185016082126794">
+                <event-block collapsed="1" sid="4185016082126794">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="1635403609972842" type="Player">
                             <param id="0" name="Object">Mine</param>
@@ -486,7 +486,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block collapsed="1" sid="7775520856246349">
+                <event-block sid="7775520856246349">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="1245352042944207" type="Player">
                             <param id="0" name="Object">fireplace</param>
@@ -497,8 +497,10 @@
                             <param id="0" name="Instance variable">freeze</param>
                             <param id="1" name="Value">0</param>
                         </action>
-                        <action id="-5" name="Set width" sid="7498932449987445" type="freezeStatus">
-                            <param id="0" name="Width">0</param>
+                        <action behavior="Flash" id="0" name="Flash" sid="2365739898776472" type="expSprite3">
+                            <param id="0" name="&apos;On&apos; time">0.2</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">0.3</param>
                         </action>
                     </actions>
                     <sub-events>
@@ -524,8 +526,15 @@
                                     <param id="0" name="Instance variable">power</param>
                                     <param id="1" name="Value">20</param>
                                 </action>
-                                <action id="-5" name="Set width" sid="6414329833763609" type="fireStatus">
-                                    <param id="0" name="Width">0</param>
+                                <action behavior="Flash" id="0" name="Flash" sid="6980617268085582" type="woodSprite">
+                                    <param id="0" name="&apos;On&apos; time">0.2</param>
+                                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                    <param id="2" name="Duration">0.3</param>
+                                </action>
+                                <action behavior="Flash" id="0" name="Flash" sid="1265885984202521" type="expSprite2">
+                                    <param id="0" name="&apos;On&apos; time">0.2</param>
+                                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                    <param id="2" name="Duration">0.3</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -548,6 +557,11 @@
                                 </action>
                                 <action behavior="Bullet" id="0" name="Set speed" sid="9757338905375609" type="Player">
                                     <param id="0" name="Speed">Player.speed</param>
+                                </action>
+                                <action behavior="Flash" id="0" name="Flash" sid="5660211501401144" type="meatSprite">
+                                    <param id="0" name="&apos;On&apos; time">0.2</param>
+                                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                    <param id="2" name="Duration">0.3</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -572,7 +586,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="560764457667941">
+                <event-block collapsed="1" sid="560764457667941">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="3908845037663883" type="Player">
                             <param id="0" name="Object">tree</param>
