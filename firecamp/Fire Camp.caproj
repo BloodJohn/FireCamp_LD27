@@ -10,18 +10,18 @@
     <unique-id>1zd9zgvyk313s</unique-id>
     <saved-with-version>13900</saved-with-version>
     <used-plugins>
-        <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="Dictionary" version="1">Dictionary</plugin>
-        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
     </used-plugins>
     <used-behaviors>
+        <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
+        <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
         <behavior author="Scirra" id="Anchor" version="1">Anchor</behavior>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
-        <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
         <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
-        <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
     <used-effects />
@@ -53,9 +53,6 @@
             <object-type name="meatSprite" sid="5194606351293235">
                 <plugin id="Sprite" />
                 <behaviors>
-                    <behavior-type name="Anchor" sid="9057111604465458">
-                        <behavior id="Anchor" />
-                    </behavior-type>
                     <behavior-type name="Flash" sid="2021172654102789">
                         <behavior id="Flash" />
                     </behavior-type>
@@ -80,9 +77,6 @@
             <object-type name="woodSprite" sid="9297788221131571">
                 <plugin id="Sprite" />
                 <behaviors>
-                    <behavior-type name="Anchor" sid="4933843942733822">
-                        <behavior id="Anchor" />
-                    </behavior-type>
                     <behavior-type name="Flash" sid="5574455287521257">
                         <behavior id="Flash" />
                     </behavior-type>
@@ -107,9 +101,6 @@
             <object-type name="batterySprite" sid="2013923375143608">
                 <plugin id="Sprite" />
                 <behaviors>
-                    <behavior-type name="Anchor" sid="2353381729168723">
-                        <behavior id="Anchor" />
-                    </behavior-type>
                     <behavior-type name="Flash" sid="5814435610518637">
                         <behavior id="Flash" />
                     </behavior-type>
@@ -133,19 +124,9 @@
             </object-type>
             <object-type name="fuelText" sid="4846075294240385">
                 <plugin id="Text" />
-                <behaviors>
-                    <behavior-type name="Anchor" sid="5154294292995488">
-                        <behavior id="Anchor" />
-                    </behavior-type>
-                </behaviors>
             </object-type>
             <object-type name="foodText" sid="5142276124777734">
                 <plugin id="Text" />
-                <behaviors>
-                    <behavior-type name="Anchor" sid="530032190125757">
-                        <behavior id="Anchor" />
-                    </behavior-type>
-                </behaviors>
             </object-type>
             <object-type name="energyText" sid="5774620211076019">
                 <plugin id="Text" />
@@ -158,9 +139,6 @@
             <object-type name="axeTool" sid="51863478682395">
                 <plugin id="Sprite" />
                 <behaviors>
-                    <behavior-type name="Anchor" sid="6043821032882019">
-                        <behavior id="Anchor" />
-                    </behavior-type>
                     <behavior-type name="Flash" sid="2485623373062503">
                         <behavior id="Flash" />
                     </behavior-type>
@@ -185,9 +163,6 @@
             <object-type name="fishingrodTool" sid="2728579071536576">
                 <plugin id="Sprite" />
                 <behaviors>
-                    <behavior-type name="Anchor" sid="1328852884806897">
-                        <behavior id="Anchor" />
-                    </behavior-type>
                     <behavior-type name="Flash" sid="9228872775092192">
                         <behavior id="Flash" />
                     </behavior-type>
@@ -212,9 +187,6 @@
             <object-type name="pickTool" sid="7743536966182473">
                 <plugin id="Sprite" />
                 <behaviors>
-                    <behavior-type name="Anchor" sid="1935341838240607">
-                        <behavior id="Anchor" />
-                    </behavior-type>
                     <behavior-type name="Flash" sid="6068995241670947">
                         <behavior id="Flash" />
                     </behavior-type>
@@ -239,9 +211,6 @@
             <object-type name="gunTool" sid="7338188005847629">
                 <plugin id="Sprite" />
                 <behaviors>
-                    <behavior-type name="Anchor" sid="1451198140641107">
-                        <behavior id="Anchor" />
-                    </behavior-type>
                     <behavior-type name="Flash" sid="8597796542438773">
                         <behavior id="Flash" />
                     </behavior-type>
@@ -292,9 +261,6 @@
             <object-type name="fireSprite" sid="989607290251775">
                 <plugin id="Sprite" />
                 <behaviors>
-                    <behavior-type name="Anchor" sid="8358313822276362">
-                        <behavior id="Anchor" />
-                    </behavior-type>
                     <behavior-type name="Flash" sid="2220555851433816">
                         <behavior id="Flash" />
                     </behavior-type>
@@ -319,9 +285,6 @@
             <object-type name="freezeSprite" sid="4016303779961211">
                 <plugin id="Sprite" />
                 <behaviors>
-                    <behavior-type name="Anchor" sid="5222919760940949">
-                        <behavior id="Anchor" />
-                    </behavior-type>
                     <behavior-type name="Flash" sid="2850769652155341">
                         <behavior id="Flash" />
                     </behavior-type>
@@ -348,6 +311,19 @@
             </object-type>
             <object-type name="GameWinText" sid="8638290014311903">
                 <plugin id="Text" />
+            </object-type>
+            <object-type name="panel" sid="5531713804646172">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Solid" sid="9312317159491612">
+                        <behavior id="solid" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1594615469406964" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
             </object-type>
         </object-folder>
         <object-folder expanded="0" name="tool">
@@ -999,19 +975,6 @@
             <plugin id="Sprite" />
             <animation-folder expanded="1">
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6867015786911366" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="panel" sid="5531713804646172">
-            <plugin id="Sprite" />
-            <behaviors>
-                <behavior-type name="Solid" sid="9312317159491612">
-                    <behavior id="solid" />
-                </behavior-type>
-            </behaviors>
-            <animation-folder expanded="1">
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1594615469406964" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>

@@ -4,7 +4,7 @@
     <name>Event sheet 1</name>
     <events>
         <variable constant="0" name="Score" sid="9430221669105701" static="0" type="number">0</variable>
-        <event-group description="" sid="3888193285997598" title="Scene Init">
+        <event-group collapsed="1" description="" sid="3888193285997598" title="Scene Init">
             <sub-events>
                 <comment>This is the speed new monsters are spawned at, and the player score.</comment>
                 <event-block sid="2016806224835871">
@@ -99,6 +99,24 @@
                             <param id="0" name="Variable">Score</param>
                             <param id="1" name="Value">1</param>
                         </action>
+                        <action id="0" name="Set text" sid="8143798948195178" type="fuelText">
+                            <param id="0" name="Text">Player.wood</param>
+                        </action>
+                        <action id="0" name="Set text" sid="4871620538941614" type="foodText">
+                            <param id="0" name="Text">Player.meat</param>
+                        </action>
+                        <action id="0" name="Set text" sid="4754893245269725" type="energyText">
+                            <param id="0" name="Text">Player.battery</param>
+                        </action>
+                        <action id="0" name="Set text" sid="5374147802106629" type="expStatus">
+                            <param id="0" name="Text">(300-Score) &amp; &quot;sec&quot;</param>
+                        </action>
+                        <action id="0" name="Set text" sid="9285775055454343" type="fireStatus">
+                            <param id="0" name="Text">CampFire.power &amp; &quot;sec&quot;</param>
+                        </action>
+                        <action id="0" name="Set text" sid="513631094312237" type="freezeStatus">
+                            <param id="0" name="Text">(10-Player.freeze) &amp; &quot;sec&quot;</param>
+                        </action>
                     </actions>
                     <sub-events>
                         <event-block sid="5436432485031942">
@@ -184,31 +202,6 @@
         <event-group description="" sid="4939230196463606" title="Player controls">
             <sub-events>
                 <comment>Always look the player towards the mouse, and update the status text.</comment>
-                <event-block sid="5933056411808581">
-                    <conditions>
-                        <condition id="-1" name="Every tick" sid="9893711515753111" type="System" />
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Set text" sid="8143798948195178" type="fuelText">
-                            <param id="0" name="Text">Player.wood</param>
-                        </action>
-                        <action id="0" name="Set text" sid="4871620538941614" type="foodText">
-                            <param id="0" name="Text">Player.meat</param>
-                        </action>
-                        <action id="0" name="Set text" sid="4754893245269725" type="energyText">
-                            <param id="0" name="Text">Player.battery</param>
-                        </action>
-                        <action id="0" name="Set text" sid="5374147802106629" type="expStatus">
-                            <param id="0" name="Text">(300-Score) &amp; &quot;sec&quot;</param>
-                        </action>
-                        <action id="0" name="Set text" sid="9285775055454343" type="fireStatus">
-                            <param id="0" name="Text">CampFire.power &amp; &quot;sec&quot;</param>
-                        </action>
-                        <action id="0" name="Set text" sid="513631094312237" type="freezeStatus">
-                            <param id="0" name="Text">(10-Player.freeze) &amp; &quot;sec&quot;</param>
-                        </action>
-                    </actions>
-                </event-block>
                 <event-block sid="9445426713988271">
                     <conditions>
                         <condition id="2" name="Is in touch" sid="9903541263969406" type="Touch" />
