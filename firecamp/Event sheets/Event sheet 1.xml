@@ -76,56 +76,6 @@
                             <param id="1" name="Value">&quot;Resque team is coming. They&apos;ll catch you in few minutes.&quot;</param>
                         </action>
                     </actions>
-                    <sub-events>
-                        <event-block disabled="1" sid="7013585197129039">
-                            <conditions>
-                                <condition id="-10" name="For" sid="9147972445871305" type="System">
-                                    <param id="0" name="Name">&quot;forestLoop&quot;</param>
-                                    <param id="1" name="Start index">1</param>
-                                    <param id="2" name="End index">30</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-3" name="Create object" sid="7962359818127675" type="System">
-                                    <param id="0" name="Object to create">tree</param>
-                                    <param id="1" name="Layer">&quot;Main&quot;</param>
-                                    <param id="2" name="X">random(128,LayoutWidth-128)</param>
-                                    <param id="3" name="Y">random(128,LayoutHeight-128)</param>
-                                </action>
-                                <action id="2" name="Stop" sid="154972514743074" type="tree" />
-                                <action id="-10" name="Set value" sid="5932597368037139" type="tree">
-                                    <param id="0" name="Instance variable">chopCounter</param>
-                                    <param id="1" name="Value">random(0,3)</param>
-                                </action>
-                                <action id="5" name="Set frame" sid="6584180911837755" type="tree">
-                                    <param id="0" name="Frame number">tree.chopCounter</param>
-                                </action>
-                                <action id="9" name="Set scale" sid="6602710974972366" type="tree">
-                                    <param id="0" name="Scale">random(0.8, 1.2)</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block disabled="1" sid="3501928810760359">
-                            <conditions>
-                                <condition id="-10" name="For" sid="1762746707116191" type="System">
-                                    <param id="0" name="Name">&quot;woodLoop&quot;</param>
-                                    <param id="1" name="Start index">1</param>
-                                    <param id="2" name="End index">10</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-3" name="Create object" sid="8238720013010307" type="System">
-                                    <param id="0" name="Object to create">firewood</param>
-                                    <param id="1" name="Layer">&quot;Main&quot;</param>
-                                    <param id="2" name="X">random(128,LayoutWidth-128)</param>
-                                    <param id="3" name="Y">random(128,LayoutHeight-128)</param>
-                                </action>
-                                <action id="-8" name="Set angle" sid="9117528681451567" type="firewood">
-                                    <param id="0" name="Angle">random(0,360)</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>
@@ -141,6 +91,10 @@
                         <action id="-11" name="Add to" sid="9513134698113411" type="CampFire">
                             <param id="0" name="Instance variable">power</param>
                             <param id="1" name="Value">-1</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="3418272060909701" type="System">
+                            <param id="0" name="Variable">Score</param>
+                            <param id="1" name="Value">1</param>
                         </action>
                     </actions>
                     <sub-events>
@@ -224,7 +178,7 @@
                             <param id="0" name="Text">Player.battery</param>
                         </action>
                         <action id="0" name="Set text" sid="5374147802106629" type="expStatus">
-                            <param id="0" name="Text">Score</param>
+                            <param id="0" name="Text">Score &amp; &quot;sec&quot;</param>
                         </action>
                         <action id="0" name="Set text" sid="9285775055454343" type="fireStatus">
                             <param id="0" name="Text">CampFire.power &amp; &quot;sec&quot;</param>
@@ -578,10 +532,6 @@
                                     <param id="0" name="Instance variable">wood</param>
                                     <param id="1" name="Value">-1</param>
                                 </action>
-                                <action id="-10" name="Add to" sid="393286595370788" type="System">
-                                    <param id="0" name="Variable">Score</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
                                 <action id="-10" name="Set value" sid="9654433311886671" type="CampFire">
                                     <param id="0" name="Instance variable">power</param>
                                     <param id="1" name="Value">20</param>
@@ -613,7 +563,7 @@
                                 </action>
                                 <action id="-10" name="Set value" sid="83428138270032" type="Player">
                                     <param id="0" name="Instance variable">speed</param>
-                                    <param id="1" name="Value">256</param>
+                                    <param id="1" name="Value">128</param>
                                 </action>
                                 <action behavior="Bullet" id="0" name="Set speed" sid="9757338905375609" type="Player">
                                     <param id="0" name="Speed">Player.speed</param>
@@ -637,7 +587,7 @@
                             <actions>
                                 <action id="-10" name="Set value" sid="8644524557009578" type="Player">
                                     <param id="0" name="Instance variable">speed</param>
-                                    <param id="1" name="Value">128</param>
+                                    <param id="1" name="Value">64</param>
                                 </action>
                                 <action behavior="Bullet" id="0" name="Set speed" sid="4227167530246147" type="Player">
                                     <param id="0" name="Speed">Player.speed</param>
@@ -938,7 +888,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block collapsed="1" sid="5803535104476343">
+                <event-block sid="5803535104476343">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="537679156339422" type="Player">
                             <param id="0" name="Object">Deer</param>
@@ -969,9 +919,13 @@
                                     <param id="2" name="X">Deer.X</param>
                                     <param id="3" name="Y">Deer.Y</param>
                                 </action>
-                                <action id="-3" name="Set position" sid="9501097648932397" type="Deer">
+                                <action disabled="1" id="-3" name="Set position" sid="9501097648932397" type="Deer">
                                     <param id="0" name="X">random(0,LayoutWidth)</param>
                                     <param id="1" name="Y">random(0,LayoutHeight)</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="7851576536919228" type="Deer">
+                                    <param id="0" name="X">1000</param>
+                                    <param id="1" name="Y">550</param>
                                 </action>
                             </actions>
                         </event-block>
