@@ -7,7 +7,7 @@
         <event-group description="" sid="3888193285997598" title="Scene Init">
             <sub-events>
                 <comment>This is the speed new monsters are spawned at, and the player score.</comment>
-                <event-block collapsed="1" sid="2016806224835871">
+                <event-block sid="2016806224835871">
                     <conditions>
                         <condition id="-2" name="On start of layout" sid="4633396582611706" type="System" />
                     </conditions>
@@ -77,7 +77,7 @@
                         </action>
                     </actions>
                     <sub-events>
-                        <event-block sid="7013585197129039">
+                        <event-block disabled="1" sid="7013585197129039">
                             <conditions>
                                 <condition id="-10" name="For" sid="9147972445871305" type="System">
                                     <param id="0" name="Name">&quot;forestLoop&quot;</param>
@@ -89,8 +89,8 @@
                                 <action id="-3" name="Create object" sid="7962359818127675" type="System">
                                     <param id="0" name="Object to create">tree</param>
                                     <param id="1" name="Layer">&quot;Main&quot;</param>
-                                    <param id="2" name="X">random(0,LayoutWidth)</param>
-                                    <param id="3" name="Y">random(0,LayoutHeight)</param>
+                                    <param id="2" name="X">random(128,LayoutWidth-128)</param>
+                                    <param id="3" name="Y">random(128,LayoutHeight-128)</param>
                                 </action>
                                 <action id="2" name="Stop" sid="154972514743074" type="tree" />
                                 <action id="-10" name="Set value" sid="5932597368037139" type="tree">
@@ -105,10 +105,10 @@
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="3501928810760359">
+                        <event-block disabled="1" sid="3501928810760359">
                             <conditions>
                                 <condition id="-10" name="For" sid="1762746707116191" type="System">
-                                    <param id="0" name="Name">&quot;woodCount&quot;</param>
+                                    <param id="0" name="Name">&quot;woodLoop&quot;</param>
                                     <param id="1" name="Start index">1</param>
                                     <param id="2" name="End index">10</param>
                                 </condition>
@@ -117,8 +117,8 @@
                                 <action id="-3" name="Create object" sid="8238720013010307" type="System">
                                     <param id="0" name="Object to create">firewood</param>
                                     <param id="1" name="Layer">&quot;Main&quot;</param>
-                                    <param id="2" name="X">random(0,LayoutWidth)</param>
-                                    <param id="3" name="Y">random(0,LayoutHeight)</param>
+                                    <param id="2" name="X">random(128,LayoutWidth-128)</param>
+                                    <param id="3" name="Y">random(128,LayoutHeight-128)</param>
                                 </action>
                                 <action id="-8" name="Set angle" sid="9117528681451567" type="firewood">
                                     <param id="0" name="Angle">random(0,360)</param>
@@ -129,7 +129,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" sid="5883093135562037" title="Scene Loop">
+        <event-group description="" sid="5883093135562037" title="Scene Loop">
             <sub-events>
                 <event-block sid="9166315253767041">
                     <conditions>
@@ -206,7 +206,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" sid="4939230196463606" title="Player controls">
+        <event-group description="" sid="4939230196463606" title="Player controls">
             <sub-events>
                 <comment>Always look the player towards the mouse, and update the status text.</comment>
                 <event-block sid="5933056411808581">
@@ -557,7 +557,7 @@
                             <param id="0" name="Instance variable">freeze</param>
                             <param id="1" name="Value">0</param>
                         </action>
-                        <action behavior="Flash" id="0" name="Flash" sid="2365739898776472" type="expSprite3">
+                        <action behavior="Flash" id="0" name="Flash" sid="2365739898776472" type="freezeSprite">
                             <param id="0" name="&apos;On&apos; time">0.2</param>
                             <param id="1" name="&apos;Off&apos; time">0.1</param>
                             <param id="2" name="Duration">0.3</param>
@@ -591,7 +591,7 @@
                                     <param id="1" name="&apos;Off&apos; time">0.1</param>
                                     <param id="2" name="Duration">0.3</param>
                                 </action>
-                                <action behavior="Flash" id="0" name="Flash" sid="1265885984202521" type="expSprite2">
+                                <action behavior="Flash" id="0" name="Flash" sid="1265885984202521" type="fireSprite">
                                     <param id="0" name="&apos;On&apos; time">0.2</param>
                                     <param id="1" name="&apos;Off&apos; time">0.1</param>
                                     <param id="2" name="Duration">0.3</param>
@@ -646,7 +646,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block collapsed="1" sid="560764457667941">
+                <event-block sid="560764457667941">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="3908845037663883" type="Player">
                             <param id="0" name="Object">tree</param>
@@ -691,7 +691,7 @@
                             <actions>
                                 <action id="-11" name="Add to" sid="3127441697912284" type="tree">
                                     <param id="0" name="Instance variable">chopCounter</param>
-                                    <param id="1" name="Value">1</param>
+                                    <param id="1" name="Value">2</param>
                                 </action>
                                 <action id="5" name="Set frame" sid="4783667383765552" type="tree">
                                     <param id="0" name="Frame number">tree.chopCounter</param>
@@ -718,6 +718,10 @@
                                         </condition>
                                     </conditions>
                                     <actions>
+                                        <action disabled="1" id="-10" name="Set value" sid="2345664280282927" type="tree">
+                                            <param id="0" name="Instance variable">chopCounter</param>
+                                            <param id="1" name="Value">5</param>
+                                        </action>
                                         <action id="11" name="Set collisions enabled" sid="4596673502206216" type="tree">
                                             <param id="0" name="Collisions">0</param>
                                         </action>
