@@ -7,7 +7,7 @@
         <event-group description="" sid="3888193285997598" title="Scene Init">
             <sub-events>
                 <comment>This is the speed new monsters are spawned at, and the player score.</comment>
-                <event-block sid="2016806224835871">
+                <event-block collapsed="1" sid="2016806224835871">
                     <conditions>
                         <condition id="-2" name="On start of layout" sid="4633396582611706" type="System" />
                     </conditions>
@@ -69,9 +69,9 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" sid="5883093135562037" title="Scene Loop">
+        <event-group description="" sid="5883093135562037" title="Scene Loop">
             <sub-events>
-                <event-block collapsed="1" sid="9166315253767041">
+                <event-block sid="9166315253767041">
                     <conditions>
                         <condition id="-6" name="Every X seconds" sid="3078012040381353" type="System">
                             <param id="0" name="Interval (seconds)">1.0</param>
@@ -110,11 +110,19 @@
                                             <param id="1" name="Comparison">5</param>
                                             <param id="2" name="Value">10</param>
                                         </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="3176629414789036" type="Player">
+                                            <param id="0" name="Instance variable">speed</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">20</param>
+                                        </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-9" name="Destroy" sid="9646909347040273" type="CampFire" />
-                                        <action id="-15" name="Set visible" sid="7189500876418307" type="GameOverText">
-                                            <param id="0" name="Visibility">1</param>
+                                        <action id="-11" name="Add to" sid="5344981997685429" type="Player">
+                                            <param id="0" name="Instance variable">speed</param>
+                                            <param id="1" name="Value">-20</param>
+                                        </action>
+                                        <action behavior="Bullet" id="0" name="Set speed" sid="4698582256798817" type="Player">
+                                            <param id="0" name="Speed">Player.speed</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -134,7 +142,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" sid="4939230196463606" title="Player controls">
+        <event-group description="" sid="4939230196463606" title="Player controls">
             <sub-events>
                 <comment>Always look the player towards the mouse, and update the status text.</comment>
                 <event-block sid="5933056411808581">
@@ -143,7 +151,7 @@
                     </conditions>
                     <actions>
                         <action id="0" name="Set text" sid="8707283659962972" type="Status">
-                            <param id="0" name="Text">&quot;Score: &quot; &amp; Score &amp; &quot; Wood: &quot; &amp; Player.wood &amp; &quot; - FPS: &quot; &amp; fps &amp; newline &amp; &quot;Find wood &amp; back 2 fire&quot;</param>
+                            <param id="0" name="Text">&quot;Score: &quot; &amp; Score &amp; &quot; Meat: &quot; &amp; Player.meat &amp; &quot; - FPS: &quot; &amp; fps &amp; newline &amp; &quot;Find wood &amp; back 2 fire&quot;</param>
                         </action>
                     </actions>
                 </event-block>
@@ -327,7 +335,7 @@
                                     <param id="1" name="Y">Player.Y</param>
                                 </action>
                                 <action id="-17" name="Move forward" sid="8716233273306797" type="meat">
-                                    <param id="0" name="Distance">Mine.Width + Mine.Width</param>
+                                    <param id="0" name="Distance">Mine.Width + Player.Width</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -352,7 +360,7 @@
                                     <param id="1" name="Y">Player.Y</param>
                                 </action>
                                 <action id="-17" name="Move forward" sid="3662210830909127" type="coal">
-                                    <param id="0" name="Distance">Mine.Width + Mine.Width</param>
+                                    <param id="0" name="Distance">Mine.Width + Player.Width</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -372,7 +380,7 @@
                                     <param id="1" name="Y">Player.Y</param>
                                 </action>
                                 <action id="-17" name="Move forward" sid="3380516857301428" type="stone">
-                                    <param id="0" name="Distance">Mine.Width + Mine.Width</param>
+                                    <param id="0" name="Distance">Mine.Width + Player.Width</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -438,10 +446,14 @@
                                     <param id="0" name="Instance variable">speed</param>
                                     <param id="1" name="Value">300</param>
                                 </action>
+                                <action behavior="Bullet" id="0" name="Set speed" sid="9757338905375609" type="Player">
+                                    <param id="0" name="Speed">Player.speed</param>
+                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="2542331543179578">
                             <conditions>
+                                <condition id="-22" name="Else" sid="7993737519397088" type="System" />
                                 <condition id="-7" name="Compare instance variable" sid="6177802812645933" type="Player">
                                     <param id="0" name="Instance variable">meat</param>
                                     <param id="1" name="Comparison">3</param>
@@ -452,6 +464,9 @@
                                 <action id="-10" name="Set value" sid="8644524557009578" type="Player">
                                     <param id="0" name="Instance variable">speed</param>
                                     <param id="1" name="Value">200</param>
+                                </action>
+                                <action behavior="Bullet" id="0" name="Set speed" sid="4227167530246147" type="Player">
+                                    <param id="0" name="Speed">Player.speed</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -527,7 +542,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="5769637284090243">
+                <event-block collapsed="1" sid="5769637284090243">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="572112759876383" type="Player">
                             <param id="0" name="Object">Zeppelin</param>
@@ -713,9 +728,48 @@
                         </event-block>
                     </sub-events>
                 </event-block>
+                <event-block sid="5803535104476343">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="537679156339422" type="Player">
+                            <param id="0" name="Object">Deer</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-22" name="Set angle toward position" sid="6637086405360868" type="Deer">
+                            <param id="0" name="X">Player.X</param>
+                            <param id="1" name="Y">Player.Y</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="6187496896315733">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="1186823486700004" type="System">
+                                    <param id="0" name="First value">gun.Count</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-17" name="Move forward" sid="9936829959475883" type="Deer">
+                                    <param id="0" name="Distance">Deer.Width*3</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="5984714001361401" type="System">
+                                    <param id="0" name="Object to create">meat</param>
+                                    <param id="1" name="Layer">&quot;Background&quot;</param>
+                                    <param id="2" name="X">Deer.X</param>
+                                    <param id="3" name="Y">Deer.Y</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="9501097648932397" type="Deer">
+                                    <param id="0" name="X">random(0,LayoutWidth)</param>
+                                    <param id="1" name="Y">random(0,LayoutHeight)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
             </sub-events>
         </event-group>
-        <event-group description="get loot" sid="2176904056125398" title="Player pickup">
+        <event-group collapsed="1" description="get loot" sid="2176904056125398" title="Player pickup">
             <sub-events>
                 <event-block sid="681213038943706">
                     <conditions>
@@ -725,6 +779,9 @@
                     </conditions>
                     <actions>
                         <action id="-9" name="Destroy" sid="5111948657126019" type="gun" />
+                        <action id="-16" name="Set opacity" sid="5085852149828345" type="Deer">
+                            <param id="0" name="Opacity">100</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="1631421384820083">
@@ -855,5 +912,16 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-block sid="1062441670539652">
+            <conditions>
+                <condition id="-4" name="Is outside layout" sid="9719534995050282" type="Deer" />
+            </conditions>
+            <actions>
+                <action id="-22" name="Set angle toward position" sid="8905931251423305" type="Deer">
+                    <param id="0" name="X">Mine.X</param>
+                    <param id="1" name="Y">Mine.Y</param>
+                </action>
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>
