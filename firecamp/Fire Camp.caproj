@@ -11,17 +11,17 @@
     <saved-with-version>13900</saved-with-version>
     <used-plugins>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
         <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
-        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
         <plugin author="Scirra" id="Dictionary" version="1">Dictionary</plugin>
     </used-plugins>
     <used-behaviors>
-        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="Anchor" version="1">Anchor</behavior>
-        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
-        <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
+        <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
+        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
     <used-effects />
@@ -276,14 +276,14 @@
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8413110728343645" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.515625">
                             <collision-poly>
-                                <point x="0.25" y="0.25" />
-                                <point x="0.5" y="0.15625" />
-                                <point x="0.71875" y="0.28125" />
-                                <point x="0.921875" y="0.5" />
+                                <point x="0.21875" y="0.21875" />
+                                <point x="0.5" y="0.0625" />
+                                <point x="0.8125" y="0.1875" />
+                                <point x="0.953125" y="0.5" />
                                 <point x="0.828125" y="0.828125" />
-                                <point x="0.5" y="0.875" />
-                                <point x="0.28125" y="0.71875" />
-                                <point x="0.125" y="0.5" />
+                                <point x="0.5" y="0.921875" />
+                                <point x="0.203125" y="0.796875" />
+                                <point x="0.046875" y="0.5" />
                             </collision-poly>
                         </frame>
                     </animation>
@@ -921,10 +921,10 @@
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5">
                         <image-point name="Imagepoint 1" x="1.04688" y="0.5" />
                         <collision-poly>
-                            <point x="0" y="0.5" />
-                            <point x="0.53125" y="0" />
-                            <point x="1" y="0.53125" />
-                            <point x="0.515625" y="1" />
+                            <point x="0.234375" y="0.53125" />
+                            <point x="0.546875" y="0.234375" />
+                            <point x="0.84375" y="0.53125" />
+                            <point x="0.546875" y="0.859375" />
                         </collision-poly>
                     </frame>
                 </animation>
@@ -935,13 +935,6 @@
         </object-type>
         <object-type name="Avatar" sid="9805831674463929">
             <plugin id="Sprite" />
-            <instance-variables>
-                <instance-variable comment="firewood count" name="wood" sid="5526053889285024" type="number" />
-                <instance-variable comment="far from camp" name="freeze" sid="686801478148635" type="number" />
-                <instance-variable comment="hungry/complete" name="speed" sid="7372748439181848" type="number" />
-                <instance-variable name="meat" sid="2658375277051524" type="number" />
-                <instance-variable comment="battery 4 radio" name="battery" sid="6619358389891775" type="number" />
-            </instance-variables>
             <animation-folder expanded="1">
                 <animation framecount="4" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3469817535274296" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5">

@@ -785,7 +785,7 @@
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
-                        <opacity>0.5</opacity>
+                        <opacity>0.800000012</opacity>
                     </world>
                 </instance>
                 <instance type="Avatar" uid="27">
@@ -795,13 +795,6 @@
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
-                    <instance-variables>
-                        <wood>0</wood>
-                        <freeze>0</freeze>
-                        <speed>128</speed>
-                        <meat>0</meat>
-                        <battery>0</battery>
-                    </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>

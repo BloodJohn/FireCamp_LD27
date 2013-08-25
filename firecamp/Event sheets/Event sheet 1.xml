@@ -129,6 +129,10 @@
                                             <param id="0" name="Instance variable">speed</param>
                                             <param id="1" name="Value">-20</param>
                                         </action>
+                                        <action id="-10" name="Set value" sid="5403390651866266" type="Player">
+                                            <param id="0" name="Instance variable">freeze</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
                                     </actions>
                                 </event-block>
                                 <event-block sid="3254326283702856">
@@ -178,7 +182,7 @@
                             <param id="0" name="Text">Player.battery</param>
                         </action>
                         <action id="0" name="Set text" sid="5374147802106629" type="expStatus">
-                            <param id="0" name="Text">Score &amp; &quot;sec&quot;</param>
+                            <param id="0" name="Text">(300-Score) &amp; &quot;sec&quot;</param>
                         </action>
                         <action id="0" name="Set text" sid="9285775055454343" type="fireStatus">
                             <param id="0" name="Text">CampFire.power &amp; &quot;sec&quot;</param>
@@ -696,7 +700,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block collapsed="1" sid="5769637284090243">
+                <event-block sid="5769637284090243">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="572112759876383" type="Player">
                             <param id="0" name="Object">Zeppelin</param>
@@ -730,7 +734,7 @@
                                 <condition id="-14" name="Compare variable" sid="5009731283911225" type="System">
                                     <param id="0" name="Variable">Score</param>
                                     <param id="1" name="Comparison">5</param>
-                                    <param id="2" name="Value">2</param>
+                                    <param id="2" name="Value">20</param>
                                 </condition>
                                 <condition id="-8" name="Compare two values" sid="1030629966016913" type="System">
                                     <param id="0" name="First value">axe.Count</param>
@@ -758,7 +762,7 @@
                                 <condition id="-14" name="Compare variable" sid="4863739972619198" type="System">
                                     <param id="0" name="Variable">Score</param>
                                     <param id="1" name="Comparison">5</param>
-                                    <param id="2" name="Value">3</param>
+                                    <param id="2" name="Value">50</param>
                                 </condition>
                                 <condition id="-8" name="Compare two values" sid="229598536862397" type="System">
                                     <param id="0" name="First value">axe.Count</param>
@@ -791,7 +795,7 @@
                                 <condition id="-14" name="Compare variable" sid="9950338836827057" type="System">
                                     <param id="0" name="Variable">Score</param>
                                     <param id="1" name="Comparison">5</param>
-                                    <param id="2" name="Value">4</param>
+                                    <param id="2" name="Value">90</param>
                                 </condition>
                                 <condition id="-8" name="Compare two values" sid="2079597341858388" type="System">
                                     <param id="0" name="First value">axe.Count</param>
@@ -829,7 +833,7 @@
                                 <condition id="-14" name="Compare variable" sid="7092635484811731" type="System">
                                     <param id="0" name="Variable">Score</param>
                                     <param id="1" name="Comparison">5</param>
-                                    <param id="2" name="Value">5</param>
+                                    <param id="2" name="Value">150</param>
                                 </condition>
                                 <condition id="-8" name="Compare two values" sid="1243549298413159" type="System">
                                     <param id="0" name="First value">axe.Count</param>
@@ -931,7 +935,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="8727149430184162">
+                <event-block collapsed="1" sid="8727149430184162">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="6349487482650664" type="Player">
                             <param id="0" name="Object">Radio</param>
@@ -1015,9 +1019,6 @@
                     </conditions>
                     <actions>
                         <action id="-9" name="Destroy" sid="7583801899121776" type="fishingrod" />
-                        <action id="-16" name="Set opacity" sid="7706887419381561" type="IceHole">
-                            <param id="0" name="Opacity">100</param>
-                        </action>
                         <action id="-16" name="Set opacity" sid="9029983410801566" type="fishingrodTool">
                             <param id="0" name="Opacity">100</param>
                         </action>
