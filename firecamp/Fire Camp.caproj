@@ -12,17 +12,17 @@
     <used-plugins>
         <plugin author="Scirra" id="Dictionary" version="1">Dictionary</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
-        <plugin author="Scirra" id="Text" version="1">Text</plugin>
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Anchor" version="1">Anchor</behavior>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
         <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
-        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
-        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
         <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
     <used-effects />
     <configurations>
@@ -33,6 +33,7 @@
         <height>720</height>
     </window-size>
     <pixel-rounding>0</pixel-rounding>
+    <first-layout>preloader</first-layout>
     <use-loader-layout>0</use-loader-layout>
     <configuration-settings>
         <prop name="Fullscreen in browser">Off</prop>
@@ -936,12 +937,13 @@
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4182437784315632" speed="5">
                         <frame duration="1" hotspotX="0.502591" hotspotY="0.5">
                             <collision-poly>
-                                <point x="0.0466321" y="0.078125" />
-                                <point x="0.906736" y="0" />
-                                <point x="1" y="0.765625" />
-                                <point x="0.953368" y="1" />
-                                <point x="0.0414508" y="1" />
-                                <point x="0" y="0.515625" />
+                                <point x="0.129534" y="0.390625" />
+                                <point x="0.497409" y="0.03125" />
+                                <point x="0.88601" y="0.34375" />
+                                <point x="0.958549" y="0.875" />
+                                <point x="0.497409" y="1" />
+                                <point x="0.00518135" y="0.984375" />
+                                <point x="0.0880829" y="0.5" />
                             </collision-poly>
                         </frame>
                     </animation>
@@ -1042,6 +1044,7 @@
                 <instance-variable comment="hungry/complete" name="speed" sid="1654364414125249" type="number" />
                 <instance-variable name="meat" sid="5980564785376933" type="number" />
                 <instance-variable comment="battery 4 radio" name="battery" sid="6836628928116733" type="number" />
+                <instance-variable comment="meat 4 speed" name="speedup" sid="6738616364531403" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Bullet" sid="4160572480526763">
@@ -1138,13 +1141,23 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="preloaderSprite" sid="308143545003387">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5121592000215378" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families />
     <layout-folder expanded="1">
-        <layout>Layout 1.xml</layout>
+        <layout>game.xml</layout>
+        <layout>preloader.xml</layout>
     </layout-folder>
     <event-folder expanded="1">
-        <event-sheet>Event sheet 1.xml</event-sheet>
+        <event-sheet>Event game.xml</event-sheet>
+        <event-sheet>Event preloader.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Touch" uid="5">
