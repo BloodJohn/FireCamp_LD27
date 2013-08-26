@@ -83,9 +83,9 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="5883093135562037" title="Scene Loop">
+        <event-group collapsed="1" description="" sid="5883093135562037" title="Scene Loop">
             <sub-events>
-                <event-block sid="9166315253767041">
+                <event-block collapsed="1" sid="9166315253767041">
                     <conditions>
                         <condition id="-6" name="Every X seconds" sid="3078012040381353" type="System">
                             <param id="0" name="Interval (seconds)">1.0</param>
@@ -195,6 +195,11 @@
                                     <param id="1" name="Comparison">5</param>
                                     <param id="2" name="Value">300</param>
                                 </condition>
+                                <condition id="-8" name="Compare two values" sid="4716654203043062" type="System">
+                                    <param id="0" name="First value">CampFire.Count</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
                             </conditions>
                             <actions>
                                 <action id="-15" name="Set visible" sid="1671534547544002" type="GameWinText">
@@ -215,9 +220,45 @@
                         <action id="-9" name="Destroy" sid="7574422645339867" type="CampFire" />
                     </actions>
                 </event-block>
+                <event-block sid="2544358619637437">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="3372013546461409" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Set position" sid="7686285436634249" type="deerAvatar">
+                            <param id="0" name="X">Deer.X</param>
+                            <param id="1" name="Y">Deer.Y</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="8771297616483973">
+                            <conditions>
+                                <condition id="-13" name="Is between angles" sid="6156072944389517" type="Deer">
+                                    <param id="0" name="First angle">-90</param>
+                                    <param id="1" name="Second angle">90</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Set mirrored" sid="8180953300991082" type="deerAvatar">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="5433930863163066">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="2768818118647416" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Set mirrored" sid="4117139674918017" type="deerAvatar">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="4939230196463606" title="Player controls">
+        <event-group collapsed="1" description="" sid="4939230196463606" title="Player controls">
             <sub-events>
                 <comment>Always look the player towards the mouse, and update the status text.</comment>
                 <event-block sid="9445426713988271">
@@ -328,7 +369,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="9986743214981356" title="Player interaction">
+        <event-group collapsed="1" description="" sid="9986743214981356" title="Player interaction">
             <sub-events>
                 <event-block sid="8472556989546301">
                     <conditions>
@@ -420,6 +461,21 @@
                                         </action>
                                         <action id="-17" name="Move forward" sid="4243244438781915" type="oldshoes">
                                             <param id="0" name="Distance">Player.Width*2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="2178058469272273">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="7083902775907357" type="IceHole">
+                                            <param id="0" name="Instance variable">itemSupply</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="2" name="Stop" sid="8368522797095009" type="IceHole" />
+                                        <action id="5" name="Set frame" sid="1056961711398545" type="IceHole">
+                                            <param id="0" name="Frame number">0</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -557,6 +613,18 @@
                                         </action>
                                     </actions>
                                 </event-block>
+                                <event-block sid="8294501106786003">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="5501078414941849" type="System">
+                                            <param id="0" name="First value">mineBlock.Count</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="8488236530448408" type="mineBlock" />
+                                    </actions>
+                                </event-block>
                             </sub-events>
                         </event-block>
                         <event-block sid="1816045730772117">
@@ -674,7 +742,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="560764457667941">
+                <event-block collapsed="1" sid="560764457667941">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="3908845037663883" type="Player">
                             <param id="0" name="Object">tree</param>
@@ -775,7 +843,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="5769637284090243">
+                <event-block collapsed="1" sid="5769637284090243">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="572112759876383" type="Player">
                             <param id="0" name="Object">Zeppelin</param>
@@ -967,7 +1035,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="5803535104476343">
+                <event-block collapsed="1" sid="5803535104476343">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="537679156339422" type="Player">
                             <param id="0" name="Object">Deer</param>
@@ -1010,7 +1078,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block collapsed="1" sid="8727149430184162">
+                <event-block sid="8727149430184162">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="6349487482650664" type="Player">
                             <param id="0" name="Object">Radio</param>
@@ -1039,6 +1107,7 @@
                                     <param id="0" name="Text">radioMessages.Get(&quot;&quot; &amp; int(random(1,15)))</param>
                                 </action>
                                 <action behavior="Fade" id="0" name="Restart fade" sid="2202975191399892" type="radioText" />
+                                <action behavior="Fade" id="0" name="Restart fade" sid="8642763845133138" type="radioBubble" />
                             </actions>
                         </event-block>
                         <event-block sid="6606524977515274">
@@ -1054,6 +1123,7 @@
                                     <param id="0" name="Text">&quot;Need battery 4 receive..&quot;</param>
                                 </action>
                                 <action behavior="Fade" id="0" name="Restart fade" sid="5432493230236828" type="radioText" />
+                                <action behavior="Fade" id="0" name="Restart fade" sid="1501781588380779" type="radioBubble" />
                                 <action id="-16" name="Set opacity" sid="4555636086469492" type="Radio">
                                     <param id="0" name="Opacity">50</param>
                                 </action>
@@ -1072,8 +1142,18 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-9" name="Destroy" sid="5111948657126019" type="gun" />
-                        <action id="-16" name="Set opacity" sid="5085852149828345" type="Deer">
+                        <action id="11" name="Set collisions enabled" sid="1647815312778236" type="gun">
+                            <param id="0" name="Collisions">0</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="2438586584175407" type="gun">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.4</param>
+                            <param id="2" name="Duration">0.5</param>
+                        </action>
+                        <action id="-26" name="Move to layer" sid="4690777789476013" type="gun">
+                            <param id="0" name="Layer">&quot;HighForest&quot;</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="5085852149828345" type="deerAvatar">
                             <param id="0" name="Opacity">100</param>
                         </action>
                         <action id="-16" name="Set opacity" sid="8590027149493819" type="gunTool">
@@ -1084,6 +1164,10 @@
                             <param id="1" name="&apos;Off&apos; time">0.1</param>
                             <param id="2" name="Duration">1.0</param>
                         </action>
+                        <action id="-16" name="Wait" sid="141509350604092" type="System">
+                            <param id="0" name="Seconds">0.5</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="5111948657126019" type="gun" />
                     </actions>
                 </event-block>
                 <event-block sid="1631421384820083">
@@ -1093,7 +1177,17 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-9" name="Destroy" sid="7583801899121776" type="fishingrod" />
+                        <action id="11" name="Set collisions enabled" sid="8107114541794823" type="fishingrod">
+                            <param id="0" name="Collisions">0</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="1156985128644244" type="fishingrod">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.4</param>
+                            <param id="2" name="Duration">0.5</param>
+                        </action>
+                        <action id="-26" name="Move to layer" sid="375695594144826" type="fishingrod">
+                            <param id="0" name="Layer">&quot;HighForest&quot;</param>
+                        </action>
                         <action id="-16" name="Set opacity" sid="9029983410801566" type="fishingrodTool">
                             <param id="0" name="Opacity">100</param>
                         </action>
@@ -1102,6 +1196,10 @@
                             <param id="1" name="&apos;Off&apos; time">0.1</param>
                             <param id="2" name="Duration">1.0</param>
                         </action>
+                        <action id="-16" name="Wait" sid="7942361317727134" type="System">
+                            <param id="0" name="Seconds">0.5</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="7583801899121776" type="fishingrod" />
                     </actions>
                 </event-block>
                 <event-block sid="810740807766749">
@@ -1111,9 +1209,16 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-9" name="Destroy" sid="6765903878032645" type="pick" />
-                        <action id="-16" name="Set opacity" sid="5160638544089457" type="Mine">
-                            <param id="0" name="Opacity">100</param>
+                        <action id="11" name="Set collisions enabled" sid="6057208163212936" type="pick">
+                            <param id="0" name="Collisions">0</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="6541244513999617" type="pick">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.4</param>
+                            <param id="2" name="Duration">0.5</param>
+                        </action>
+                        <action id="-26" name="Move to layer" sid="924197195697812" type="pick">
+                            <param id="0" name="Layer">&quot;HighForest&quot;</param>
                         </action>
                         <action id="-16" name="Set opacity" sid="1778133496145755" type="pickTool">
                             <param id="0" name="Opacity">100</param>
@@ -1123,6 +1228,10 @@
                             <param id="1" name="&apos;Off&apos; time">0.1</param>
                             <param id="2" name="Duration">1.0</param>
                         </action>
+                        <action id="-16" name="Wait" sid="8182242958969124" type="System">
+                            <param id="0" name="Seconds">0.5</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="6765903878032645" type="pick" />
                     </actions>
                 </event-block>
                 <event-block sid="3402303966449781">
@@ -1132,7 +1241,17 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-9" name="Destroy" sid="5481985016713901" type="axe" />
+                        <action id="11" name="Set collisions enabled" sid="2085816440678007" type="axe">
+                            <param id="0" name="Collisions">0</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="4576990842780331" type="axe">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.4</param>
+                            <param id="2" name="Duration">0.5</param>
+                        </action>
+                        <action id="-26" name="Move to layer" sid="204548737255644" type="axe">
+                            <param id="0" name="Layer">&quot;HighForest&quot;</param>
+                        </action>
                         <action id="-16" name="Set opacity" sid="8117660294947721" type="axeTool">
                             <param id="0" name="Opacity">100</param>
                         </action>
@@ -1141,6 +1260,10 @@
                             <param id="1" name="&apos;Off&apos; time">0.1</param>
                             <param id="2" name="Duration">1.0</param>
                         </action>
+                        <action id="-16" name="Wait" sid="2304655433622426" type="System">
+                            <param id="0" name="Seconds">0.5</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="5481985016713901" type="axe" />
                     </actions>
                 </event-block>
                 <event-block sid="8496255799633769">
@@ -1150,6 +1273,20 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action id="11" name="Set collisions enabled" sid="7526720414323006" type="oldshoes">
+                            <param id="0" name="Collisions">0</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="8909206509899651" type="oldshoes">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.3</param>
+                            <param id="2" name="Duration">0.4</param>
+                        </action>
+                        <action id="-26" name="Move to layer" sid="8151706844665218" type="oldshoes">
+                            <param id="0" name="Layer">&quot;HighForest&quot;</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="4997400455114715" type="System">
+                            <param id="0" name="Seconds">0.4</param>
+                        </action>
                         <action id="-9" name="Destroy" sid="3578705606257695" type="oldshoes" />
                     </actions>
                 </event-block>
@@ -1160,6 +1297,20 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action id="11" name="Set collisions enabled" sid="1850956741216392" type="stone">
+                            <param id="0" name="Collisions">0</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="3252394840767563" type="stone">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.3</param>
+                            <param id="2" name="Duration">0.4</param>
+                        </action>
+                        <action id="-26" name="Move to layer" sid="4502612352285891" type="stone">
+                            <param id="0" name="Layer">&quot;HighForest&quot;</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="7503787639157104" type="System">
+                            <param id="0" name="Seconds">0.4</param>
+                        </action>
                         <action id="-9" name="Destroy" sid="560042338222358" type="stone" />
                     </actions>
                 </event-block>
@@ -1170,7 +1321,17 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-9" name="Destroy" sid="9371887111465753" type="firewood" />
+                        <action id="11" name="Set collisions enabled" sid="7438597283530381" type="firewood">
+                            <param id="0" name="Collisions">0</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="3470257205682656" type="firewood">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.3</param>
+                            <param id="2" name="Duration">0.4</param>
+                        </action>
+                        <action id="-26" name="Move to layer" sid="8242680112456836" type="firewood">
+                            <param id="0" name="Layer">&quot;HighForest&quot;</param>
+                        </action>
                         <action id="-11" name="Add to" sid="1342389928707647" type="Player">
                             <param id="0" name="Instance variable">wood</param>
                             <param id="1" name="Value">1</param>
@@ -1180,6 +1341,10 @@
                             <param id="1" name="&apos;Off&apos; time">0.1</param>
                             <param id="2" name="Duration">0.3</param>
                         </action>
+                        <action id="-16" name="Wait" sid="4444818017481568" type="System">
+                            <param id="0" name="Seconds">0.4</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="9371887111465753" type="firewood" />
                     </actions>
                 </event-block>
                 <event-block sid="9489851990902435">
@@ -1189,7 +1354,17 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-9" name="Destroy" sid="9723568312411922" type="coal" />
+                        <action id="11" name="Set collisions enabled" sid="2333962215834811" type="coal">
+                            <param id="0" name="Collisions">0</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="5559811594413869" type="coal">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.3</param>
+                            <param id="2" name="Duration">0.4</param>
+                        </action>
+                        <action id="-26" name="Move to layer" sid="9257198453024041" type="coal">
+                            <param id="0" name="Layer">&quot;HighForest&quot;</param>
+                        </action>
                         <action id="-11" name="Add to" sid="697797018719323" type="Player">
                             <param id="0" name="Instance variable">wood</param>
                             <param id="1" name="Value">2</param>
@@ -1199,6 +1374,10 @@
                             <param id="1" name="&apos;Off&apos; time">0.1</param>
                             <param id="2" name="Duration">0.3</param>
                         </action>
+                        <action id="-16" name="Wait" sid="2824699253648374" type="System">
+                            <param id="0" name="Seconds">0.4</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="9723568312411922" type="coal" />
                     </actions>
                 </event-block>
                 <event-block sid="8543928036258413">
@@ -1208,7 +1387,17 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-9" name="Destroy" sid="723832365508718" type="battery" />
+                        <action id="11" name="Set collisions enabled" sid="4858620214967162" type="battery">
+                            <param id="0" name="Collisions">0</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="9948791046783575" type="battery">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.3</param>
+                            <param id="2" name="Duration">0.4</param>
+                        </action>
+                        <action id="-26" name="Move to layer" sid="3969085436522622" type="battery">
+                            <param id="0" name="Layer">&quot;HighForest&quot;</param>
+                        </action>
                         <action id="-11" name="Add to" sid="2096825050390579" type="Player">
                             <param id="0" name="Instance variable">battery</param>
                             <param id="1" name="Value">1</param>
@@ -1221,6 +1410,10 @@
                             <param id="1" name="&apos;Off&apos; time">0.1</param>
                             <param id="2" name="Duration">0.3</param>
                         </action>
+                        <action id="-16" name="Wait" sid="3378802347456469" type="System">
+                            <param id="0" name="Seconds">0.4</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="723832365508718" type="battery" />
                     </actions>
                 </event-block>
                 <event-block sid="1104801215975828">
@@ -1230,7 +1423,17 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-9" name="Destroy" sid="5575873886476636" type="meat" />
+                        <action id="11" name="Set collisions enabled" sid="1748959945175603" type="meat">
+                            <param id="0" name="Collisions">0</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="6774429854100284" type="meat">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.3</param>
+                            <param id="2" name="Duration">0.4</param>
+                        </action>
+                        <action id="-26" name="Move to layer" sid="1603671516038667" type="meat">
+                            <param id="0" name="Layer">&quot;HighForest&quot;</param>
+                        </action>
                         <action id="-11" name="Add to" sid="170731583570496" type="Player">
                             <param id="0" name="Instance variable">meat</param>
                             <param id="1" name="Value">1</param>
@@ -1240,6 +1443,10 @@
                             <param id="1" name="&apos;Off&apos; time">0.1</param>
                             <param id="2" name="Duration">0.3</param>
                         </action>
+                        <action id="-16" name="Wait" sid="5710410002817942" type="System">
+                            <param id="0" name="Seconds">0.4</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="5575873886476636" type="meat" />
                     </actions>
                 </event-block>
                 <event-block sid="5612797616533628">
@@ -1249,7 +1456,17 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-9" name="Destroy" sid="481881175208196" type="fish" />
+                        <action id="11" name="Set collisions enabled" sid="5259746426376228" type="fish">
+                            <param id="0" name="Collisions">0</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="3911840265083839" type="fish">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.3</param>
+                            <param id="2" name="Duration">0.4</param>
+                        </action>
+                        <action id="-26" name="Move to layer" sid="4211507996157091" type="fish">
+                            <param id="0" name="Layer">&quot;HighForest&quot;</param>
+                        </action>
                         <action id="-11" name="Add to" sid="3621472260442413" type="Player">
                             <param id="0" name="Instance variable">meat</param>
                             <param id="1" name="Value">1</param>
@@ -1259,6 +1476,10 @@
                             <param id="1" name="&apos;Off&apos; time">0.1</param>
                             <param id="2" name="Duration">0.3</param>
                         </action>
+                        <action id="-16" name="Wait" sid="1104507815506899" type="System">
+                            <param id="0" name="Seconds">0.4</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="481881175208196" type="fish" />
                     </actions>
                 </event-block>
             </sub-events>
