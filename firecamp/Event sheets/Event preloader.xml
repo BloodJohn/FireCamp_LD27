@@ -6,7 +6,7 @@
         <event-block sid="2052767841717807">
             <conditions>
                 <condition id="4" name="Is touching object" sid="6520563674535051" type="Touch">
-                    <param id="0" name="Object">comixSprite</param>
+                    <param id="0" name="Object">playButton</param>
                 </condition>
             </conditions>
             <actions>

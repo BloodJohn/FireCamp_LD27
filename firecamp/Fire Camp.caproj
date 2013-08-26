@@ -3,26 +3,26 @@
     <name>Fire Camp</name>
     <description></description>
     <version>1</version>
-    <author></author>
-    <author-email></author-email>
-    <author-website></author-website>
+    <author>BloodJohn</author>
+    <author-email>bjohn.ext@gmail.com</author-email>
+    <author-website>http://www.linkedin.com/profile/view?id=2262213</author-website>
     <app-id></app-id>
     <unique-id>1zd9zgvyk313s</unique-id>
     <saved-with-version>13900</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="Dictionary" version="1">Dictionary</plugin>
+        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
-        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
-        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
-        <plugin author="Scirra" id="Dictionary" version="1">Dictionary</plugin>
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="Anchor" version="1">Anchor</behavior>
-        <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
         <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
-        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
+        <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
+        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
     </used-behaviors>
     <used-effects />
     <configurations>
@@ -41,7 +41,7 @@
         <prop name="Preview mode">HTTP</prop>
     </configuration-settings>
     <object-folder expanded="1">
-        <object-folder expanded="1" name="GUI">
+        <object-folder expanded="0" name="GUI">
             <object-type name="fireStatus" sid="9705679062719049">
                 <plugin id="Text" />
             </object-type>
@@ -610,6 +610,7 @@
                 <plugin id="Sprite" />
                 <instance-variables>
                     <instance-variable name="power" sid="5218553631166437" type="number" />
+                    <instance-variable name="playerLock" sid="3458853641771862" type="boolean" />
                 </instance-variables>
                 <behaviors>
                     <behavior-type name="Fade" sid="9756502815884836">
@@ -1029,6 +1030,9 @@
                     </animation>
                 </animation-folder>
             </object-type>
+            <object-type global="1" name="radioMessages" sid="413812363611642">
+                <plugin id="Dictionary" />
+            </object-type>
         </object-folder>
         <object-folder expanded="0" name="titleLayers">
             <object-type name="preloadSprite" sid="5687202222457632">
@@ -1099,7 +1103,16 @@
                 <plugin id="Sprite" />
                 <animation-folder expanded="1">
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8985026897025529" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.503268" hotspotY="0.506494">
+                            <collision-poly>
+                                <point x="0.0196078" y="0.038961" />
+                                <point x="0.496732" y="0.025974" />
+                                <point x="0.980392" y="0.038961" />
+                                <point x="0.980392" y="0.961039" />
+                                <point x="0.496732" y="0.974026" />
+                                <point x="0.0196078" y="0.961039" />
+                            </collision-poly>
+                        </frame>
                     </animation>
                 </animation-folder>
             </object-type>
@@ -1113,6 +1126,8 @@
                 <instance-variable name="meat" sid="5980564785376933" type="number" />
                 <instance-variable comment="battery 4 radio" name="battery" sid="6836628928116733" type="number" />
                 <instance-variable comment="meat 4 speed" name="speedup" sid="6738616364531403" type="number" />
+                <instance-variable comment="number of radio message" name="radioScore" sid="7106542514251995" type="number" />
+                <instance-variable comment="second to rescue" name="score" sid="7297540311353618" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Bullet" sid="4160572480526763">
@@ -1195,17 +1210,6 @@
                             <point x="0.03125" y="0.5" />
                         </collision-poly>
                     </frame>
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type global="1" name="radioMessages" sid="413812363611642">
-            <plugin id="Dictionary" />
-        </object-type>
-        <object-type name="Sprite" sid="320469577334268">
-            <plugin id="Sprite" />
-            <animation-folder expanded="1">
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6867015786911366" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
         </object-type>

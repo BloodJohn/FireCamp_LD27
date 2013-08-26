@@ -280,6 +280,7 @@
                     </properties>
                     <instance-variables>
                         <power>20</power>
+                        <playerLock>false</playerLock>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Fade">
@@ -959,6 +960,8 @@
                         <meat>0</meat>
                         <battery>0</battery>
                         <speedup>0</speedup>
+                        <radioScore>1</radioScore>
+                        <score>0</score>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Bullet">

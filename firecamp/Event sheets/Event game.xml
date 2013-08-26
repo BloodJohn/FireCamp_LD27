@@ -4,6 +4,8 @@
     <name>Event game</name>
     <events>
         <variable comment="number of radio message" constant="0" name="radioScore" sid="9724662809374265" static="0" type="number">1</variable>
+        <variable comment="seconds to rescue" constant="1" name="WINSCORE" sid="4262192312700704" static="0" type="number">580</variable>
+        <variable comment="base level 4 all sounds" constant="0" name="soundLevel" sid="1417971879352037" static="0" type="number">0</variable>
         <variable constant="0" name="Score" sid="9430221669105701" static="0" type="number">0</variable>
         <event-group description="" sid="3888193285997598" title="Scene Init">
             <sub-events>
@@ -13,6 +15,14 @@
                         <condition id="-2" name="On start of layout" sid="4633396582611706" type="System" />
                     </conditions>
                     <actions>
+                        <action id="-9" name="Set value" sid="8858020666093405" type="System">
+                            <param id="0" name="Variable">Score</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="5890265606943883" type="System">
+                            <param id="0" name="Variable">radioScore</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
                         <action id="2" name="Stop" sid="8387197797089273" type="Avatar" />
                         <action id="0" name="Add key" sid="3677979646057739" type="radioMessages">
                             <param id="0" name="Key">&quot;1&quot;</param>
@@ -80,7 +90,7 @@
         </event-group>
         <event-group description="" sid="5883093135562037" title="Scene Loop">
             <sub-events>
-                <event-block collapsed="1" sid="2544358619637437">
+                <event-block sid="2544358619637437">
                     <conditions>
                         <condition id="-1" name="Every tick" sid="3372013546461409" type="System" />
                     </conditions>
@@ -141,7 +151,7 @@
                             <param id="0" name="Text">Player.battery</param>
                         </action>
                         <action id="0" name="Set text" sid="5374147802106629" type="expStatus">
-                            <param id="0" name="Text">(580-Score) &amp; &quot;sec&quot;</param>
+                            <param id="0" name="Text">(WINSCORE-Score) &amp; &quot;sec&quot;</param>
                         </action>
                         <action id="0" name="Set text" sid="9285775055454343" type="fireStatus">
                             <param id="0" name="Text">CampFire.power &amp; &quot;sec&quot;</param>
@@ -151,6 +161,25 @@
                         </action>
                     </actions>
                     <sub-events>
+                        <event-block sid="3182123057288302">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="1814975542197599" type="System">
+                                    <param id="0" name="Variable">Score</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">WINSCORE</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="4716654203043062" type="System">
+                                    <param id="0" name="First value">CampFire.Count</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-2" name="Go to layout" sid="6948192261373692" type="System">
+                                    <param id="0" name="Layout">gamewin</param>
+                                </action>
+                            </actions>
+                        </event-block>
                         <event-block collapsed="1" sid="5436432485031942">
                             <conditions>
                                 <condition id="1" inverted="1" name="Is overlapping another object" sid="7300634048677421" type="Player">
@@ -219,25 +248,6 @@
                                 </event-block>
                             </sub-events>
                         </event-block>
-                        <event-block sid="3182123057288302">
-                            <conditions>
-                                <condition id="-14" name="Compare variable" sid="1814975542197599" type="System">
-                                    <param id="0" name="Variable">Score</param>
-                                    <param id="1" name="Comparison">5</param>
-                                    <param id="2" name="Value">580</param>
-                                </condition>
-                                <condition id="-8" name="Compare two values" sid="4716654203043062" type="System">
-                                    <param id="0" name="First value">CampFire.Count</param>
-                                    <param id="1" name="Comparison">4</param>
-                                    <param id="2" name="Second value">1</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-2" name="Go to layout" sid="6948192261373692" type="System">
-                                    <param id="0" name="Layout">gamewin</param>
-                                </action>
-                            </actions>
-                        </event-block>
                         <event-block sid="7227150917738014">
                             <conditions>
                                 <condition id="-7" name="Compare instance variable" sid="6120198670143715" type="Player">
@@ -301,26 +311,44 @@
                                 </action>
                             </actions>
                         </event-block>
+                        <event-block sid="1062441670539652">
+                            <conditions>
+                                <condition id="-4" name="Is outside layout" sid="9719534995050282" type="Deer" />
+                            </conditions>
+                            <actions>
+                                <action id="-22" name="Set angle toward position" sid="8905931251423305" type="Deer">
+                                    <param id="0" name="X">fireSprite.X</param>
+                                    <param id="1" name="Y">fireSprite.Y</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="3422303518103931">
+                            <conditions>
+                                <condition id="-8" name="Is boolean instance variable set" sid="4097287796041695" type="CampFire">
+                                    <param id="0" name="Instance variable">playerLock</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Wait" sid="8219864337665522" type="System">
+                                    <param id="0" name="Seconds">5.0</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="9716745993325927" type="CampFire">
+                                    <param id="0" name="Instance variable">playerLock</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
                     </sub-events>
-                </event-block>
-                <event-block sid="1062441670539652">
-                    <conditions>
-                        <condition id="-4" name="Is outside layout" sid="9719534995050282" type="Deer" />
-                    </conditions>
-                    <actions>
-                        <action id="-22" name="Set angle toward position" sid="8905931251423305" type="Deer">
-                            <param id="0" name="X">fireSprite.X</param>
-                            <param id="1" name="Y">fireSprite.Y</param>
-                        </action>
-                    </actions>
                 </event-block>
                 <event-block sid="1238229792633858">
                     <conditions>
                         <condition behavior="Fade" id="0" name="On fade out finished" sid="3191540269146869" type="CampFire" />
                     </conditions>
                     <actions>
-                        <action id="-16" name="Wait" sid="3604902813530004" type="System">
-                            <param id="0" name="Seconds">3.0</param>
+                        <action behavior="Flash" id="0" name="Flash" sid="8467039135473821" type="fireSprite">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">3.0</param>
                         </action>
                         <action id="-9" name="Destroy" sid="7574422645339867" type="CampFire" />
                         <action id="-2" name="Go to layout" sid="7360594246529021" type="System">
@@ -330,7 +358,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="4939230196463606" title="Player controls">
+        <event-group collapsed="1" description="" sid="4939230196463606" title="Player controls">
             <sub-events>
                 <comment>Always look the player towards the mouse, and update the status text.</comment>
                 <event-block sid="9445426713988271">
@@ -427,7 +455,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" sid="9986743214981356" title="Player interaction">
+        <event-group description="" sid="9986743214981356" title="Player interaction">
             <sub-events>
                 <event-block collapsed="1" sid="8472556989546301">
                     <conditions>
@@ -699,21 +727,19 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block collapsed="1" sid="7775520856246349">
+                <event-block sid="7775520856246349">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="1245352042944207" type="Player">
                             <param id="0" name="Object">CampFire</param>
                         </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="3345350455651403" type="CampFire">
+                            <param id="0" name="Instance variable">playerLock</param>
+                        </condition>
                     </conditions>
                     <actions>
-                        <action id="-10" name="Set value" sid="7167713840561844" type="Player">
-                            <param id="0" name="Instance variable">freeze</param>
-                            <param id="1" name="Value">0</param>
-                        </action>
-                        <action behavior="Flash" id="0" name="Flash" sid="2365739898776472" type="freezeSprite">
-                            <param id="0" name="&apos;On&apos; time">0.2</param>
-                            <param id="1" name="&apos;Off&apos; time">0.1</param>
-                            <param id="2" name="Duration">0.3</param>
+                        <action id="-13" name="Set boolean" sid="2676078089024957" type="CampFire">
+                            <param id="0" name="Instance variable">playerLock</param>
+                            <param id="1" name="Value">1</param>
                         </action>
                     </actions>
                     <sub-events>
@@ -806,7 +832,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="560764457667941">
+                <event-block collapsed="1" sid="560764457667941">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="3908845037663883" type="Player">
                             <param id="0" name="Object">tree</param>
@@ -907,7 +933,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="5769637284090243">
+                <event-block collapsed="1" sid="5769637284090243">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="572112759876383" type="Player">
                             <param id="0" name="Object">Zeppelin</param>
@@ -1142,7 +1168,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="8727149430184162">
+                <event-block collapsed="1" sid="8727149430184162">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="6349487482650664" type="Player">
                             <param id="0" name="Object">Radio</param>
@@ -1190,6 +1216,11 @@
                                         <action id="-10" name="Add to" sid="1606430954625855" type="System">
                                             <param id="0" name="Variable">Score</param>
                                             <param id="1" name="Value">20</param>
+                                        </action>
+                                        <action behavior="Flash" id="0" name="Flash" sid="7487709890278998" type="expSprite">
+                                            <param id="0" name="&apos;On&apos; time">0.2</param>
+                                            <param id="1" name="&apos;Off&apos; time">0.2</param>
+                                            <param id="2" name="Duration">0.6</param>
                                         </action>
                                     </actions>
                                 </event-block>
