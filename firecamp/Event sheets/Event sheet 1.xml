@@ -330,7 +330,7 @@
         </event-group>
         <event-group description="" sid="9986743214981356" title="Player interaction">
             <sub-events>
-                <event-block collapsed="1" sid="8472556989546301">
+                <event-block sid="8472556989546301">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="1318087601316103" type="Player">
                             <param id="0" name="Object">IceHole</param>
@@ -359,15 +359,25 @@
                         </action>
                     </actions>
                     <sub-events>
-                        <event-block collapsed="1" sid="4521523672594057">
+                        <event-block sid="4521523672594057">
                             <conditions>
                                 <condition id="-8" name="Compare two values" sid="2338073304568402" type="System">
                                     <param id="0" name="First value">fishingrod.Count</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Second value">0</param>
                                 </condition>
+                                <condition id="-7" name="Compare instance variable" sid="6203027351894494" type="IceHole">
+                                    <param id="0" name="Instance variable">itemSupply</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
                             </conditions>
-                            <actions />
+                            <actions>
+                                <action id="-11" name="Add to" sid="8887161602704383" type="IceHole">
+                                    <param id="0" name="Instance variable">itemSupply</param>
+                                    <param id="1" name="Value">-1</param>
+                                </action>
+                            </actions>
                             <sub-events>
                                 <event-block sid="8974395218942865">
                                     <conditions>
@@ -389,7 +399,7 @@
                                             <param id="1" name="Y">Player.Y</param>
                                         </action>
                                         <action id="-17" name="Move forward" sid="849924002721556" type="fish">
-                                            <param id="0" name="Distance">IceHole.Width</param>
+                                            <param id="0" name="Distance">Player.Width*2</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -409,7 +419,7 @@
                                             <param id="1" name="Y">Player.Y</param>
                                         </action>
                                         <action id="-17" name="Move forward" sid="4243244438781915" type="oldshoes">
-                                            <param id="0" name="Distance">IceHole.Width</param>
+                                            <param id="0" name="Distance">Player.Width*2</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -443,7 +453,7 @@
                             <param id="0" name="Instance variable">playerLock</param>
                             <param id="1" name="Value">1</param>
                         </action>
-                        <action id="-16" name="Set opacity" sid="7465653286729132" type="Mine">
+                        <action id="-16" name="Set opacity" sid="7465653286729132" type="mountain">
                             <param id="0" name="Opacity">50</param>
                         </action>
                         <action id="-16" name="Wait" sid="8438973407743538" type="System">
@@ -453,20 +463,30 @@
                             <param id="0" name="Instance variable">playerLock</param>
                             <param id="1" name="Value">0</param>
                         </action>
-                        <action id="-16" name="Set opacity" sid="4584213012275248" type="Mine">
+                        <action id="-16" name="Set opacity" sid="4584213012275248" type="mountain">
                             <param id="0" name="Opacity">100</param>
                         </action>
                     </actions>
                     <sub-events>
-                        <event-block collapsed="1" sid="2125830868049572">
+                        <event-block sid="2125830868049572">
                             <conditions>
                                 <condition id="-8" name="Compare two values" sid="1017257388641281" type="System">
                                     <param id="0" name="First value">pick.Count</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Second value">0</param>
                                 </condition>
+                                <condition id="-7" name="Compare instance variable" sid="4205035146669305" type="Mine">
+                                    <param id="0" name="Instance variable">itemSupply</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
                             </conditions>
-                            <actions />
+                            <actions>
+                                <action id="-11" name="Add to" sid="5650784354657358" type="Mine">
+                                    <param id="0" name="Instance variable">itemSupply</param>
+                                    <param id="1" name="Value">-1</param>
+                                </action>
+                            </actions>
                             <sub-events>
                                 <event-block sid="8524172571414186">
                                     <conditions>
@@ -488,7 +508,7 @@
                                             <param id="1" name="Y">Player.Y</param>
                                         </action>
                                         <action id="-17" name="Move forward" sid="8716233273306797" type="meat">
-                                            <param id="0" name="Distance">Mine.Width</param>
+                                            <param id="0" name="Distance">Player.Width*2</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -513,7 +533,7 @@
                                             <param id="1" name="Y">Player.Y</param>
                                         </action>
                                         <action id="-17" name="Move forward" sid="3662210830909127" type="coal">
-                                            <param id="0" name="Distance">Mine.Width</param>
+                                            <param id="0" name="Distance">Player.Width*2</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -553,7 +573,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="7775520856246349">
+                <event-block collapsed="1" sid="7775520856246349">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="1245352042944207" type="Player">
                             <param id="0" name="Object">fireplace</param>
@@ -577,6 +597,11 @@
                                     <param id="0" name="Instance variable">wood</param>
                                     <param id="1" name="Comparison">4</param>
                                     <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="3466095165103507" type="CampFire">
+                                    <param id="0" name="Instance variable">power</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">10</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -699,10 +724,11 @@
                                 <action id="5" name="Set frame" sid="4783667383765552" type="tree">
                                     <param id="0" name="Frame number">tree.chopCounter</param>
                                 </action>
-                                <action id="0" name="Spawn another object" sid="7770174046599258" type="tree">
-                                    <param id="0" name="Object">firewood</param>
+                                <action id="-3" name="Create object" sid="7770174046599258" type="System">
+                                    <param id="0" name="Object to create">firewood</param>
                                     <param id="1" name="Layer">&quot;Background&quot;</param>
-                                    <param id="2" name="Image point">0</param>
+                                    <param id="2" name="X">tree.X</param>
+                                    <param id="3" name="Y">tree.y</param>
                                 </action>
                                 <action id="-8" name="Set angle" sid="1498545148774842" type="firewood">
                                     <param id="0" name="Angle">random(0,360)</param>
@@ -721,7 +747,7 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action disabled="1" id="-10" name="Set value" sid="2345664280282927" type="tree">
+                                        <action id="-10" name="Set value" sid="2345664280282927" type="tree">
                                             <param id="0" name="Instance variable">chopCounter</param>
                                             <param id="1" name="Value">5</param>
                                         </action>
@@ -801,7 +827,7 @@
                                     <param id="1" name="Y">Player.Y</param>
                                 </action>
                                 <action id="-17" name="Move forward" sid="2888489772832665" type="axe">
-                                    <param id="0" name="Distance">Zeppelin.Width</param>
+                                    <param id="0" name="Distance">Player.Width*2</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -834,7 +860,7 @@
                                     <param id="1" name="Y">Player.Y</param>
                                 </action>
                                 <action id="-17" name="Move forward" sid="406762902057858" type="fishingrod">
-                                    <param id="0" name="Distance">Zeppelin.Width</param>
+                                    <param id="0" name="Distance">Player.Width*2</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -872,7 +898,7 @@
                                     <param id="1" name="Y">Player.Y</param>
                                 </action>
                                 <action id="-17" name="Move forward" sid="1719477251045337" type="pick">
-                                    <param id="0" name="Distance">Zeppelin.Width</param>
+                                    <param id="0" name="Distance">Player.Width*2</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -915,7 +941,7 @@
                                     <param id="1" name="Y">Player.Y</param>
                                 </action>
                                 <action id="-17" name="Move forward" sid="9049021936234875" type="gun">
-                                    <param id="0" name="Distance">Zeppelin.Width</param>
+                                    <param id="0" name="Distance">Player.Width*2</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -972,11 +998,11 @@
                                     <param id="2" name="X">Deer.X</param>
                                     <param id="3" name="Y">Deer.Y</param>
                                 </action>
-                                <action disabled="1" id="-3" name="Set position" sid="9501097648932397" type="Deer">
-                                    <param id="0" name="X">random(0,LayoutWidth)</param>
-                                    <param id="1" name="Y">random(0,LayoutHeight)</param>
+                                <action id="-3" name="Set position" sid="9501097648932397" type="Deer">
+                                    <param id="0" name="X">random(350,1000)</param>
+                                    <param id="1" name="Y">random(240,670)</param>
                                 </action>
-                                <action id="-3" name="Set position" sid="7851576536919228" type="Deer">
+                                <action disabled="1" id="-3" name="Set position" sid="7851576536919228" type="Deer">
                                     <param id="0" name="X">1000</param>
                                     <param id="1" name="Y">550</param>
                                 </action>
@@ -1037,7 +1063,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="get loot" sid="2176904056125398" title="Player pickup">
+        <event-group description="get loot" sid="2176904056125398" title="Player pickup">
             <sub-events>
                 <event-block sid="681213038943706">
                     <conditions>
@@ -1166,7 +1192,7 @@
                         <action id="-9" name="Destroy" sid="9723568312411922" type="coal" />
                         <action id="-11" name="Add to" sid="697797018719323" type="Player">
                             <param id="0" name="Instance variable">wood</param>
-                            <param id="1" name="Value">1</param>
+                            <param id="1" name="Value">2</param>
                         </action>
                         <action behavior="Flash" id="0" name="Flash" sid="880097716859363" type="woodSprite">
                             <param id="0" name="&apos;On&apos; time">0.2</param>
@@ -1243,8 +1269,8 @@
             </conditions>
             <actions>
                 <action id="-22" name="Set angle toward position" sid="8905931251423305" type="Deer">
-                    <param id="0" name="X">Mine.X</param>
-                    <param id="1" name="Y">Mine.Y</param>
+                    <param id="0" name="X">fireSprite.X</param>
+                    <param id="1" name="Y">fireSprite.Y</param>
                 </action>
             </actions>
         </event-block>
