@@ -4,7 +4,7 @@
     <name>Event game</name>
     <events>
         <variable comment="number of radio message" constant="0" name="radioScore" sid="9724662809374265" static="0" type="number">1</variable>
-        <variable comment="seconds to rescue" constant="1" name="WINSCORE" sid="4262192312700704" static="0" type="number">580</variable>
+        <variable comment="seconds to rescue" constant="1" name="WINSCORE" sid="4262192312700704" static="0" type="number">720</variable>
         <variable comment="base level 4 all sounds" constant="0" name="soundLevel" sid="1417971879352037" static="0" type="number">0</variable>
         <variable constant="0" name="Score" sid="9430221669105701" static="0" type="number">0</variable>
         <event-group description="" sid="3888193285997598" title="Scene Init">
@@ -727,7 +727,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="7775520856246349">
+                <event-block collapsed="1" sid="7775520856246349">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="1245352042944207" type="Player">
                             <param id="0" name="Object">CampFire</param>
@@ -793,7 +793,7 @@
                                 </action>
                                 <action id="-10" name="Set value" sid="83428138270032" type="Player">
                                     <param id="0" name="Instance variable">speed</param>
-                                    <param id="1" name="Value">128</param>
+                                    <param id="1" name="Value">96</param>
                                 </action>
                                 <action behavior="Bullet" id="0" name="Set speed" sid="9757338905375609" type="Player">
                                     <param id="0" name="Speed">Player.speed</param>
@@ -877,7 +877,7 @@
                             <actions>
                                 <action id="-11" name="Add to" sid="3127441697912284" type="tree">
                                     <param id="0" name="Instance variable">chopCounter</param>
-                                    <param id="1" name="Value">2</param>
+                                    <param id="1" name="Value">3</param>
                                 </action>
                                 <action id="5" name="Set frame" sid="4783667383765552" type="tree">
                                     <param id="0" name="Frame number">tree.chopCounter</param>
@@ -933,7 +933,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block collapsed="1" sid="5769637284090243">
+                <event-block sid="5769637284090243">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="572112759876383" type="Player">
                             <param id="0" name="Object">Zeppelin</param>
@@ -1106,6 +1106,11 @@
                         <event-block sid="7732390901822143">
                             <conditions>
                                 <condition id="-22" name="Else" sid="8679833315543008" type="System" />
+                                <condition id="-8" name="Compare two values" sid="8292534159095698" type="System">
+                                    <param id="0" name="First value">radioScore + Player.battery</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">16</param>
+                                </condition>
                             </conditions>
                             <actions>
                                 <action id="-3" name="Create object" sid="9398855596594485" type="System">
