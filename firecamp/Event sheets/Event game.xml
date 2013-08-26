@@ -171,7 +171,7 @@
                                 <condition id="-8" name="Compare two values" sid="4716654203043062" type="System">
                                     <param id="0" name="First value">CampFire.Count</param>
                                     <param id="1" name="Comparison">4</param>
-                                    <param id="2" name="Second value">1</param>
+                                    <param id="2" name="Second value">0</param>
                                 </condition>
                             </conditions>
                             <actions>
