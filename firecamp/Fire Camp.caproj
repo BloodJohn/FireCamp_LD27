@@ -10,15 +10,15 @@
     <unique-id>1zd9zgvyk313s</unique-id>
     <saved-with-version>13900</saved-with-version>
     <used-plugins>
-        <plugin author="Scirra" id="Dictionary" version="1">Dictionary</plugin>
-        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
-        <plugin author="Scirra" id="Text" version="1">Text</plugin>
-        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
+        <plugin author="Scirra" id="Dictionary" version="1">Dictionary</plugin>
     </used-plugins>
     <used-behaviors>
-        <behavior author="Scirra" id="Anchor" version="1">Anchor</behavior>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="Anchor" version="1">Anchor</behavior>
         <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
         <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
         <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
@@ -41,14 +41,11 @@
         <prop name="Preview mode">HTTP</prop>
     </configuration-settings>
     <object-folder expanded="1">
-        <object-folder expanded="0" name="GUI">
+        <object-folder expanded="1" name="GUI">
             <object-type name="fireStatus" sid="9705679062719049">
                 <plugin id="Text" />
             </object-type>
             <object-type name="freezeStatus" sid="3741371945695945">
-                <plugin id="Text" />
-            </object-type>
-            <object-type name="GameOverText" sid="4764306912919052">
                 <plugin id="Text" />
             </object-type>
             <object-type name="meatSprite" sid="5194606351293235">
@@ -322,9 +319,6 @@
             <object-type name="expStatus" sid="8618647904373542">
                 <plugin id="Text" />
             </object-type>
-            <object-type name="GameWinText" sid="8638290014311903">
-                <plugin id="Text" />
-            </object-type>
             <object-type name="panel" sid="5531713804646172">
                 <plugin id="Sprite" />
                 <behaviors>
@@ -347,7 +341,7 @@
                 </animation-folder>
             </object-type>
         </object-folder>
-        <object-folder expanded="1" name="tool">
+        <object-folder expanded="0" name="tool">
             <object-type name="axe" sid="3787682176878771">
                 <plugin id="Sprite" />
                 <behaviors>
@@ -444,7 +438,7 @@
                 </animation-folder>
             </object-type>
         </object-folder>
-        <object-folder expanded="1" name="items">
+        <object-folder expanded="0" name="items">
             <object-type name="coal" sid="596544877068511">
                 <plugin id="Sprite" />
                 <behaviors>
@@ -1036,6 +1030,80 @@
                 </animation-folder>
             </object-type>
         </object-folder>
+        <object-folder expanded="0" name="titleLayers">
+            <object-type name="preloadSprite" sid="5687202222457632">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8578215423212419" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="comixSprite" sid="7994572093203537">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5599909222762126" speed="5">
+                        <frame duration="1" hotspotX="0.503268" hotspotY="0.506494">
+                            <collision-poly>
+                                <point x="0.0196078" y="0.038961" />
+                                <point x="0.980392" y="0.038961" />
+                                <point x="0.980392" y="0.961039" />
+                                <point x="0.0196078" y="0.961039" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="startButton" sid="207423848429789">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8185274937475834" speed="5">
+                        <frame duration="1" hotspotX="0.503268" hotspotY="0.506494">
+                            <collision-poly>
+                                <point x="0.0196078" y="0.038961" />
+                                <point x="0.496732" y="0.025974" />
+                                <point x="0.980392" y="0.038961" />
+                                <point x="0.980392" y="0.961039" />
+                                <point x="0.496732" y="0.974026" />
+                                <point x="0.0196078" y="0.961039" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="winSprite" sid="9442298403274772">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6100984918946671" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="gameoverSprite" sid="9037909462986742">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4640786899625289" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="preloaderSprite" sid="308143545003387">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5121592000215378" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="playButton" sid="1620290349367096">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8985026897025529" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
         <object-type name="Player" sid="4665982004058992">
             <plugin id="Sprite" />
             <instance-variables>
@@ -1141,23 +1209,21 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="preloaderSprite" sid="308143545003387">
-            <plugin id="Sprite" />
-            <animation-folder expanded="1">
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5121592000215378" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                </animation>
-            </animation-folder>
-        </object-type>
     </object-folder>
     <families />
     <layout-folder expanded="1">
         <layout>game.xml</layout>
+        <layout>comix.xml</layout>
         <layout>preloader.xml</layout>
+        <layout>gameover.xml</layout>
+        <layout>gamewin.xml</layout>
     </layout-folder>
     <event-folder expanded="1">
         <event-sheet>Event game.xml</event-sheet>
+        <event-sheet>Event comix.xml</event-sheet>
         <event-sheet>Event preloader.xml</event-sheet>
+        <event-sheet>Event gameover.xml</event-sheet>
+        <event-sheet>Event gamewin.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Touch" uid="5">

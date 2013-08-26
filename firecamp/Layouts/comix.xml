@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2layout>
-    <name>preloader</name>
-    <sid>2664654199253199</sid>
-    <event-sheet>Event preloader</event-sheet>
+    <name>comix</name>
+    <sid>4572053252478112</sid>
+    <event-sheet>Event comix</event-sheet>
     <size>
         <width>1280</width>
         <height>720</height>
@@ -13,7 +13,7 @@
     </margins>
     <unbounded-scrolling>0</unbounded-scrolling>
     <layers>
-        <layer name="Layer 0" sid="4696266607150045">
+        <layer name="Layer 0" sid="4405626954934561">
             <initially-visible>1</initially-visible>
             <background-color>255,255,255</background-color>
             <transparent>0</transparent>
@@ -27,7 +27,7 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
-                <instance type="preloadSprite" uid="98">
+                <instance type="preloaderSprite" uid="95">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -49,7 +49,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="comixSprite" uid="101">
+                <instance type="startButton" uid="43">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -59,8 +59,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>888</x>
-                        <y>158</y>
+                        <x>632</x>
+                        <y>366</y>
                         <z>0</z>
                         <width>153</width>
                         <height>77</height>

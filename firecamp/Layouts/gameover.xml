@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2layout>
-    <name>preloader</name>
-    <sid>2664654199253199</sid>
-    <event-sheet>Event preloader</event-sheet>
+    <name>gameover</name>
+    <sid>7885219537454838</sid>
+    <event-sheet>Event gameover</event-sheet>
     <size>
         <width>1280</width>
         <height>720</height>
@@ -13,7 +13,7 @@
     </margins>
     <unbounded-scrolling>0</unbounded-scrolling>
     <layers>
-        <layer name="Layer 0" sid="4696266607150045">
+        <layer name="Layer 0" sid="3774765002023574">
             <initially-visible>1</initially-visible>
             <background-color>255,255,255</background-color>
             <transparent>0</transparent>
@@ -27,7 +27,7 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
-                <instance type="preloadSprite" uid="98">
+                <instance type="gameoverSprite" uid="102">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -49,7 +49,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="comixSprite" uid="101">
+                <instance type="playButton" uid="103">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -59,14 +59,14 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>888</x>
-                        <y>158</y>
+                        <x>638</x>
+                        <y>469.5</y>
                         <z>0</z>
-                        <width>153</width>
-                        <height>77</height>
+                        <width>149</width>
+                        <height>73</height>
                         <depth>0</depth>
-                        <hotspotX>0.503268003</hotspotX>
-                        <hotspotY>0.506493509</hotspotY>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
