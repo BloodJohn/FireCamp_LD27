@@ -353,7 +353,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>804</x>
-                        <y>184</y>
+                        <y>183</y>
                         <z>0</z>
                         <width>64</width>
                         <height>64</height>
@@ -532,7 +532,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>565</x>
-                        <y>184</y>
+                        <y>183</y>
                         <z>0</z>
                         <width>64</width>
                         <height>64</height>
@@ -558,7 +558,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>1050</x>
-                        <y>184</y>
+                        <y>183</y>
                         <z>0</z>
                         <width>64</width>
                         <height>64</height>
@@ -962,6 +962,8 @@
                         <speedup>0</speedup>
                         <radioScore>1</radioScore>
                         <score>0</score>
+                        <touchX>0</touchX>
+                        <touchY>0</touchY>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Bullet">
@@ -2493,17 +2495,6 @@
                         <wrapping>Word</wrapping>
                         <line-height>0</line-height>
                     </properties>
-                    <behavior-instances>
-                        <behavior-instance type="Anchor">
-                            <properties>
-                                <left-edge>Window right</left-edge>
-                                <top-edge>Window top</top-edge>
-                                <right-edge>None</right-edge>
-                                <bottom-edge>None</bottom-edge>
-                                <initial-state>Enabled</initial-state>
-                            </properties>
-                        </behavior-instance>
-                    </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
@@ -2627,15 +2618,6 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <behavior-instances>
-                        <behavior-instance type="Anchor">
-                            <properties>
-                                <left-edge>Window left</left-edge>
-                                <top-edge>Window top</top-edge>
-                                <right-edge>None</right-edge>
-                                <bottom-edge>None</bottom-edge>
-                                <initial-state>Enabled</initial-state>
-                            </properties>
-                        </behavior-instance>
                         <behavior-instance type="Flash" />
                     </behavior-instances>
                     <blend-mode>0</blend-mode>

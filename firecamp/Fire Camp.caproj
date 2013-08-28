@@ -11,17 +11,16 @@
     <saved-with-version>13900</saved-with-version>
     <used-plugins>
         <plugin author="Scirra" id="Dictionary" version="1">Dictionary</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
-        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
-        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
     </used-plugins>
     <used-behaviors>
-        <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
-        <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
-        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
-        <behavior author="Scirra" id="Anchor" version="1">Anchor</behavior>
         <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
+        <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
     <used-effects />
@@ -36,7 +35,9 @@
     <first-layout>preloader</first-layout>
     <use-loader-layout>0</use-loader-layout>
     <configuration-settings>
-        <prop name="Fullscreen in browser">Off</prop>
+        <prop name="Enable WebGL">Off</prop>
+        <prop name="Fullscreen in browser">Scale inner</prop>
+        <prop name="Pause on unfocus">Yes</prop>
         <prop name="Preview browser">(default)</prop>
         <prop name="Preview mode">HTTP</prop>
     </configuration-settings>
@@ -128,11 +129,6 @@
             </object-type>
             <object-type name="energyText" sid="5774620211076019">
                 <plugin id="Text" />
-                <behaviors>
-                    <behavior-type name="Anchor" sid="4369298608666243">
-                        <behavior id="Anchor" />
-                    </behavior-type>
-                </behaviors>
             </object-type>
             <object-type name="axeTool" sid="51863478682395">
                 <plugin id="Sprite" />
@@ -232,9 +228,6 @@
             <object-type name="expSprite" sid="6600788182286551">
                 <plugin id="Sprite" />
                 <behaviors>
-                    <behavior-type name="Anchor" sid="7118055065463975">
-                        <behavior id="Anchor" />
-                    </behavior-type>
                     <behavior-type name="Flash" sid="6927913165008605">
                         <behavior id="Flash" />
                     </behavior-type>
@@ -732,7 +725,7 @@
                     <instance-variable name="itemSupply" sid="1475598874712437" type="number" />
                 </instance-variables>
                 <animation-folder expanded="1">
-                    <animation framecount="7" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4769857096132993" speed="5">
+                    <animation framecount="7" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4769857096132993" speed="3">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
@@ -1128,6 +1121,8 @@
                 <instance-variable comment="meat 4 speed" name="speedup" sid="6738616364531403" type="number" />
                 <instance-variable comment="number of radio message" name="radioScore" sid="7106542514251995" type="number" />
                 <instance-variable comment="second to rescue" name="score" sid="7297540311353618" type="number" />
+                <instance-variable comment="last tap" name="touchX" sid="9099776589095877" type="number" />
+                <instance-variable comment="las tap" name="touchY" sid="3023385169632693" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Bullet" sid="4160572480526763">
