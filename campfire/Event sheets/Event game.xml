@@ -3,6 +3,9 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Event game</name>
     <events>
+        <variable constant="1" name="highplayerspeed" sid="2832942740142049" static="0" type="number">96</variable>
+        <variable constant="1" name="PlayerSpeed" sid="8322609092889287" static="0" type="number">64</variable>
+        <variable constant="1" name="LOWPLAYERSPEED" sid="1379799149899475" static="0" type="number">16</variable>
         <variable comment="seconds to rescue" constant="1" name="WINSCORE" sid="4262192312700704" static="0" type="number">900</variable>
         <variable comment="base level 4 all sounds" constant="0" name="soundLevel" sid="1417971879352037" static="0" type="number">0</variable>
         <event-group description="" sid="3888193285997598" title="Scene Init">
@@ -158,7 +161,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block collapsed="1" sid="9166315253767041">
+                <event-block sid="9166315253767041">
                     <conditions>
                         <condition id="-6" name="Every X seconds" sid="3078012040381353" type="System">
                             <param id="0" name="Interval (seconds)">1.0</param>
@@ -212,7 +215,7 @@
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block collapsed="1" sid="5436432485031942">
+                        <event-block sid="5436432485031942">
                             <conditions>
                                 <condition id="1" inverted="1" name="Is overlapping another object" sid="7300634048677421" type="Player">
                                     <param id="0" name="Object">fireplace</param>
@@ -237,16 +240,15 @@
                                             <param id="1" name="Comparison">5</param>
                                             <param id="2" name="Value">10</param>
                                         </condition>
-                                        <condition id="-7" name="Compare instance variable" sid="3176629414789036" type="Player">
-                                            <param id="0" name="Instance variable">speed</param>
-                                            <param id="1" name="Comparison">5</param>
-                                            <param id="2" name="Value">20</param>
-                                        </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-11" name="Add to" sid="5344981997685429" type="Player">
+                                        <action id="-10" name="Set value" sid="5344981997685429" type="Player">
                                             <param id="0" name="Instance variable">speed</param>
-                                            <param id="1" name="Value">-20</param>
+                                            <param id="1" name="Value">LOWPLAYERSPEED</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="6224673332162259" type="Player">
+                                            <param id="0" name="Instance variable">speedup</param>
+                                            <param id="1" name="Value">0</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -390,7 +392,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="4939230196463606" title="Player controls">
+        <event-group collapsed="1" description="" sid="4939230196463606" title="Player controls">
             <sub-events>
                 <comment>Always look the player towards the mouse, and update the status text.</comment>
                 <event-block sid="9445426713988271">
@@ -710,7 +712,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block collapsed="1" sid="7775520856246349">
+                <event-block sid="7775520856246349">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="1245352042944207" type="Player">
                             <param id="0" name="Object">CampFire</param>
@@ -776,7 +778,7 @@
                                 </action>
                                 <action id="-10" name="Set value" sid="83428138270032" type="Player">
                                     <param id="0" name="Instance variable">speed</param>
-                                    <param id="1" name="Value">96</param>
+                                    <param id="1" name="Value">HIGHPLAYERSPEED</param>
                                 </action>
                                 <action behavior="Bullet" id="0" name="Set speed" sid="9757338905375609" type="Player">
                                     <param id="0" name="Speed">Player.speed</param>
@@ -803,7 +805,7 @@
                             <actions>
                                 <action id="-10" name="Set value" sid="8644524557009578" type="Player">
                                     <param id="0" name="Instance variable">speed</param>
-                                    <param id="1" name="Value">64</param>
+                                    <param id="1" name="Value">PLAYERSPEED</param>
                                 </action>
                                 <action behavior="Bullet" id="0" name="Set speed" sid="4227167530246147" type="Player">
                                     <param id="0" name="Speed">Player.speed</param>
@@ -916,7 +918,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="5769637284090243">
+                <event-block collapsed="1" sid="5769637284090243">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="572112759876383" type="Player">
                             <param id="0" name="Object">Zeppelin</param>
@@ -1156,7 +1158,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="8727149430184162">
+                <event-block collapsed="1" sid="8727149430184162">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="6349487482650664" type="Player">
                             <param id="0" name="Object">Radio</param>
@@ -1257,6 +1259,26 @@
                             <param id="2" name="Duration">0.3</param>
                         </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="1157406554204891">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="356661237549485" type="Player">
+                                    <param id="0" name="Instance variable">speed</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">PLAYERSPEED</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="8940003358315625" type="Player">
+                                    <param id="0" name="Instance variable">speed</param>
+                                    <param id="1" name="Value">PLAYERSPEED</param>
+                                </action>
+                                <action behavior="Bullet" id="0" name="Set speed" sid="3028507036441197" type="Player">
+                                    <param id="0" name="Speed">Player.speed</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>

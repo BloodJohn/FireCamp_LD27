@@ -2028,7 +2028,7 @@
                 </instance>
                 <instance type="radioText" uid="25">
                     <properties>
-                        <text>Need battery 4 receive</text>
+                        <text>Уou must hang on 600 seconds until rescuers arrive.</text>
                         <initial-visibility>Visible</initial-visibility>
                         <font>Arial,-19,700,0</font>
                         <color>0,51,51</color>
