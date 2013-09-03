@@ -6,7 +6,9 @@
         <variable constant="1" name="highplayerspeed" sid="2832942740142049" static="0" type="number">96</variable>
         <variable constant="1" name="PlayerSpeed" sid="8322609092889287" static="0" type="number">64</variable>
         <variable constant="1" name="LOWPLAYERSPEED" sid="1379799149899475" static="0" type="number">16</variable>
-        <variable comment="seconds to rescue" constant="1" name="WINSCORE" sid="4262192312700704" static="0" type="number">900</variable>
+        <variable comment="seconds to rescue" constant="1" name="WINSCORE" sid="4262192312700704" static="0" type="number">600</variable>
+        <variable constant="1" name="freeze_delay" sid="7350444329891131" static="0" type="number">10</variable>
+        <variable constant="1" name="campfire_delay" sid="653388181981294" static="0" type="number">20</variable>
         <variable comment="base level 4 all sounds" constant="0" name="soundLevel" sid="1417971879352037" static="0" type="number">0</variable>
         <event-group description="" sid="3888193285997598" title="Scene Init">
             <sub-events>
@@ -77,13 +79,49 @@
                             <param id="0" name="Key">&quot;15&quot;</param>
                             <param id="1" name="Value">&quot;Resque team is coming. They&apos;ll catch you in few minutes.&quot;</param>
                         </action>
+                        <action id="0" name="Play" sid="5413775785902358" type="Audio">
+                            <param id="0" name="Audio file">winter_theme_final</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">soundLevel</param>
+                            <param id="1" name="Tag (optional)">&quot;winter&quot;</param>
+                        </action>
+                        <action id="4" name="Preload" sid="6915150282114079" type="Audio">
+                            <param id="0" name="Audio file">pickup_loot</param>
+                        </action>
+                        <action id="4" name="Preload" sid="1097779820356161" type="Audio">
+                            <param id="0" name="Audio file">wood-rustle</param>
+                        </action>
+                        <action id="4" name="Preload" sid="4899476431286722" type="Audio">
+                            <param id="0" name="Audio file">no_tool</param>
+                        </action>
+                        <action id="4" name="Preload" sid="4619537621526867" type="Audio">
+                            <param id="0" name="Audio file">get_near_campfire</param>
+                        </action>
+                        <action id="4" name="Preload" sid="6514877923964412" type="Audio">
+                            <param id="0" name="Audio file">pickup_axe</param>
+                        </action>
+                        <action id="4" name="Preload" sid="5109222505251773" type="Audio">
+                            <param id="0" name="Audio file">need_battery</param>
+                        </action>
+                        <action id="4" name="Preload" sid="4343090325688588" type="Audio">
+                            <param id="0" name="Audio file">10sec_frozen</param>
+                        </action>
+                        <action id="4" name="Preload" sid="7463849664509323" type="Audio">
+                            <param id="0" name="Audio file">3sec_campfire_warning</param>
+                        </action>
+                        <action id="4" name="Preload" sid="5507976462347624" type="Audio">
+                            <param id="0" name="Audio file">use_airplane</param>
+                        </action>
+                        <action id="4" name="Preload" sid="5291095986222894" type="Audio">
+                            <param id="0" name="Audio file">use_campfire</param>
+                        </action>
                     </actions>
                 </event-block>
             </sub-events>
         </event-group>
         <event-group description="" sid="5883093135562037" title="Scene Loop">
             <sub-events>
-                <event-block sid="2544358619637437">
+                <event-block collapsed="1" sid="2544358619637437">
                     <conditions>
                         <condition id="-1" name="Every tick" sid="3372013546461409" type="System" />
                     </conditions>
@@ -161,7 +199,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="9166315253767041">
+                <event-block collapsed="1" sid="9166315253767041">
                     <conditions>
                         <condition id="-6" name="Every X seconds" sid="3078012040381353" type="System">
                             <param id="0" name="Interval (seconds)">1.0</param>
@@ -182,7 +220,7 @@
                         <action id="0" name="Set text" sid="4871620538941614" type="foodText">
                             <param id="0" name="Text">Player.meat</param>
                         </action>
-                        <action disabled="1" id="0" name="Set text" sid="4754893245269725" type="energyText">
+                        <action id="0" name="Set text" sid="4754893245269725" type="energyText">
                             <param id="0" name="Text">Player.battery</param>
                         </action>
                         <action id="0" name="Set text" sid="5374147802106629" type="expStatus">
@@ -192,7 +230,7 @@
                             <param id="0" name="Text">CampFire.power &amp; &quot;sec&quot;</param>
                         </action>
                         <action id="0" name="Set text" sid="513631094312237" type="freezeStatus">
-                            <param id="0" name="Text">(10-Player.freeze) &amp; &quot;sec&quot;</param>
+                            <param id="0" name="Text">(FREEZE_DELAY-Player.freeze) &amp; &quot;sec&quot;</param>
                         </action>
                     </actions>
                     <sub-events>
@@ -215,7 +253,7 @@
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="5436432485031942">
+                        <event-block collapsed="1" sid="5436432485031942">
                             <conditions>
                                 <condition id="1" inverted="1" name="Is overlapping another object" sid="7300634048677421" type="Player">
                                     <param id="0" name="Object">fireplace</param>
@@ -238,7 +276,7 @@
                                         <condition id="-7" name="Compare instance variable" sid="7369365015096753" type="Player">
                                             <param id="0" name="Instance variable">freeze</param>
                                             <param id="1" name="Comparison">5</param>
-                                            <param id="2" name="Value">10</param>
+                                            <param id="2" name="Value">FREEZE_DELAY</param>
                                         </condition>
                                     </conditions>
                                     <actions>
@@ -249,6 +287,10 @@
                                         <action id="-10" name="Set value" sid="6224673332162259" type="Player">
                                             <param id="0" name="Instance variable">speedup</param>
                                             <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="5403390651866266" type="Player">
+                                            <param id="0" name="Instance variable">freeze</param>
+                                            <param id="1" name="Value">FREEZE_DELAY</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -262,21 +304,6 @@
                                     <actions>
                                         <action behavior="Bullet" id="0" name="Set speed" sid="4698582256798817" type="Player">
                                             <param id="0" name="Speed">Player.speed</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="7020413512955965">
-                                    <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="5195318226987188" type="Player">
-                                            <param id="0" name="Instance variable">freeze</param>
-                                            <param id="1" name="Comparison">4</param>
-                                            <param id="2" name="Value">10</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-10" name="Set value" sid="5403390651866266" type="Player">
-                                            <param id="0" name="Instance variable">freeze</param>
-                                            <param id="1" name="Value">10</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -301,7 +328,7 @@
                             <conditions>
                                 <condition id="-7" name="Compare instance variable" sid="7884883385091688" type="CampFire">
                                     <param id="0" name="Instance variable">power</param>
-                                    <param id="1" name="Comparison">0</param>
+                                    <param id="1" name="Comparison">3</param>
                                     <param id="2" name="Value">3</param>
                                 </condition>
                             </conditions>
@@ -309,7 +336,13 @@
                                 <action behavior="Flash" id="0" name="Flash" sid="5763741582068883" type="fireSprite">
                                     <param id="0" name="&apos;On&apos; time">0.2</param>
                                     <param id="1" name="&apos;Off&apos; time">0.2</param>
-                                    <param id="2" name="Duration">3.0</param>
+                                    <param id="2" name="Duration">1.0</param>
+                                </action>
+                                <action id="0" name="Play" sid="6676424063201481" type="Audio">
+                                    <param id="0" name="Audio file">3sec_campfire_warning</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">soundLevel</param>
+                                    <param id="1" name="Tag (optional)">&quot;3sec_campfire&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -318,7 +351,7 @@
                                 <condition id="-7" name="Compare instance variable" sid="4191719394308849" type="Player">
                                     <param id="0" name="Instance variable">freeze</param>
                                     <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">7</param>
+                                    <param id="2" name="Value">FREEZE_DELAY-3</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -334,7 +367,7 @@
                                 <condition id="-7" name="Compare instance variable" sid="3261183772275006" type="Player">
                                     <param id="0" name="Instance variable">freeze</param>
                                     <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">10</param>
+                                    <param id="2" name="Value">FREEZE_DELAY</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -342,6 +375,12 @@
                                     <param id="0" name="&apos;On&apos; time">0.1</param>
                                     <param id="1" name="&apos;Off&apos; time">0.1</param>
                                     <param id="2" name="Duration">1.0</param>
+                                </action>
+                                <action id="0" name="Play" sid="6390649300907896" type="Audio">
+                                    <param id="0" name="Audio file">10sec_frozen</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">soundLevel</param>
+                                    <param id="1" name="Tag (optional)">&quot;10sec_frozen&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -385,6 +424,7 @@
                             <param id="2" name="Duration">3.0</param>
                         </action>
                         <action id="-9" name="Destroy" sid="7574422645339867" type="CampFire" />
+                        <action id="33" name="Stop all" sid="2522188379368096" type="Audio" />
                         <action id="-2" name="Go to layout" sid="7360594246529021" type="System">
                             <param id="0" name="Layout">gameover</param>
                         </action>
@@ -392,7 +432,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" sid="4939230196463606" title="Player controls">
+        <event-group description="" sid="4939230196463606" title="Player controls">
             <sub-events>
                 <comment>Always look the player towards the mouse, and update the status text.</comment>
                 <event-block sid="9445426713988271">
@@ -425,17 +465,6 @@
                         <action id="3" name="Start" sid="367497187604827" type="Avatar">
                             <param id="0" name="From">0</param>
                         </action>
-                    </actions>
-                </event-block>
-                <event-block disabled="1" sid="10653457378459">
-                    <conditions>
-                        <condition id="1" name="On any touch end" sid="7721575774920883" type="Touch" />
-                    </conditions>
-                    <actions>
-                        <action behavior="Bullet" id="0" name="Set speed" sid="9383113858597787" type="Player">
-                            <param id="0" name="Speed">0</param>
-                        </action>
-                        <action id="2" name="Stop" sid="8802929901261177" type="Avatar" />
                     </actions>
                 </event-block>
             </sub-events>
@@ -488,6 +517,12 @@
                                 <action id="-11" name="Add to" sid="8887161602704383" type="IceHole">
                                     <param id="0" name="Instance variable">itemSupply</param>
                                     <param id="1" name="Value">-1</param>
+                                </action>
+                                <action id="0" name="Play" sid="554799660028174" type="Audio">
+                                    <param id="0" name="Audio file">use_fishy_waters</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">soundLevel</param>
+                                    <param id="1" name="Tag (optional)">&quot;use_fishy_waters&quot;</param>
                                 </action>
                             </actions>
                             <sub-events>
@@ -557,6 +592,12 @@
                                 <condition id="-22" name="Else" sid="4627385702211113" type="System" />
                             </conditions>
                             <actions>
+                                <action id="0" name="Play" sid="204644534911295" type="Audio">
+                                    <param id="0" name="Audio file">no_tool</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">soundLevel</param>
+                                    <param id="1" name="Tag (optional)">&quot;no_tool&quot;</param>
+                                </action>
                                 <action behavior="Flash" id="0" name="Flash" sid="6903424873067226" type="fishingrodTool">
                                     <param id="0" name="&apos;On&apos; time">0.1</param>
                                     <param id="1" name="&apos;Off&apos; time">0.2</param>
@@ -595,7 +636,7 @@
                         </action>
                     </actions>
                     <sub-events>
-                        <event-block sid="2125830868049572">
+                        <event-block collapsed="1" sid="2125830868049572">
                             <conditions>
                                 <condition id="-8" name="Compare two values" sid="1017257388641281" type="System">
                                     <param id="0" name="First value">pick.Count</param>
@@ -612,6 +653,12 @@
                                 <action id="-11" name="Add to" sid="5650784354657358" type="Mine">
                                     <param id="0" name="Instance variable">itemSupply</param>
                                     <param id="1" name="Value">-1</param>
+                                </action>
+                                <action id="0" name="Play" sid="4787524526319808" type="Audio">
+                                    <param id="0" name="Audio file">use_cave</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">soundLevel</param>
+                                    <param id="1" name="Tag (optional)">&quot;use_cave&quot;</param>
                                 </action>
                             </actions>
                             <sub-events>
@@ -694,6 +741,12 @@
                                     </conditions>
                                     <actions>
                                         <action id="-9" name="Destroy" sid="8488236530448408" type="mineBlock" />
+                                        <action id="0" name="Play" sid="2090717130641077" type="Audio">
+                                            <param id="0" name="Audio file">crash_cave</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">soundLevel</param>
+                                            <param id="1" name="Tag (optional)">&quot;crash_cave&quot;</param>
+                                        </action>
                                     </actions>
                                 </event-block>
                             </sub-events>
@@ -712,7 +765,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="7775520856246349">
+                <event-block collapsed="1" sid="7775520856246349">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="1245352042944207" type="Player">
                             <param id="0" name="Object">CampFire</param>
@@ -749,7 +802,7 @@
                                 </action>
                                 <action id="-10" name="Set value" sid="9654433311886671" type="CampFire">
                                     <param id="0" name="Instance variable">power</param>
-                                    <param id="1" name="Value">20</param>
+                                    <param id="1" name="Value">CAMPFIRE_DELAY</param>
                                 </action>
                                 <action behavior="Flash" id="0" name="Flash" sid="6980617268085582" type="woodSprite">
                                     <param id="0" name="&apos;On&apos; time">0.2</param>
@@ -760,6 +813,12 @@
                                     <param id="0" name="&apos;On&apos; time">0.2</param>
                                     <param id="1" name="&apos;Off&apos; time">0.1</param>
                                     <param id="2" name="Duration">0.3</param>
+                                </action>
+                                <action id="0" name="Play" sid="5878524356527404" type="Audio">
+                                    <param id="0" name="Audio file">use_campfire</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">soundLevel</param>
+                                    <param id="1" name="Tag (optional)">&quot;use_campfire&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -791,6 +850,17 @@
                                 <action id="5" name="Set frame" sid="872598448518424" type="expSprite">
                                     <param id="0" name="Frame number">1</param>
                                 </action>
+                                <action behavior="Flash" id="0" name="Flash" sid="8432135730800218" type="expSprite">
+                                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                    <param id="2" name="Duration">1.2</param>
+                                </action>
+                                <action id="0" name="Play" sid="4801546553185714" type="Audio">
+                                    <param id="0" name="Audio file">use_food</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">soundLevel</param>
+                                    <param id="1" name="Tag (optional)">&quot;use_food&quot;</param>
+                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="2542331543179578">
@@ -817,7 +887,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block collapsed="1" sid="560764457667941">
+                <event-block sid="560764457667941">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="3908845037663883" type="Player">
                             <param id="0" name="Object">tree</param>
@@ -862,7 +932,7 @@
                             <actions>
                                 <action id="-11" name="Add to" sid="3127441697912284" type="tree">
                                     <param id="0" name="Instance variable">chopCounter</param>
-                                    <param id="1" name="Value">3</param>
+                                    <param id="1" name="Value">5</param>
                                 </action>
                                 <action id="5" name="Set frame" sid="4783667383765552" type="tree">
                                     <param id="0" name="Frame number">tree.chopCounter</param>
@@ -873,11 +943,21 @@
                                     <param id="2" name="X">tree.X</param>
                                     <param id="3" name="Y">tree.y</param>
                                 </action>
-                                <action id="-8" name="Set angle" sid="1498545148774842" type="firewood">
-                                    <param id="0" name="Angle">random(0,360)</param>
+                                <action id="-22" name="Set angle toward position" sid="4698276537452368" type="firewood">
+                                    <param id="0" name="X">CampFire.X</param>
+                                    <param id="1" name="Y">CampFire.Y</param>
+                                </action>
+                                <action id="-18" name="Rotate clockwise" sid="7026093674885158" type="firewood">
+                                    <param id="0" name="Degrees">random(-90,90)</param>
                                 </action>
                                 <action id="-17" name="Move forward" sid="988149017701914" type="firewood">
                                     <param id="0" name="Distance">random(tree.Width*0.8,tree.Width*1.2)</param>
+                                </action>
+                                <action id="0" name="Play" sid="3919421292544973" type="Audio">
+                                    <param id="0" name="Audio file">use_tree</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">soundLevel</param>
+                                    <param id="1" name="Tag (optional)">&quot;use_tree&quot;</param>
                                 </action>
                             </actions>
                             <sub-events>
@@ -909,6 +989,12 @@
                                 <condition id="-22" name="Else" sid="1962868559078265" type="System" />
                             </conditions>
                             <actions>
+                                <action id="0" name="Play" sid="3448396350882438" type="Audio">
+                                    <param id="0" name="Audio file">wood-rustle</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">soundLevel</param>
+                                    <param id="1" name="Tag (optional)">&quot;wood-rustle&quot;</param>
+                                </action>
                                 <action behavior="Flash" id="0" name="Flash" sid="7058135659426848" type="axeTool">
                                     <param id="0" name="&apos;On&apos; time">0.1</param>
                                     <param id="1" name="&apos;Off&apos; time">0.2</param>
@@ -928,6 +1014,12 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action id="0" name="Play" sid="6217990385721372" type="Audio">
+                            <param id="0" name="Audio file">use_airplane</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">soundLevel</param>
+                            <param id="1" name="Tag (optional)">&quot;use_airplane&quot;</param>
+                        </action>
                         <action id="-13" name="Set boolean" sid="2417071741340825" type="Zeppelin">
                             <param id="0" name="Instance variable">playerLock</param>
                             <param id="1" name="Value">1</param>
@@ -1137,6 +1229,12 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="0" name="Play" sid="6481281614978668" type="Audio">
+                                    <param id="0" name="Audio file">kill_deer</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">soundLevel</param>
+                                    <param id="1" name="Tag (optional)">&quot;kill_deer&quot;</param>
+                                </action>
                                 <action id="-17" name="Move forward" sid="9936829959475883" type="Deer">
                                     <param id="0" name="Distance">Deer.Width*3</param>
                                 </action>
@@ -1150,9 +1248,23 @@
                                     <param id="0" name="X">random(350,1000)</param>
                                     <param id="1" name="Y">random(240,670)</param>
                                 </action>
-                                <action disabled="1" id="-3" name="Set position" sid="7851576536919228" type="Deer">
-                                    <param id="0" name="X">1000</param>
-                                    <param id="1" name="Y">550</param>
+                            </actions>
+                        </event-block>
+                        <event-block sid="8219838162555776">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="5429618555399987" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="7596539474409362" type="Audio">
+                                    <param id="0" name="Audio file">no_tool</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">soundLevel</param>
+                                    <param id="1" name="Tag (optional)">&quot;no_tool&quot;</param>
+                                </action>
+                                <action behavior="Flash" id="0" name="Flash" sid="8490001680162021" type="gunTool">
+                                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                                    <param id="1" name="&apos;Off&apos; time">0.2</param>
+                                    <param id="2" name="Duration">0.3</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1179,6 +1291,12 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="0" name="Play" sid="1169090401728048" type="Audio">
+                                    <param id="0" name="Audio file">use_radio</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">soundLevel</param>
+                                    <param id="1" name="Tag (optional)">&quot;use_radio&quot;</param>
+                                </action>
                                 <action id="-11" name="Add to" sid="6312102200327111" type="Player">
                                     <param id="0" name="Instance variable">battery</param>
                                     <param id="1" name="Value">-1</param>
@@ -1210,12 +1328,12 @@
                                         </action>
                                         <action id="-11" name="Add to" sid="8026566378897254" type="Player">
                                             <param id="0" name="Instance variable">score</param>
-                                            <param id="1" name="Value">20</param>
+                                            <param id="1" name="Value">15</param>
                                         </action>
                                         <action behavior="Flash" id="0" name="Flash" sid="7487709890278998" type="expSprite">
                                             <param id="0" name="&apos;On&apos; time">0.2</param>
                                             <param id="1" name="&apos;Off&apos; time">0.2</param>
-                                            <param id="2" name="Duration">0.6</param>
+                                            <param id="2" name="Duration">1.2</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -1230,6 +1348,12 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="0" name="Play" sid="7644863704184037" type="Audio">
+                                    <param id="0" name="Audio file">need_battery</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">soundLevel</param>
+                                    <param id="1" name="Tag (optional)">&quot;need_battery&quot;</param>
+                                </action>
                                 <action id="0" name="Set text" sid="7877263430390695" type="radioText">
                                     <param id="0" name="Text">&quot;Need battery 4 receive..&quot;</param>
                                 </action>
@@ -1249,6 +1373,12 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action id="0" name="Play" sid="6560703980579872" type="Audio">
+                            <param id="0" name="Audio file">get_near_campfire</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">soundLevel</param>
+                            <param id="1" name="Tag (optional)">&quot;get_near_campfire&quot;</param>
+                        </action>
                         <action id="-10" name="Set value" sid="7258080599865093" type="Player">
                             <param id="0" name="Instance variable">freeze</param>
                             <param id="1" name="Value">0</param>
@@ -1313,10 +1443,19 @@
                             <param id="1" name="&apos;Off&apos; time">0.1</param>
                             <param id="2" name="Duration">1.0</param>
                         </action>
+                        <action id="0" name="Play" sid="261020744734293" type="Audio">
+                            <param id="0" name="Audio file">pickup_shotgun</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">soundLevel</param>
+                            <param id="1" name="Tag (optional)">&quot;pickup_shotgun&quot;</param>
+                        </action>
                         <action id="-16" name="Wait" sid="141509350604092" type="System">
                             <param id="0" name="Seconds">1</param>
                         </action>
                         <action id="-9" name="Destroy" sid="5111948657126019" type="gun" />
+                        <action id="4" name="Preload" sid="7981265950993945" type="Audio">
+                            <param id="0" name="Audio file">kill_deer</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="1631421384820083">
@@ -1345,10 +1484,25 @@
                             <param id="1" name="&apos;Off&apos; time">0.1</param>
                             <param id="2" name="Duration">1.0</param>
                         </action>
+                        <action id="0" name="Play" sid="8738755423378344" type="Audio">
+                            <param id="0" name="Audio file">pickup_fishingrod</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">soundLevel</param>
+                            <param id="1" name="Tag (optional)">&quot;pickup_fishingrod&quot;</param>
+                        </action>
                         <action id="-16" name="Wait" sid="7942361317727134" type="System">
-                            <param id="0" name="Seconds">0.5</param>
+                            <param id="0" name="Seconds">1.0</param>
                         </action>
                         <action id="-9" name="Destroy" sid="7583801899121776" type="fishingrod" />
+                        <action id="4" name="Preload" sid="5443713919806316" type="Audio">
+                            <param id="0" name="Audio file">pickup_pickaxe</param>
+                        </action>
+                        <action id="4" name="Preload" sid="3945661983665271" type="Audio">
+                            <param id="0" name="Audio file">pickup_useless</param>
+                        </action>
+                        <action id="4" name="Preload" sid="5176378079611243" type="Audio">
+                            <param id="0" name="Audio file">use_fishy_waters</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="810740807766749">
@@ -1377,10 +1531,25 @@
                             <param id="1" name="&apos;Off&apos; time">0.1</param>
                             <param id="2" name="Duration">1.0</param>
                         </action>
+                        <action id="0" name="Play" sid="2156987100794634" type="Audio">
+                            <param id="0" name="Audio file">pickup_pickaxe</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">soundLevel</param>
+                            <param id="1" name="Tag (optional)">&quot;pickup_pickaxe&quot;</param>
+                        </action>
                         <action id="-16" name="Wait" sid="8182242958969124" type="System">
                             <param id="0" name="Seconds">1</param>
                         </action>
                         <action id="-9" name="Destroy" sid="6765903878032645" type="pick" />
+                        <action id="4" name="Preload" sid="1896408239620292" type="Audio">
+                            <param id="0" name="Audio file">pickup_shotgun</param>
+                        </action>
+                        <action id="4" name="Preload" sid="7115620353286531" type="Audio">
+                            <param id="0" name="Audio file">crash_cave</param>
+                        </action>
+                        <action id="4" name="Preload" sid="8216585528347113" type="Audio">
+                            <param id="0" name="Audio file">use_cave</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="3402303966449781">
@@ -1409,10 +1578,22 @@
                             <param id="1" name="&apos;Off&apos; time">0.1</param>
                             <param id="2" name="Duration">1.0</param>
                         </action>
+                        <action id="0" name="Play" sid="605000334462595" type="Audio">
+                            <param id="0" name="Audio file">pickup_axe</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">soundLevel</param>
+                            <param id="1" name="Tag (optional)">&quot;pickup_axe&quot;</param>
+                        </action>
                         <action id="-16" name="Wait" sid="2304655433622426" type="System">
                             <param id="0" name="Seconds">1</param>
                         </action>
                         <action id="-9" name="Destroy" sid="5481985016713901" type="axe" />
+                        <action id="4" name="Preload" sid="974741100095944" type="Audio">
+                            <param id="0" name="Audio file">pickup_fishingrod</param>
+                        </action>
+                        <action id="4" name="Preload" sid="220648535375578" type="Audio">
+                            <param id="0" name="Audio file">use_tree</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="8496255799633769">
@@ -1432,6 +1613,12 @@
                         </action>
                         <action id="-26" name="Move to layer" sid="8151706844665218" type="oldshoes">
                             <param id="0" name="Layer">&quot;HighForest&quot;</param>
+                        </action>
+                        <action id="0" name="Play" sid="1290385960524586" type="Audio">
+                            <param id="0" name="Audio file">pickup_useless</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">soundLevel</param>
+                            <param id="1" name="Tag (optional)">&quot;pickup_useless&quot;</param>
                         </action>
                         <action id="-16" name="Wait" sid="4997400455114715" type="System">
                             <param id="0" name="Seconds">1</param>
@@ -1456,6 +1643,12 @@
                         </action>
                         <action id="-26" name="Move to layer" sid="4502612352285891" type="stone">
                             <param id="0" name="Layer">&quot;HighForest&quot;</param>
+                        </action>
+                        <action id="0" name="Play" sid="2343462463972011" type="Audio">
+                            <param id="0" name="Audio file">pickup_useless</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">soundLevel</param>
+                            <param id="1" name="Tag (optional)">&quot;pickup_useless&quot;</param>
                         </action>
                         <action id="-16" name="Wait" sid="7503787639157104" type="System">
                             <param id="0" name="Seconds">1</param>
@@ -1490,6 +1683,12 @@
                             <param id="1" name="&apos;Off&apos; time">0.1</param>
                             <param id="2" name="Duration">0.3</param>
                         </action>
+                        <action id="0" name="Play" sid="8864179729131472" type="Audio">
+                            <param id="0" name="Audio file">pickup_loot</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">soundLevel</param>
+                            <param id="1" name="Tag (optional)">&quot;pickup_loot&quot;</param>
+                        </action>
                         <action id="-16" name="Wait" sid="4444818017481568" type="System">
                             <param id="0" name="Seconds">1.0</param>
                         </action>
@@ -1522,6 +1721,12 @@
                             <param id="0" name="&apos;On&apos; time">0.2</param>
                             <param id="1" name="&apos;Off&apos; time">0.1</param>
                             <param id="2" name="Duration">0.3</param>
+                        </action>
+                        <action id="0" name="Play" sid="2691528569083483" type="Audio">
+                            <param id="0" name="Audio file">pickup_loot</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">soundLevel</param>
+                            <param id="1" name="Tag (optional)">&quot;pickup_loot&quot;</param>
                         </action>
                         <action id="-16" name="Wait" sid="2824699253648374" type="System">
                             <param id="0" name="Seconds">1</param>
@@ -1559,10 +1764,19 @@
                             <param id="1" name="&apos;Off&apos; time">0.1</param>
                             <param id="2" name="Duration">0.3</param>
                         </action>
+                        <action id="0" name="Play" sid="7019330684250423" type="Audio">
+                            <param id="0" name="Audio file">pickup_loot</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">soundLevel</param>
+                            <param id="1" name="Tag (optional)">&quot;pickup_loot&quot;</param>
+                        </action>
                         <action id="-16" name="Wait" sid="3378802347456469" type="System">
                             <param id="0" name="Seconds">1</param>
                         </action>
                         <action id="-9" name="Destroy" sid="723832365508718" type="battery" />
+                        <action id="4" name="Preload" sid="8291082567087289" type="Audio">
+                            <param id="0" name="Audio file">use_radio</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="1104801215975828">
@@ -1591,6 +1805,12 @@
                             <param id="0" name="&apos;On&apos; time">0.2</param>
                             <param id="1" name="&apos;Off&apos; time">0.1</param>
                             <param id="2" name="Duration">0.3</param>
+                        </action>
+                        <action id="0" name="Play" sid="8090500301908447" type="Audio">
+                            <param id="0" name="Audio file">pickup_loot</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">soundLevel</param>
+                            <param id="1" name="Tag (optional)">&quot;pickup_loot&quot;</param>
                         </action>
                         <action id="-16" name="Wait" sid="5710410002817942" type="System">
                             <param id="0" name="Seconds">1</param>
@@ -1625,10 +1845,19 @@
                             <param id="1" name="&apos;Off&apos; time">0.1</param>
                             <param id="2" name="Duration">0.3</param>
                         </action>
+                        <action id="0" name="Play" sid="1665790154499516" type="Audio">
+                            <param id="0" name="Audio file">pickup_loot</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">soundLevel</param>
+                            <param id="1" name="Tag (optional)">&quot;pickup_loot&quot;</param>
+                        </action>
                         <action id="-16" name="Wait" sid="1104507815506899" type="System">
                             <param id="0" name="Seconds">1</param>
                         </action>
                         <action id="-9" name="Destroy" sid="481881175208196" type="fish" />
+                        <action id="4" name="Preload" sid="1700405576475312" type="Audio">
+                            <param id="0" name="Audio file">use_food</param>
+                        </action>
                     </actions>
                 </event-block>
             </sub-events>
