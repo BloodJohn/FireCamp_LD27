@@ -19,102 +19,6 @@
                     </conditions>
                     <actions>
                         <action id="2" name="Stop" sid="8387197797089273" type="Avatar" />
-                        <action id="0" name="Add key" sid="3677979646057739" type="radioMessages">
-                            <param id="0" name="Key">&quot;1&quot;</param>
-                            <param id="1" name="Value">&quot;We have received your alarm. Does your coffee-machine not work?&quot;</param>
-                        </action>
-                        <action id="0" name="Add key" sid="6917293712211098" type="radioMessages">
-                            <param id="0" name="Key">&quot;2&quot;</param>
-                            <param id="1" name="Value">&quot;We received data. You&apos;re in Russia. I hope it&apos;s not cold there.&quot;</param>
-                        </action>
-                        <action id="0" name="Add key" sid="380244985860413" type="radioMessages">
-                            <param id="0" name="Key">&quot;3&quot;</param>
-                            <param id="1" name="Value">&quot;Smith, we are trying to determine your location. We&apos;ll save you.&quot;</param>
-                        </action>
-                        <action id="0" name="Add key" sid="3877242403236487" type="radioMessages">
-                            <param id="0" name="Key">&quot;4&quot;</param>
-                            <param id="1" name="Value">&quot;Mike from Typing Department asks you to take a picture of a bear.&quot;</param>
-                        </action>
-                        <action id="0" name="Add key" sid="1254123961440494" type="radioMessages">
-                            <param id="0" name="Key">&quot;5&quot;</param>
-                            <param id="1" name="Value">&quot;Mr. Smith, don&apos;t panic. Obviously, you&apos;re somewhere in Syberia.&quot;</param>
-                        </action>
-                        <action id="0" name="Add key" sid="1513151656694188" type="radioMessages">
-                            <param id="0" name="Key">&quot;6&quot;</param>
-                            <param id="1" name="Value">&quot;We are trying to determine coordinates of your location.&quot;</param>
-                        </action>
-                        <action id="0" name="Add key" sid="6227454336816539" type="radioMessages">
-                            <param id="0" name="Key">&quot;7&quot;</param>
-                            <param id="1" name="Value">&quot;We have some good news. It&apos;s easy to get firewood in Syberia.&quot;</param>
-                        </action>
-                        <action id="0" name="Add key" sid="8104268736889149" type="radioMessages">
-                            <param id="0" name="Key">&quot;8&quot;</param>
-                            <param id="1" name="Value">&quot;Your situation isn&apos;t so poor. You have an unscheduled vacation!&quot;</param>
-                        </action>
-                        <action id="0" name="Add key" sid="8275059078873062" type="radioMessages">
-                            <param id="0" name="Key">&quot;9&quot;</param>
-                            <param id="1" name="Value">&quot;Good morning, Mr. Smith. Your wife, Lucy, sends you greetings.&quot;</param>
-                        </action>
-                        <action id="0" name="Add key" sid="6167658343631394" type="radioMessages">
-                            <param id="0" name="Key">&quot;10&quot;</param>
-                            <param id="1" name="Value">&quot;Hey, Mr. Smith! The resque team will get to you soon!&quot;</param>
-                        </action>
-                        <action id="0" name="Add key" sid="2398714520596736" type="radioMessages">
-                            <param id="0" name="Key">&quot;11&quot;</param>
-                            <param id="1" name="Value">&quot;Hello, Syberia! Hope you are in a good mood.&quot;</param>
-                        </action>
-                        <action id="0" name="Add key" sid="3676267004565677" type="radioMessages">
-                            <param id="0" name="Key">&quot;12&quot;</param>
-                            <param id="1" name="Value">&quot;There is no news for today. So I&apos;ll just set you a merry tune.&quot;</param>
-                        </action>
-                        <action id="0" name="Add key" sid="1163383701755707" type="radioMessages">
-                            <param id="0" name="Key">&quot;13&quot;</param>
-                            <param id="1" name="Value">&quot;Resque team has to make an emergency stop to get warm by vodka.&quot;</param>
-                        </action>
-                        <action id="0" name="Add key" sid="5507035627451942" type="radioMessages">
-                            <param id="0" name="Key">&quot;14&quot;</param>
-                            <param id="1" name="Value">&quot;Congratulations with the first day of summer! Yippee!&quot;</param>
-                        </action>
-                        <action id="0" name="Add key" sid="566505698078923" type="radioMessages">
-                            <param id="0" name="Key">&quot;15&quot;</param>
-                            <param id="1" name="Value">&quot;Resque team is coming. They&apos;ll catch you in few minutes.&quot;</param>
-                        </action>
-                        <action id="0" name="Play" sid="5413775785902358" type="Audio">
-                            <param id="0" name="Audio file">winter_theme_final</param>
-                            <param id="2" name="Loop">0</param>
-                            <param id="3" name="Volume">soundLevel</param>
-                            <param id="1" name="Tag (optional)">&quot;winter&quot;</param>
-                        </action>
-                        <action id="4" name="Preload" sid="6915150282114079" type="Audio">
-                            <param id="0" name="Audio file">pickup_loot</param>
-                        </action>
-                        <action id="4" name="Preload" sid="1097779820356161" type="Audio">
-                            <param id="0" name="Audio file">wood-rustle</param>
-                        </action>
-                        <action id="4" name="Preload" sid="4899476431286722" type="Audio">
-                            <param id="0" name="Audio file">no_tool</param>
-                        </action>
-                        <action id="4" name="Preload" sid="4619537621526867" type="Audio">
-                            <param id="0" name="Audio file">get_near_campfire</param>
-                        </action>
-                        <action id="4" name="Preload" sid="6514877923964412" type="Audio">
-                            <param id="0" name="Audio file">pickup_axe</param>
-                        </action>
-                        <action id="4" name="Preload" sid="5109222505251773" type="Audio">
-                            <param id="0" name="Audio file">need_battery</param>
-                        </action>
-                        <action id="4" name="Preload" sid="4343090325688588" type="Audio">
-                            <param id="0" name="Audio file">10sec_frozen</param>
-                        </action>
-                        <action id="4" name="Preload" sid="7463849664509323" type="Audio">
-                            <param id="0" name="Audio file">3sec_campfire_warning</param>
-                        </action>
-                        <action id="4" name="Preload" sid="5507976462347624" type="Audio">
-                            <param id="0" name="Audio file">use_airplane</param>
-                        </action>
-                        <action id="4" name="Preload" sid="5291095986222894" type="Audio">
-                            <param id="0" name="Audio file">use_campfire</param>
-                        </action>
                     </actions>
                 </event-block>
             </sub-events>
@@ -133,6 +37,18 @@
                         <action id="-3" name="Set position" sid="9551355699931489" type="Avatar">
                             <param id="0" name="X">Player.X</param>
                             <param id="1" name="Y">Player.Y</param>
+                        </action>
+                        <action id="0" name="Play" sid="6849591871208926" type="Audio">
+                            <param id="0" name="Audio file">winter_theme_final</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">soundLevel</param>
+                            <param id="1" name="Tag (optional)">&quot;winter&quot;</param>
+                        </action>
+                        <action id="0" name="Play" sid="2101561526977694" type="Audio">
+                            <param id="0" name="Audio file">need_battery</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">soundLevel</param>
+                            <param id="1" name="Tag (optional)">&quot;need_battery&quot;</param>
                         </action>
                     </actions>
                     <sub-events>
@@ -471,301 +387,7 @@
         </event-group>
         <event-group description="" sid="9986743214981356" title="Player interaction">
             <sub-events>
-                <event-block collapsed="1" sid="8472556989546301">
-                    <conditions>
-                        <condition id="0" name="On collision with another object" sid="1318087601316103" type="Player">
-                            <param id="0" name="Object">IceHole</param>
-                        </condition>
-                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="7891326233282726" type="IceHole">
-                            <param id="0" name="Instance variable">playerLock</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-13" name="Set boolean" sid="4882797881869076" type="IceHole">
-                            <param id="0" name="Instance variable">playerLock</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
-                        <action id="-16" name="Set opacity" sid="3687833976691036" type="IceHole">
-                            <param id="0" name="Opacity">50</param>
-                        </action>
-                        <action id="-16" name="Wait" sid="207555115370823" type="System">
-                            <param id="0" name="Seconds">2.0</param>
-                        </action>
-                        <action id="-13" name="Set boolean" sid="6721008713108104" type="IceHole">
-                            <param id="0" name="Instance variable">playerLock</param>
-                            <param id="1" name="Value">0</param>
-                        </action>
-                        <action id="-16" name="Set opacity" sid="3660596353527867" type="IceHole">
-                            <param id="0" name="Opacity">100</param>
-                        </action>
-                    </actions>
-                    <sub-events>
-                        <event-block sid="4521523672594057">
-                            <conditions>
-                                <condition id="-8" name="Compare two values" sid="2338073304568402" type="System">
-                                    <param id="0" name="First value">fishingrod.Count</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Second value">0</param>
-                                </condition>
-                                <condition id="-7" name="Compare instance variable" sid="6203027351894494" type="IceHole">
-                                    <param id="0" name="Instance variable">itemSupply</param>
-                                    <param id="1" name="Comparison">4</param>
-                                    <param id="2" name="Value">0</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-11" name="Add to" sid="8887161602704383" type="IceHole">
-                                    <param id="0" name="Instance variable">itemSupply</param>
-                                    <param id="1" name="Value">-1</param>
-                                </action>
-                                <action id="0" name="Play" sid="554799660028174" type="Audio">
-                                    <param id="0" name="Audio file">use_fishy_waters</param>
-                                    <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">soundLevel</param>
-                                    <param id="1" name="Tag (optional)">&quot;use_fishy_waters&quot;</param>
-                                </action>
-                            </actions>
-                            <sub-events>
-                                <event-block sid="8974395218942865">
-                                    <conditions>
-                                        <condition id="-8" name="Compare two values" sid="8644086709557927" type="System">
-                                            <param id="0" name="First value">random(0,100)</param>
-                                            <param id="1" name="Comparison">4</param>
-                                            <param id="2" name="Second value">50</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-3" name="Create object" sid="7181379421178135" type="System">
-                                            <param id="0" name="Object to create">fish</param>
-                                            <param id="1" name="Layer">&quot;Background&quot;</param>
-                                            <param id="2" name="X">IceHole.X</param>
-                                            <param id="3" name="Y">IceHole.Y</param>
-                                        </action>
-                                        <action id="-22" name="Set angle toward position" sid="1960792557807604" type="fish">
-                                            <param id="0" name="X">CampFire.X</param>
-                                            <param id="1" name="Y">CampFire.Y</param>
-                                        </action>
-                                        <action id="-17" name="Move forward" sid="849924002721556" type="fish">
-                                            <param id="0" name="Distance">Player.Width*2</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="2444222160194119">
-                                    <conditions>
-                                        <condition id="-22" name="Else" sid="5654499724860222" type="System" />
-                                    </conditions>
-                                    <actions>
-                                        <action id="-3" name="Create object" sid="7903073711159787" type="System">
-                                            <param id="0" name="Object to create">oldshoes</param>
-                                            <param id="1" name="Layer">&quot;Background&quot;</param>
-                                            <param id="2" name="X">IceHole.X</param>
-                                            <param id="3" name="Y">IceHole.Y</param>
-                                        </action>
-                                        <action id="-22" name="Set angle toward position" sid="4193986893982946" type="oldshoes">
-                                            <param id="0" name="X">CampFire.X</param>
-                                            <param id="1" name="Y">CampFire.Y</param>
-                                        </action>
-                                        <action id="-17" name="Move forward" sid="4243244438781915" type="oldshoes">
-                                            <param id="0" name="Distance">Player.Width*2</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="2178058469272273">
-                                    <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="7083902775907357" type="IceHole">
-                                            <param id="0" name="Instance variable">itemSupply</param>
-                                            <param id="1" name="Comparison">3</param>
-                                            <param id="2" name="Value">0</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="2" name="Stop" sid="8368522797095009" type="IceHole" />
-                                        <action id="5" name="Set frame" sid="1056961711398545" type="IceHole">
-                                            <param id="0" name="Frame number">0</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                            </sub-events>
-                        </event-block>
-                        <event-block sid="1060013525298917">
-                            <conditions>
-                                <condition id="-22" name="Else" sid="4627385702211113" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Play" sid="204644534911295" type="Audio">
-                                    <param id="0" name="Audio file">no_tool</param>
-                                    <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">soundLevel</param>
-                                    <param id="1" name="Tag (optional)">&quot;no_tool&quot;</param>
-                                </action>
-                                <action behavior="Flash" id="0" name="Flash" sid="6903424873067226" type="fishingrodTool">
-                                    <param id="0" name="&apos;On&apos; time">0.1</param>
-                                    <param id="1" name="&apos;Off&apos; time">0.2</param>
-                                    <param id="2" name="Duration">0.3</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-block>
-                <event-block collapsed="1" sid="4185016082126794">
-                    <conditions>
-                        <condition id="0" name="On collision with another object" sid="1635403609972842" type="Player">
-                            <param id="0" name="Object">Mine</param>
-                        </condition>
-                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="7619272970345536" type="Mine">
-                            <param id="0" name="Instance variable">playerLock</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-13" name="Set boolean" sid="7701671770336637" type="Mine">
-                            <param id="0" name="Instance variable">playerLock</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
-                        <action id="-16" name="Set opacity" sid="7465653286729132" type="mountain">
-                            <param id="0" name="Opacity">50</param>
-                        </action>
-                        <action id="-16" name="Wait" sid="8438973407743538" type="System">
-                            <param id="0" name="Seconds">2.0</param>
-                        </action>
-                        <action id="-13" name="Set boolean" sid="792759450036348" type="Mine">
-                            <param id="0" name="Instance variable">playerLock</param>
-                            <param id="1" name="Value">0</param>
-                        </action>
-                        <action id="-16" name="Set opacity" sid="4584213012275248" type="mountain">
-                            <param id="0" name="Opacity">100</param>
-                        </action>
-                    </actions>
-                    <sub-events>
-                        <event-block collapsed="1" sid="2125830868049572">
-                            <conditions>
-                                <condition id="-8" name="Compare two values" sid="1017257388641281" type="System">
-                                    <param id="0" name="First value">pick.Count</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Second value">0</param>
-                                </condition>
-                                <condition id="-7" name="Compare instance variable" sid="4205035146669305" type="Mine">
-                                    <param id="0" name="Instance variable">itemSupply</param>
-                                    <param id="1" name="Comparison">4</param>
-                                    <param id="2" name="Value">0</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-11" name="Add to" sid="5650784354657358" type="Mine">
-                                    <param id="0" name="Instance variable">itemSupply</param>
-                                    <param id="1" name="Value">-1</param>
-                                </action>
-                                <action id="0" name="Play" sid="4787524526319808" type="Audio">
-                                    <param id="0" name="Audio file">use_cave</param>
-                                    <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">soundLevel</param>
-                                    <param id="1" name="Tag (optional)">&quot;use_cave&quot;</param>
-                                </action>
-                            </actions>
-                            <sub-events>
-                                <event-block sid="8524172571414186">
-                                    <conditions>
-                                        <condition id="-8" name="Compare two values" sid="5238576646012703" type="System">
-                                            <param id="0" name="First value">random(0,100)</param>
-                                            <param id="1" name="Comparison">4</param>
-                                            <param id="2" name="Second value">70</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-3" name="Create object" sid="2745450582356141" type="System">
-                                            <param id="0" name="Object to create">meat</param>
-                                            <param id="1" name="Layer">&quot;Background&quot;</param>
-                                            <param id="2" name="X">Mine.X</param>
-                                            <param id="3" name="Y">Mine.Y</param>
-                                        </action>
-                                        <action id="-22" name="Set angle toward position" sid="2363831260565259" type="meat">
-                                            <param id="0" name="X">Player.X</param>
-                                            <param id="1" name="Y">Player.Y</param>
-                                        </action>
-                                        <action id="-17" name="Move forward" sid="8716233273306797" type="meat">
-                                            <param id="0" name="Distance">Player.Width*2</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="8873753413692451">
-                                    <conditions>
-                                        <condition id="-22" name="Else" sid="6978941553432772" type="System" />
-                                        <condition id="-8" name="Compare two values" sid="125159642091843" type="System">
-                                            <param id="0" name="First value">random(0,70)</param>
-                                            <param id="1" name="Comparison">4</param>
-                                            <param id="2" name="Second value">40</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-3" name="Create object" sid="9569593985535288" type="System">
-                                            <param id="0" name="Object to create">coal</param>
-                                            <param id="1" name="Layer">&quot;Background&quot;</param>
-                                            <param id="2" name="X">Mine.X</param>
-                                            <param id="3" name="Y">Mine.Y</param>
-                                        </action>
-                                        <action id="-22" name="Set angle toward position" sid="7920497945968796" type="coal">
-                                            <param id="0" name="X">CampFire.X</param>
-                                            <param id="1" name="Y">CampFire.Y</param>
-                                        </action>
-                                        <action id="-17" name="Move forward" sid="3662210830909127" type="coal">
-                                            <param id="0" name="Distance">Player.Width*2</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="2354988023102101">
-                                    <conditions>
-                                        <condition id="-22" name="Else" sid="1739293065836758" type="System" />
-                                    </conditions>
-                                    <actions>
-                                        <action id="-3" name="Create object" sid="7334245394699175" type="System">
-                                            <param id="0" name="Object to create">stone</param>
-                                            <param id="1" name="Layer">&quot;Background&quot;</param>
-                                            <param id="2" name="X">Mine.X</param>
-                                            <param id="3" name="Y">Mine.Y</param>
-                                        </action>
-                                        <action id="-22" name="Set angle toward position" sid="2369686008818409" type="stone">
-                                            <param id="0" name="X">CampFire.X</param>
-                                            <param id="1" name="Y">CampFire.Y</param>
-                                        </action>
-                                        <action id="-17" name="Move forward" sid="3380516857301428" type="stone">
-                                            <param id="0" name="Distance">Mine.Width</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="8294501106786003">
-                                    <conditions>
-                                        <condition id="-8" name="Compare two values" sid="5501078414941849" type="System">
-                                            <param id="0" name="First value">mineBlock.Count</param>
-                                            <param id="1" name="Comparison">4</param>
-                                            <param id="2" name="Second value">0</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-9" name="Destroy" sid="8488236530448408" type="mineBlock" />
-                                        <action id="0" name="Play" sid="2090717130641077" type="Audio">
-                                            <param id="0" name="Audio file">crash_cave</param>
-                                            <param id="2" name="Loop">0</param>
-                                            <param id="3" name="Volume">soundLevel</param>
-                                            <param id="1" name="Tag (optional)">&quot;crash_cave&quot;</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                            </sub-events>
-                        </event-block>
-                        <event-block sid="1816045730772117">
-                            <conditions>
-                                <condition id="-22" name="Else" sid="6170856779156663" type="System" />
-                            </conditions>
-                            <actions>
-                                <action behavior="Flash" id="0" name="Flash" sid="5929923065330171" type="pickTool">
-                                    <param id="0" name="&apos;On&apos; time">0.1</param>
-                                    <param id="1" name="&apos;Off&apos; time">0.2</param>
-                                    <param id="2" name="Duration">0.6</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-block>
-                <event-block collapsed="1" sid="7775520856246349">
+                <event-block sid="7775520856246349">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="1245352042944207" type="Player">
                             <param id="0" name="Object">CampFire</param>
@@ -815,7 +437,7 @@
                                     <param id="2" name="Duration">0.3</param>
                                 </action>
                                 <action id="0" name="Play" sid="5878524356527404" type="Audio">
-                                    <param id="0" name="Audio file">use_campfire</param>
+                                    <param id="0" name="Audio file">use_campfire2</param>
                                     <param id="2" name="Loop">0</param>
                                     <param id="3" name="Volume">soundLevel</param>
                                     <param id="1" name="Tag (optional)">&quot;use_campfire&quot;</param>
@@ -850,16 +472,19 @@
                                 <action id="5" name="Set frame" sid="872598448518424" type="expSprite">
                                     <param id="0" name="Frame number">1</param>
                                 </action>
-                                <action behavior="Flash" id="0" name="Flash" sid="8432135730800218" type="expSprite">
-                                    <param id="0" name="&apos;On&apos; time">0.1</param>
-                                    <param id="1" name="&apos;Off&apos; time">0.1</param>
-                                    <param id="2" name="Duration">1.2</param>
+                                <action id="-16" name="Wait" sid="2947647990668265" type="System">
+                                    <param id="0" name="Seconds">1.0</param>
                                 </action>
-                                <action id="0" name="Play" sid="4801546553185714" type="Audio">
+                                <action id="0" name="Play" sid="3591343034803898" type="Audio">
                                     <param id="0" name="Audio file">use_food</param>
                                     <param id="2" name="Loop">0</param>
                                     <param id="3" name="Volume">soundLevel</param>
                                     <param id="1" name="Tag (optional)">&quot;use_food&quot;</param>
+                                </action>
+                                <action behavior="Flash" id="0" name="Flash" sid="8432135730800218" type="expSprite">
+                                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                    <param id="2" name="Duration">2.0</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -887,7 +512,51 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="560764457667941">
+                <event-block collapsed="1" sid="5279966766805221">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="7395375667655074" type="Player">
+                            <param id="0" name="Object">fireplace</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="6560703980579872" type="Audio">
+                            <param id="0" name="Audio file">get_near_campfire</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">soundLevel</param>
+                            <param id="1" name="Tag (optional)">&quot;get_near_campfire&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="7258080599865093" type="Player">
+                            <param id="0" name="Instance variable">freeze</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="9518909901363266" type="freezeSprite">
+                            <param id="0" name="&apos;On&apos; time">0.2</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">0.3</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="1157406554204891">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="356661237549485" type="Player">
+                                    <param id="0" name="Instance variable">speed</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">PLAYERSPEED</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="8940003358315625" type="Player">
+                                    <param id="0" name="Instance variable">speed</param>
+                                    <param id="1" name="Value">PLAYERSPEED</param>
+                                </action>
+                                <action behavior="Bullet" id="0" name="Set speed" sid="3028507036441197" type="Player">
+                                    <param id="0" name="Speed">Player.speed</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block collapsed="1" sid="560764457667941">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="3908845037663883" type="Player">
                             <param id="0" name="Object">tree</param>
@@ -909,19 +578,9 @@
                         <action id="-16" name="Set opacity" sid="7149587813078026" type="tree">
                             <param id="0" name="Opacity">50</param>
                         </action>
-                        <action id="-16" name="Wait" sid="2798675890273334" type="System">
-                            <param id="0" name="Seconds">1.0</param>
-                        </action>
-                        <action id="-13" name="Set boolean" sid="7085233288069159" type="tree">
-                            <param id="0" name="Instance variable">playerLock</param>
-                            <param id="1" name="Value">0</param>
-                        </action>
-                        <action id="-16" name="Set opacity" sid="8893208158527471" type="tree">
-                            <param id="0" name="Opacity">100</param>
-                        </action>
                     </actions>
                     <sub-events>
-                        <event-block sid="5989957969510223">
+                        <event-block collapsed="1" sid="5989957969510223">
                             <conditions>
                                 <condition id="-8" name="Compare two values" sid="3124388625465465" type="System">
                                     <param id="0" name="First value">axe.Count</param>
@@ -930,6 +589,22 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="0" name="Play" sid="3919421292544973" type="Audio">
+                                    <param id="0" name="Audio file">use_tree2</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">soundLevel</param>
+                                    <param id="1" name="Tag (optional)">&quot;use_tree&quot;</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="3860851021649687" type="System">
+                                    <param id="0" name="Seconds">1.0</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="8624771348514865" type="tree">
+                                    <param id="0" name="Instance variable">playerLock</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="5393970625019955" type="tree">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
                                 <action id="-11" name="Add to" sid="3127441697912284" type="tree">
                                     <param id="0" name="Instance variable">chopCounter</param>
                                     <param id="1" name="Value">5</param>
@@ -952,12 +627,6 @@
                                 </action>
                                 <action id="-17" name="Move forward" sid="988149017701914" type="firewood">
                                     <param id="0" name="Distance">random(tree.Width*0.8,tree.Width*1.2)</param>
-                                </action>
-                                <action id="0" name="Play" sid="3919421292544973" type="Audio">
-                                    <param id="0" name="Audio file">use_tree</param>
-                                    <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">soundLevel</param>
-                                    <param id="1" name="Tag (optional)">&quot;use_tree&quot;</param>
                                 </action>
                             </actions>
                             <sub-events>
@@ -989,16 +658,26 @@
                                 <condition id="-22" name="Else" sid="1962868559078265" type="System" />
                             </conditions>
                             <actions>
-                                <action id="0" name="Play" sid="3448396350882438" type="Audio">
+                                <action id="0" name="Play" sid="8816891275531189" type="Audio">
                                     <param id="0" name="Audio file">wood-rustle</param>
                                     <param id="2" name="Loop">0</param>
                                     <param id="3" name="Volume">soundLevel</param>
-                                    <param id="1" name="Tag (optional)">&quot;wood-rustle&quot;</param>
+                                    <param id="1" name="Tag (optional)">&quot;wood_rustle&quot;</param>
                                 </action>
                                 <action behavior="Flash" id="0" name="Flash" sid="7058135659426848" type="axeTool">
                                     <param id="0" name="&apos;On&apos; time">0.1</param>
                                     <param id="1" name="&apos;Off&apos; time">0.2</param>
                                     <param id="2" name="Duration">0.3</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="9369565484406627" type="System">
+                                    <param id="0" name="Seconds">1.0</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="8141522606441473" type="tree">
+                                    <param id="0" name="Instance variable">playerLock</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="8315981471667619" type="tree">
+                                    <param id="0" name="Opacity">100</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1207,69 +886,6 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block collapsed="1" sid="5803535104476343">
-                    <conditions>
-                        <condition id="0" name="On collision with another object" sid="537679156339422" type="Player">
-                            <param id="0" name="Object">Deer</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-22" name="Set angle toward position" sid="6637086405360868" type="Deer">
-                            <param id="0" name="X">Player.X</param>
-                            <param id="1" name="Y">Player.Y</param>
-                        </action>
-                    </actions>
-                    <sub-events>
-                        <event-block sid="6187496896315733">
-                            <conditions>
-                                <condition id="-8" name="Compare two values" sid="1186823486700004" type="System">
-                                    <param id="0" name="First value">gun.Count</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Second value">0</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Play" sid="6481281614978668" type="Audio">
-                                    <param id="0" name="Audio file">kill_deer</param>
-                                    <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">soundLevel</param>
-                                    <param id="1" name="Tag (optional)">&quot;kill_deer&quot;</param>
-                                </action>
-                                <action id="-17" name="Move forward" sid="9936829959475883" type="Deer">
-                                    <param id="0" name="Distance">Deer.Width*3</param>
-                                </action>
-                                <action id="-3" name="Create object" sid="5984714001361401" type="System">
-                                    <param id="0" name="Object to create">meat</param>
-                                    <param id="1" name="Layer">&quot;Background&quot;</param>
-                                    <param id="2" name="X">Deer.X</param>
-                                    <param id="3" name="Y">Deer.Y</param>
-                                </action>
-                                <action id="-3" name="Set position" sid="9501097648932397" type="Deer">
-                                    <param id="0" name="X">random(350,1000)</param>
-                                    <param id="1" name="Y">random(240,670)</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="8219838162555776">
-                            <conditions>
-                                <condition id="-22" name="Else" sid="5429618555399987" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Play" sid="7596539474409362" type="Audio">
-                                    <param id="0" name="Audio file">no_tool</param>
-                                    <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">soundLevel</param>
-                                    <param id="1" name="Tag (optional)">&quot;no_tool&quot;</param>
-                                </action>
-                                <action behavior="Flash" id="0" name="Flash" sid="8490001680162021" type="gunTool">
-                                    <param id="0" name="&apos;On&apos; time">0.1</param>
-                                    <param id="1" name="&apos;Off&apos; time">0.2</param>
-                                    <param id="2" name="Duration">0.3</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-block>
                 <event-block collapsed="1" sid="8727149430184162">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="6349487482650664" type="Player">
@@ -1278,7 +894,7 @@
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block sid="7239386861164882">
+                        <event-block collapsed="1" sid="7239386861164882">
                             <conditions>
                                 <condition id="-7" name="Compare instance variable" sid="2152577395176187" type="Player">
                                     <param id="0" name="Instance variable">battery</param>
@@ -1366,45 +982,384 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="5279966766805221">
+                <event-block collapsed="1" sid="8472556989546301">
                     <conditions>
-                        <condition id="0" name="On collision with another object" sid="7395375667655074" type="Player">
-                            <param id="0" name="Object">fireplace</param>
+                        <condition id="0" name="On collision with another object" sid="1318087601316103" type="Player">
+                            <param id="0" name="Object">IceHole</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="7891326233282726" type="IceHole">
+                            <param id="0" name="Instance variable">playerLock</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="0" name="Play" sid="6560703980579872" type="Audio">
-                            <param id="0" name="Audio file">get_near_campfire</param>
-                            <param id="2" name="Loop">0</param>
-                            <param id="3" name="Volume">soundLevel</param>
-                            <param id="1" name="Tag (optional)">&quot;get_near_campfire&quot;</param>
+                        <action id="-13" name="Set boolean" sid="4882797881869076" type="IceHole">
+                            <param id="0" name="Instance variable">playerLock</param>
+                            <param id="1" name="Value">1</param>
                         </action>
-                        <action id="-10" name="Set value" sid="7258080599865093" type="Player">
-                            <param id="0" name="Instance variable">freeze</param>
-                            <param id="1" name="Value">0</param>
-                        </action>
-                        <action behavior="Flash" id="0" name="Flash" sid="9518909901363266" type="freezeSprite">
-                            <param id="0" name="&apos;On&apos; time">0.2</param>
-                            <param id="1" name="&apos;Off&apos; time">0.1</param>
-                            <param id="2" name="Duration">0.3</param>
+                        <action id="-16" name="Set opacity" sid="3687833976691036" type="IceHole">
+                            <param id="0" name="Opacity">50</param>
                         </action>
                     </actions>
                     <sub-events>
-                        <event-block sid="1157406554204891">
+                        <event-block collapsed="1" sid="4521523672594057">
                             <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="356661237549485" type="Player">
-                                    <param id="0" name="Instance variable">speed</param>
-                                    <param id="1" name="Comparison">2</param>
-                                    <param id="2" name="Value">PLAYERSPEED</param>
+                                <condition id="-8" name="Compare two values" sid="2338073304568402" type="System">
+                                    <param id="0" name="First value">fishingrod.Count</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="6203027351894494" type="IceHole">
+                                    <param id="0" name="Instance variable">itemSupply</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">0</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-10" name="Set value" sid="8940003358315625" type="Player">
-                                    <param id="0" name="Instance variable">speed</param>
-                                    <param id="1" name="Value">PLAYERSPEED</param>
+                                <action id="-11" name="Add to" sid="8887161602704383" type="IceHole">
+                                    <param id="0" name="Instance variable">itemSupply</param>
+                                    <param id="1" name="Value">-1</param>
                                 </action>
-                                <action behavior="Bullet" id="0" name="Set speed" sid="3028507036441197" type="Player">
-                                    <param id="0" name="Speed">Player.speed</param>
+                                <action id="0" name="Play" sid="554799660028174" type="Audio">
+                                    <param id="0" name="Audio file">use_fishy_waters</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">soundLevel</param>
+                                    <param id="1" name="Tag (optional)">&quot;use_fishy_waters&quot;</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="6399986377768937" type="System">
+                                    <param id="0" name="Seconds">2.0</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="418547389797987" type="IceHole">
+                                    <param id="0" name="Instance variable">playerLock</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="5814904356044086" type="IceHole">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="8974395218942865">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="8644086709557927" type="System">
+                                            <param id="0" name="First value">random(0,100)</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Second value">50</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="7181379421178135" type="System">
+                                            <param id="0" name="Object to create">fish</param>
+                                            <param id="1" name="Layer">&quot;Background&quot;</param>
+                                            <param id="2" name="X">IceHole.X</param>
+                                            <param id="3" name="Y">IceHole.Y</param>
+                                        </action>
+                                        <action id="-22" name="Set angle toward position" sid="1960792557807604" type="fish">
+                                            <param id="0" name="X">CampFire.X</param>
+                                            <param id="1" name="Y">CampFire.Y</param>
+                                        </action>
+                                        <action id="-17" name="Move forward" sid="849924002721556" type="fish">
+                                            <param id="0" name="Distance">Player.Width*2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="2444222160194119">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="5654499724860222" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="7903073711159787" type="System">
+                                            <param id="0" name="Object to create">oldshoes</param>
+                                            <param id="1" name="Layer">&quot;Background&quot;</param>
+                                            <param id="2" name="X">IceHole.X</param>
+                                            <param id="3" name="Y">IceHole.Y</param>
+                                        </action>
+                                        <action id="-22" name="Set angle toward position" sid="4193986893982946" type="oldshoes">
+                                            <param id="0" name="X">CampFire.X</param>
+                                            <param id="1" name="Y">CampFire.Y</param>
+                                        </action>
+                                        <action id="-17" name="Move forward" sid="4243244438781915" type="oldshoes">
+                                            <param id="0" name="Distance">Player.Width*2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="2178058469272273">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="7083902775907357" type="IceHole">
+                                            <param id="0" name="Instance variable">itemSupply</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="2" name="Stop" sid="8368522797095009" type="IceHole" />
+                                        <action id="5" name="Set frame" sid="1056961711398545" type="IceHole">
+                                            <param id="0" name="Frame number">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="1060013525298917">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="4627385702211113" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="204644534911295" type="Audio">
+                                    <param id="0" name="Audio file">no_tool2</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">soundLevel</param>
+                                    <param id="1" name="Tag (optional)">&quot;no_tool&quot;</param>
+                                </action>
+                                <action behavior="Flash" id="0" name="Flash" sid="6903424873067226" type="fishingrodTool">
+                                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                                    <param id="1" name="&apos;Off&apos; time">0.2</param>
+                                    <param id="2" name="Duration">0.3</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="3781487208857936" type="System">
+                                    <param id="0" name="Seconds">2.0</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="8661092975764488" type="IceHole">
+                                    <param id="0" name="Instance variable">playerLock</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="242919165471201" type="IceHole">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block collapsed="1" sid="4185016082126794">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="1635403609972842" type="Player">
+                            <param id="0" name="Object">Mine</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="7619272970345536" type="Mine">
+                            <param id="0" name="Instance variable">playerLock</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="7701671770336637" type="Mine">
+                            <param id="0" name="Instance variable">playerLock</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="7465653286729132" type="mountain">
+                            <param id="0" name="Opacity">50</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block collapsed="1" sid="2125830868049572">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="1017257388641281" type="System">
+                                    <param id="0" name="First value">pick.Count</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="4205035146669305" type="Mine">
+                                    <param id="0" name="Instance variable">itemSupply</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-11" name="Add to" sid="5650784354657358" type="Mine">
+                                    <param id="0" name="Instance variable">itemSupply</param>
+                                    <param id="1" name="Value">-1</param>
+                                </action>
+                                <action id="0" name="Play" sid="4787524526319808" type="Audio">
+                                    <param id="0" name="Audio file">use_cave</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">soundLevel</param>
+                                    <param id="1" name="Tag (optional)">&quot;use_cave&quot;</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="5478806332920027" type="System">
+                                    <param id="0" name="Seconds">2.0</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="7513949924350627" type="Mine">
+                                    <param id="0" name="Instance variable">playerLock</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="6983935330944017" type="mountain">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="8524172571414186">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="5238576646012703" type="System">
+                                            <param id="0" name="First value">random(0,100)</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Second value">70</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="2745450582356141" type="System">
+                                            <param id="0" name="Object to create">meat</param>
+                                            <param id="1" name="Layer">&quot;Background&quot;</param>
+                                            <param id="2" name="X">Mine.X</param>
+                                            <param id="3" name="Y">Mine.Y</param>
+                                        </action>
+                                        <action id="-22" name="Set angle toward position" sid="2363831260565259" type="meat">
+                                            <param id="0" name="X">Player.X</param>
+                                            <param id="1" name="Y">Player.Y</param>
+                                        </action>
+                                        <action id="-17" name="Move forward" sid="8716233273306797" type="meat">
+                                            <param id="0" name="Distance">Player.Width*2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="8873753413692451">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="6978941553432772" type="System" />
+                                        <condition id="-8" name="Compare two values" sid="125159642091843" type="System">
+                                            <param id="0" name="First value">random(0,70)</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Second value">40</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="9569593985535288" type="System">
+                                            <param id="0" name="Object to create">coal</param>
+                                            <param id="1" name="Layer">&quot;Background&quot;</param>
+                                            <param id="2" name="X">Mine.X</param>
+                                            <param id="3" name="Y">Mine.Y</param>
+                                        </action>
+                                        <action id="-22" name="Set angle toward position" sid="7920497945968796" type="coal">
+                                            <param id="0" name="X">CampFire.X</param>
+                                            <param id="1" name="Y">CampFire.Y</param>
+                                        </action>
+                                        <action id="-17" name="Move forward" sid="3662210830909127" type="coal">
+                                            <param id="0" name="Distance">Player.Width*2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="2354988023102101">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="1739293065836758" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="7334245394699175" type="System">
+                                            <param id="0" name="Object to create">stone</param>
+                                            <param id="1" name="Layer">&quot;Background&quot;</param>
+                                            <param id="2" name="X">Mine.X</param>
+                                            <param id="3" name="Y">Mine.Y</param>
+                                        </action>
+                                        <action id="-22" name="Set angle toward position" sid="2369686008818409" type="stone">
+                                            <param id="0" name="X">CampFire.X</param>
+                                            <param id="1" name="Y">CampFire.Y</param>
+                                        </action>
+                                        <action id="-17" name="Move forward" sid="3380516857301428" type="stone">
+                                            <param id="0" name="Distance">Mine.Width</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="8294501106786003">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="5501078414941849" type="System">
+                                            <param id="0" name="First value">mineBlock.Count</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="8488236530448408" type="mineBlock" />
+                                        <action id="0" name="Play" sid="2090717130641077" type="Audio">
+                                            <param id="0" name="Audio file">crash_cave</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">soundLevel</param>
+                                            <param id="1" name="Tag (optional)">&quot;crash_cave&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="1816045730772117">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="6170856779156663" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="7756415198195262" type="Audio">
+                                    <param id="0" name="Audio file">no_tool2</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">soundLevel</param>
+                                    <param id="1" name="Tag (optional)">&quot;no_tool&quot;</param>
+                                </action>
+                                <action behavior="Flash" id="0" name="Flash" sid="5929923065330171" type="pickTool">
+                                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                                    <param id="1" name="&apos;Off&apos; time">0.2</param>
+                                    <param id="2" name="Duration">0.6</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="2329229851801467" type="System">
+                                    <param id="0" name="Seconds">2.0</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="8140952395729387" type="Mine">
+                                    <param id="0" name="Instance variable">playerLock</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="2115709876420868" type="mountain">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block collapsed="1" sid="5803535104476343">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="537679156339422" type="Player">
+                            <param id="0" name="Object">Deer</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-22" name="Set angle toward position" sid="6637086405360868" type="Deer">
+                            <param id="0" name="X">Player.X</param>
+                            <param id="1" name="Y">Player.Y</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="6187496896315733">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="1186823486700004" type="System">
+                                    <param id="0" name="First value">gun.Count</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="6481281614978668" type="Audio">
+                                    <param id="0" name="Audio file">kill_deer</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">soundLevel</param>
+                                    <param id="1" name="Tag (optional)">&quot;kill_deer&quot;</param>
+                                </action>
+                                <action id="-17" name="Move forward" sid="9936829959475883" type="Deer">
+                                    <param id="0" name="Distance">Deer.Width*3</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="5984714001361401" type="System">
+                                    <param id="0" name="Object to create">meat</param>
+                                    <param id="1" name="Layer">&quot;Background&quot;</param>
+                                    <param id="2" name="X">Deer.X</param>
+                                    <param id="3" name="Y">Deer.Y</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="9501097648932397" type="Deer">
+                                    <param id="0" name="X">random(350,1000)</param>
+                                    <param id="1" name="Y">random(240,670)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="8219838162555776">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="5429618555399987" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="7596539474409362" type="Audio">
+                                    <param id="0" name="Audio file">no_tool2</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">soundLevel</param>
+                                    <param id="1" name="Tag (optional)">&quot;no_tool&quot;</param>
+                                </action>
+                                <action behavior="Flash" id="0" name="Flash" sid="8490001680162021" type="gunTool">
+                                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                                    <param id="1" name="&apos;Off&apos; time">0.2</param>
+                                    <param id="2" name="Duration">0.3</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1412,7 +1367,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="get loot" sid="2176904056125398" title="Player pickup">
+        <event-group description="get loot" sid="2176904056125398" title="Player pickup">
             <sub-events>
                 <event-block sid="681213038943706">
                     <conditions>
@@ -1588,12 +1543,6 @@
                             <param id="0" name="Seconds">1</param>
                         </action>
                         <action id="-9" name="Destroy" sid="5481985016713901" type="axe" />
-                        <action id="4" name="Preload" sid="974741100095944" type="Audio">
-                            <param id="0" name="Audio file">pickup_fishingrod</param>
-                        </action>
-                        <action id="4" name="Preload" sid="220648535375578" type="Audio">
-                            <param id="0" name="Audio file">use_tree</param>
-                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="8496255799633769">
@@ -1684,7 +1633,7 @@
                             <param id="2" name="Duration">0.3</param>
                         </action>
                         <action id="0" name="Play" sid="8864179729131472" type="Audio">
-                            <param id="0" name="Audio file">pickup_loot</param>
+                            <param id="0" name="Audio file">pickup_loot2</param>
                             <param id="2" name="Loop">0</param>
                             <param id="3" name="Volume">soundLevel</param>
                             <param id="1" name="Tag (optional)">&quot;pickup_loot&quot;</param>
@@ -1723,7 +1672,7 @@
                             <param id="2" name="Duration">0.3</param>
                         </action>
                         <action id="0" name="Play" sid="2691528569083483" type="Audio">
-                            <param id="0" name="Audio file">pickup_loot</param>
+                            <param id="0" name="Audio file">pickup_loot2</param>
                             <param id="2" name="Loop">0</param>
                             <param id="3" name="Volume">soundLevel</param>
                             <param id="1" name="Tag (optional)">&quot;pickup_loot&quot;</param>
@@ -1765,7 +1714,7 @@
                             <param id="2" name="Duration">0.3</param>
                         </action>
                         <action id="0" name="Play" sid="7019330684250423" type="Audio">
-                            <param id="0" name="Audio file">pickup_loot</param>
+                            <param id="0" name="Audio file">pickup_loot2</param>
                             <param id="2" name="Loop">0</param>
                             <param id="3" name="Volume">soundLevel</param>
                             <param id="1" name="Tag (optional)">&quot;pickup_loot&quot;</param>
@@ -1774,9 +1723,6 @@
                             <param id="0" name="Seconds">1</param>
                         </action>
                         <action id="-9" name="Destroy" sid="723832365508718" type="battery" />
-                        <action id="4" name="Preload" sid="8291082567087289" type="Audio">
-                            <param id="0" name="Audio file">use_radio</param>
-                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="1104801215975828">
@@ -1807,7 +1753,7 @@
                             <param id="2" name="Duration">0.3</param>
                         </action>
                         <action id="0" name="Play" sid="8090500301908447" type="Audio">
-                            <param id="0" name="Audio file">pickup_loot</param>
+                            <param id="0" name="Audio file">pickup_loot2</param>
                             <param id="2" name="Loop">0</param>
                             <param id="3" name="Volume">soundLevel</param>
                             <param id="1" name="Tag (optional)">&quot;pickup_loot&quot;</param>
@@ -1846,7 +1792,7 @@
                             <param id="2" name="Duration">0.3</param>
                         </action>
                         <action id="0" name="Play" sid="1665790154499516" type="Audio">
-                            <param id="0" name="Audio file">pickup_loot</param>
+                            <param id="0" name="Audio file">pickup_loot2</param>
                             <param id="2" name="Loop">0</param>
                             <param id="3" name="Volume">soundLevel</param>
                             <param id="1" name="Tag (optional)">&quot;pickup_loot&quot;</param>
@@ -1855,9 +1801,6 @@
                             <param id="0" name="Seconds">1</param>
                         </action>
                         <action id="-9" name="Destroy" sid="481881175208196" type="fish" />
-                        <action id="4" name="Preload" sid="1700405576475312" type="Audio">
-                            <param id="0" name="Audio file">use_food</param>
-                        </action>
                     </actions>
                 </event-block>
             </sub-events>

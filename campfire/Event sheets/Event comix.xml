@@ -15,5 +15,117 @@
                 </action>
             </actions>
         </event-block>
+        <event-block sid="2903939533986126">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="9986848197456099" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Add key" sid="7425775257079053" type="radioMessages">
+                    <param id="0" name="Key">&quot;1&quot;</param>
+                    <param id="1" name="Value">&quot;We have received your alarm. Does your coffee-machine not work?&quot;</param>
+                </action>
+                <action id="0" name="Add key" sid="8667719751003284" type="radioMessages">
+                    <param id="0" name="Key">&quot;2&quot;</param>
+                    <param id="1" name="Value">&quot;We received data. You&apos;re in Russia. I hope it&apos;s not cold there.&quot;</param>
+                </action>
+                <action id="0" name="Add key" sid="3254660183042607" type="radioMessages">
+                    <param id="0" name="Key">&quot;3&quot;</param>
+                    <param id="1" name="Value">&quot;Smith, we are trying to determine your location. We&apos;ll save you.&quot;</param>
+                </action>
+                <action id="0" name="Add key" sid="4947847371154049" type="radioMessages">
+                    <param id="0" name="Key">&quot;4&quot;</param>
+                    <param id="1" name="Value">&quot;Mike from Typing Department asks you to take a picture of a bear.&quot;</param>
+                </action>
+                <action id="0" name="Add key" sid="3281558921180554" type="radioMessages">
+                    <param id="0" name="Key">&quot;5&quot;</param>
+                    <param id="1" name="Value">&quot;Mr. Smith, don&apos;t panic. Obviously, you&apos;re somewhere in Syberia.&quot;</param>
+                </action>
+                <action id="0" name="Add key" sid="5096514121334132" type="radioMessages">
+                    <param id="0" name="Key">&quot;6&quot;</param>
+                    <param id="1" name="Value">&quot;We are trying to determine coordinates of your location.&quot;</param>
+                </action>
+                <action id="0" name="Add key" sid="5629230783316827" type="radioMessages">
+                    <param id="0" name="Key">&quot;7&quot;</param>
+                    <param id="1" name="Value">&quot;We have some good news. It&apos;s easy to get firewood in Syberia.&quot;</param>
+                </action>
+                <action id="0" name="Add key" sid="9938070936485177" type="radioMessages">
+                    <param id="0" name="Key">&quot;8&quot;</param>
+                    <param id="1" name="Value">&quot;Your situation isn&apos;t so poor. You have an unscheduled vacation!&quot;</param>
+                </action>
+                <action id="0" name="Add key" sid="261169130790492" type="radioMessages">
+                    <param id="0" name="Key">&quot;9&quot;</param>
+                    <param id="1" name="Value">&quot;Good morning, Mr. Smith. Your wife, Lucy, sends you greetings.&quot;</param>
+                </action>
+                <action id="0" name="Add key" sid="5891527966770265" type="radioMessages">
+                    <param id="0" name="Key">&quot;10&quot;</param>
+                    <param id="1" name="Value">&quot;Hey, Mr. Smith! The resque team will get to you soon!&quot;</param>
+                </action>
+                <action id="0" name="Add key" sid="6932492969540499" type="radioMessages">
+                    <param id="0" name="Key">&quot;11&quot;</param>
+                    <param id="1" name="Value">&quot;Hello, Syberia! Hope you are in a good mood.&quot;</param>
+                </action>
+                <action id="0" name="Add key" sid="4377322382180278" type="radioMessages">
+                    <param id="0" name="Key">&quot;12&quot;</param>
+                    <param id="1" name="Value">&quot;There is no news for today. So I&apos;ll just set you a merry tune.&quot;</param>
+                </action>
+                <action id="0" name="Add key" sid="8540881251628396" type="radioMessages">
+                    <param id="0" name="Key">&quot;13&quot;</param>
+                    <param id="1" name="Value">&quot;Resque team has to make an emergency stop to get warm by vodka.&quot;</param>
+                </action>
+                <action id="0" name="Add key" sid="4409265319839799" type="radioMessages">
+                    <param id="0" name="Key">&quot;14&quot;</param>
+                    <param id="1" name="Value">&quot;Congratulations with the first day of summer! Yippee!&quot;</param>
+                </action>
+                <action id="0" name="Add key" sid="1979588590826815" type="radioMessages">
+                    <param id="0" name="Key">&quot;15&quot;</param>
+                    <param id="1" name="Value">&quot;Resque team is coming. They&apos;ll catch you in few minutes.&quot;</param>
+                </action>
+                <action id="4" name="Preload" sid="1426077967362792" type="Audio">
+                    <param id="0" name="Audio file">wood-rustle</param>
+                </action>
+                <action id="4" name="Preload" sid="5853548827607279" type="Audio">
+                    <param id="0" name="Audio file">pickup_loot2</param>
+                </action>
+                <action id="4" name="Preload" sid="4553458482988463" type="Audio">
+                    <param id="0" name="Audio file">no_tool2</param>
+                </action>
+                <action id="4" name="Preload" sid="1381302453564025" type="Audio">
+                    <param id="0" name="Audio file">get_near_campfire</param>
+                </action>
+                <action id="4" name="Preload" sid="2902656445586684" type="Audio">
+                    <param id="0" name="Audio file">use_campfire2</param>
+                </action>
+                <action id="4" name="Preload" sid="8684925954887233" type="Audio">
+                    <param id="0" name="Audio file">pickup_axe</param>
+                </action>
+                <action id="4" name="Preload" sid="908941312576746" type="Audio">
+                    <param id="0" name="Audio file">need_battery</param>
+                </action>
+                <action id="4" name="Preload" sid="5878465012650004" type="Audio">
+                    <param id="0" name="Audio file">10sec_frozen</param>
+                </action>
+                <action id="4" name="Preload" sid="6247887723266979" type="Audio">
+                    <param id="0" name="Audio file">3sec_campfire_warning</param>
+                </action>
+                <action id="4" name="Preload" sid="7064809358871678" type="Audio">
+                    <param id="0" name="Audio file">use_airplane</param>
+                </action>
+                <action id="4" name="Preload" sid="3462703124025828" type="Audio">
+                    <param id="0" name="Audio file">use_radio</param>
+                </action>
+                <action id="4" name="Preload" sid="1739386576317251" type="Audio">
+                    <param id="0" name="Audio file">use_tree2</param>
+                </action>
+                <action id="4" name="Preload" sid="9623019561412948" type="Audio">
+                    <param id="0" name="Audio file">pickup_fishingrod</param>
+                </action>
+                <action id="4" name="Preload" sid="8915806027534205" type="Audio">
+                    <param id="0" name="Audio file">use_food</param>
+                </action>
+                <action id="4" name="Preload" sid="2190954699212377" type="Audio">
+                    <param id="0" name="Audio file">game_over</param>
+                </action>
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>

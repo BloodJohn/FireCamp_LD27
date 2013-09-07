@@ -12,10 +12,10 @@
     <used-plugins>
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Dictionary" version="1">Dictionary</plugin>
-        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
-        <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
@@ -693,9 +693,10 @@
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2901257636939935" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5">
                             <collision-poly>
-                                <point x="0" y="0" />
-                                <point x="1" y="0.484375" />
-                                <point x="0" y="1" />
+                                <point x="0.21875" y="0.5" />
+                                <point x="0.5" y="0.210938" />
+                                <point x="0.796875" y="0.515625" />
+                                <point x="0.46875" y="0.8125" />
                             </collision-poly>
                         </frame>
                     </animation>
@@ -707,13 +708,12 @@
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1684992998605297" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5">
                             <collision-poly>
-                                <point x="0.25" y="0.25" />
-                                <point x="0.5" y="0.291667" />
-                                <point x="0.697917" y="0.302083" />
-                                <point x="0.84375" y="0.5" />
-                                <point x="1" y="1" />
-                                <point x="0.5" y="0.8125" />
-                                <point x="0" y="1" />
+                                <point x="0.119791" y="0.317709" />
+                                <point x="0.505208" y="0.140625" />
+                                <point x="0.869792" y="0.338542" />
+                                <point x="0.875" y="0.760418" />
+                                <point x="0.489583" y="0.911458" />
+                                <point x="0.125" y="0.765626" />
                             </collision-poly>
                         </frame>
                     </animation>
@@ -1221,7 +1221,7 @@
         <layout>gameover.xml</layout>
         <layout>gamewin.xml</layout>
     </layout-folder>
-    <event-folder expanded="0">
+    <event-folder expanded="1">
         <event-sheet>Event game.xml</event-sheet>
         <event-sheet>Event comix.xml</event-sheet>
         <event-sheet>Event preloader.xml</event-sheet>
@@ -1268,9 +1268,6 @@
         <file name="pickup_useless.m4a" />
         <file name="pickup_useless.ogg" />
         <file name="pickup_useless.wav" />
-        <file name="pickup_loot.m4a" />
-        <file name="pickup_loot.ogg" />
-        <file name="pickup_loot.wav" />
         <file name="kill_deer.m4a" />
         <file name="kill_deer.ogg" />
         <file name="kill_deer.wav" />
@@ -1301,18 +1298,30 @@
         <file name="crash_cave.m4a" />
         <file name="crash_cave.ogg" />
         <file name="crash_cave.wav" />
-        <file name="use_campfire.m4a" />
-        <file name="use_campfire.ogg" />
-        <file name="use_campfire.wav" />
-        <file name="use_food.m4a" />
-        <file name="use_food.ogg" />
-        <file name="use_food.wav" />
         <file name="get_near_campfire.m4a" />
         <file name="get_near_campfire.ogg" />
         <file name="get_near_campfire.wav" />
         <file name="wood-rustle.m4a" />
         <file name="wood-rustle.ogg" />
         <file name="wood-rustle.wav" />
+        <file name="pickup_loot2.m4a" />
+        <file name="pickup_loot2.ogg" />
+        <file name="pickup_loot2.wav" />
+        <file name="use_tree2.m4a" />
+        <file name="use_tree2.ogg" />
+        <file name="use_tree2.wav" />
+        <file name="no_tool2.m4a" />
+        <file name="no_tool2.ogg" />
+        <file name="no_tool2.wav" />
+        <file name="game_over.m4a" />
+        <file name="game_over.ogg" />
+        <file name="game_over.wav" />
+        <file name="use_food.m4a" />
+        <file name="use_food.ogg" />
+        <file name="use_food.wav" />
+        <file name="use_campfire2.m4a" />
+        <file name="use_campfire2.ogg" />
+        <file name="use_campfire2.wav" />
     </sounds-folder>
     <music-folder expanded="0">
         <file name="winter_theme_final.ogg" />
